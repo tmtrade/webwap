@@ -39,6 +39,7 @@ abstract class AppAction extends Action
      */
     public function before()
     {
+	$this->caches = ""; //打开后关闭所有 页面缓存
         //设置用户信息
         $this->setLoginUser();
         $this->set('_mod_', $this->mod);

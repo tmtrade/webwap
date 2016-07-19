@@ -14,6 +14,10 @@ define('SELLER_URL', 'http://seller.chofn.net/');
 define('SITE_URL', 'http://t.chofn.net/');
 //交易站后台URL
 define('TRADE_URL', 'http://tr2.chofn.net/');
+
+//手机端
+define('WAP_URL', 'http://m.chofn.net/');
+
 //近似查询URL
 define('GUANJIA_URL', 'http://tuotu.chofn.net/');
 //文章发布后台地址主要针对图片

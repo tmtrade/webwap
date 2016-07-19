@@ -1,0 +1,166 @@
+<? require(ViewDir.'/header.html'); ?>
+		<section class="brand-pt-search">
+			<div class="search-main">
+				<p class="brand-pt-search-tit">
+					<b class="on" id="search1">商标  trademark</b>
+					<b id="search2">专利  patent</b>
+				</p>
+				<div class="brand-box" id="con_search_1" style="display: block;">
+					<div class="brand-inp">
+						<input class="search-inp" type="text" placeholder="请输入您要搜索的商标名或商标号"/>
+						<a class="search-btn"></a>
+					</div>
+					<p>
+						<a href="#">我特么是推荐商标 </a>
+						<a href="#">我特么是推荐商标 </a>
+						<a href="#">我特么是推荐商标 </a>
+						<a href="#">我特么是推荐商标 </a>
+						<a href="#">我特么是推荐商标 </a>
+					</p>
+				</div>
+				<div class="brand-box" id="con_search_2">
+					<div class="brand-inp f-hidden">
+						<input class="search-inp" type="text" placeholder="请输入您要搜索的专利名或专利号"/>
+						<a  href="/trademark/" class="search-btn"></a>
+					</div>
+					<p>
+						<a href="#">我特么是推荐专利 </a>
+						<a href="#">我特么是推荐专利 </a>
+						<a href="#">我特么是推荐专利 </a>
+						<a href="#">我特么是推荐专利 </a>
+						<a href="#">我特么是推荐专利 </a>
+					</p>
+				</div>
+			</div>
+		</section>
+		<nav class="yzc-nav">
+			<a href="#">
+				<span>
+					<img src="<?=StaticDir?>1.0/images/nav-ico1.png" />
+				</span>
+				<p>
+					<b>商标筛选</b><br/>
+					trademark
+				</p>
+			</a>
+			<a href="#">
+				<span>
+					<img src="<?=StaticDir?>1.0/images/nav-ico2.png" />
+				</span>
+				<p>
+					<b>专利筛选</b><br/>
+					patent
+				</p>
+			</a>
+			<a href="#">
+				<span>
+					<img src="<?=StaticDir?>1.0/images/nav-ico3.png" />
+				</span>
+				<p>
+					<b>购买登记</b><br/>
+					buy
+				</p>
+			</a>
+			<a href="#">
+				<span>
+					<img src="<?=StaticDir?>1.0/images/nav-ico4.png" />
+				</span>
+				<p>
+					<b>我要出售</b><br/>
+					sell
+				</p>
+			</a>
+		</nav>
+		<section class="yzc-classify">
+			<div class="yzc-class-tit">
+				<span>热门商标类别</span>
+			</div>
+			<div class="yzc-class-show">
+				<a href="#">
+					<span>
+						<img src="<?=StaticDir?>1.0/images/clas-ico1.jpg" />
+					</span>
+					<p>
+						<b>25类</b><br/>
+						服装鞋帽
+					</p>
+				</a>
+				<a href="#">
+					<span>
+						<img src="<?=StaticDir?>1.0/images/clas-ico2.jpg" />
+					</span>
+					<p>
+						<b>3类</b><br/>
+						化妆日化
+					</p>
+				</a>
+				<a href="#">
+					<span>
+						<img src="<?=StaticDir?>1.0/images/clas-ico3.jpg" />
+					</span>
+					<p>
+						<b>9类</b><br/>
+						科学仪器
+					</p>
+				</a>
+			</div>
+			<ul class="yzc-class-list">
+				<li>
+					<a href=""><label>&bull;</label>01类 化工原料</a>
+					<a href=""><label>&bull;</label>01类 化工原料</a>
+					<a href=""><label>&bull;</label>01类 化工原料</a>
+					<a href=""><label>&bull;</label>01类 化工原料</a>
+				</li>
+				<li>
+					<a href=""><label>&bull;</label>01类 化工原料</a>
+					<a href=""><label>&bull;</label>01类 化工原料</a>
+					<a href=""><label>&bull;</label>01类 化工原料</a>
+					<a href=""><label>&bull;</label>01类 化工原料</a>
+				</li>
+				<li>
+					<a href=""><label>&bull;</label>01类 化工原料</a>
+					<a href=""><label>&bull;</label>01类 化工原料</a>
+					<a href=""><label>&bull;</label>01类 化工原料</a>
+					<a href=""><label>&bull;</label>01类 化工原料</a>
+				</li>
+			</ul>
+		</section>
+		<section class="yzc-classify">
+			<div class="yzc-class-tit">
+				<span>热门专利类别</span>
+			</div>
+			<ul class="yzc-class-list pat-list">
+				<li>
+					<a href=""><label>&bull;</label>01类 化工原料</a>
+					<a href=""><label>&bull;</label>01类 化工原料</a>
+					<a href=""><label>&bull;</label>01类 化工原料</a>
+					<a href=""><label>&bull;</label>01类 化工原料</a>
+				</li>
+			</ul>
+		</section>
+		
+		<!--公用弹话框-->
+		<div class="dlg-box">
+			<a href=""></a>
+			<span id="gb-btn"></span>
+		</div>
+		<!--共用底部-->
+		<section class="yzc-btm">
+			<div class="yzc-btm-main">
+				<h2><a>4006-929-199</a></h2>
+				<p>ICP证：蜀ICP备15035613号-1 <a href=""></a>电脑版</p>
+			</div>
+		</section>
+	
+	<script type="text/javascript" src="<?=StaticDir?>1.0/js/common.js"></script>
+	<script type="text/javascript">
+	   //首页商标专利搜索选项卡；
+	   $("#search1").on(tap,function(){
+	   	 jc('search',1,2);
+	   });
+	   
+	    $("#search2").on(tap,function(){
+	   	  jc('search',2,2);
+	   });
+	</script>
+<? require(ViewDir.'/footer.html'); ?>
