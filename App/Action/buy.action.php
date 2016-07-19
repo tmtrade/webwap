@@ -7,4 +7,7 @@
  */
 class BuyAction extends AppAction{
 
+    public function index(){
+        $this->display();
+    }
 }

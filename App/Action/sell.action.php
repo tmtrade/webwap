@@ -7,4 +7,7 @@
  */
 class SellAction extends AppAction{
 
+    public function index(){
+        $this->display();
+    }
 }
