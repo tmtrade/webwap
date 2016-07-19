@@ -14,7 +14,7 @@ class TrademarkAction extends AppAction
 
     public function index()
     {
-	$this->set('list',$list);
+	$name = $this->input('name', 'string', '');
         $this->display();
     }
     

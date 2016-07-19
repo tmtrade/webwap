@@ -7,8 +7,10 @@
 				</p>
 				<div class="brand-box" id="con_search_1" style="display: block;">
 					<div class="brand-inp">
-						<input class="search-inp" type="text" placeholder="请输入您要搜索的商标名或商标号"/>
-						<a class="search-btn"></a>
+					    <form action="/trademark/index" >
+						<input class="search-inp" type="text" name="name" placeholder="请输入您要搜索的商标名或商标号"/>
+						<input type="submit" class="search-btn" value="">
+					    </form>
 					</div>
 					<p>
 						<a href="#">我特么是推荐商标 </a>
@@ -152,7 +154,7 @@
 			</div>
 		</section>
 	
-	<script type="text/javascript" src="<?=StaticDir?>1.0/js/common.js"></script>
+	<script type="text/javascript" src="<?=StaticDir?>1.0/script/common.js"></script>
 	<script type="text/javascript">
 	   //首页商标专利搜索选项卡；
 	   $("#search1").on(tap,function(){

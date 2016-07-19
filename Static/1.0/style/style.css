@@ -40,13 +40,14 @@
 	margin-top: 0.13rem;
 }
 .search-main .search-btn{
-	display: inline-block;
+    display: inline-block;
     width: 16.6%;
     height: 0.7rem;
     background: url(../images/search-ico.png) no-repeat center top;
     background-size: 100% 100%;
     float: left;
     cursor: pointer;
+    border: 0px;
 }
 .search-main .search-inp{
 	display: inline-block;
