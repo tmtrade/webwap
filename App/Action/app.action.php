@@ -48,7 +48,7 @@ abstract class AppAction extends Action
         $this->set('keywords', $this->pageKey);//页面keywords
         $this->set('description', $this->pageDescription);//页面description
         
-        $this->set('_sv_', 1234);//静态文件版本号>>控制js,css缓存
+        $this->set('static_version', 1234);//静态文件版本号>>控制js,css缓存
     }
 
     /**
@@ -94,7 +94,7 @@ abstract class AppAction extends Action
             $this->removeUser();
             return false;
         }else{
-            $this->loginId      = $_COOKIE['uc_ukey'];
+            $this->loginId      = $_COOKIE['uc_identify'];
             $this->nickname     = $_COOKIE['uc_nickname'];
             $this->userMobile   = $_COOKIE['uc_mobile'];
             $this->isLogin      = true;
@@ -194,6 +194,6 @@ abstract class AppAction extends Action
         return $length ? substr($value, 0, $length) : $value;             
     }
 
-    
+
 }
 ?>

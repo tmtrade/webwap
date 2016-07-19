@@ -1,0 +1,124 @@
+<? require(ViewDir.'/header.html'); ?>
+   <section class="deta-banner top-head">
+	  <h2>25类女装、内衣、好听、大众、韩范  高大上</h2>
+	  <h6>天猫正品 90%白鸭绒 多彩玩转冬季 时尚立领</h6>
+	  <div class="deta-banner-pic flex-box flex-jz">
+		<img src="images/clas-ico2.jpg"/>
+	  </div>
+   </section>
+   <section class="deta-cont">
+	  <div class="main">
+		 <ul class="deta-cont-tit">
+			<li id="message1" tap="jc('message',1,2)" class="on">商标基本信息</li>
+			<li id="message2" tap="jc('message',2,2)">商标介绍</li>
+		 </ul>
+		 <div class="deta-cont-main"  id="con_message_1" style="display: block;">
+			<p class="basic-info">商标分类第1类 - 化工原料   当前群组0109</p>
+			<p class="enter">此商标可入驻：<a href="">京东</a> | <a href="">天猫</a> | <a href="">大型超市</a></p>
+			<p class="intr">商品列表：土壤调节用化学品;氮肥;农业肥料;肥料;混合肥料;化学肥料;植物肥料;</p>
+		 </div>
+		  <div class="deta-cont-main" id="con_message_2">
+			<p class="basic-info">专利分类第1类 - 化工原料   当前群组0109</p>
+			<p class="enter">此商标可入驻：<a href="">京东</a> | <a href="">天猫</a> | <a href="">大型超市</a></p>
+			<p class="intr">商品列表：土壤调节用化学品;氮肥;农业肥料;肥料;混合肥料;化学肥料;植物肥料;</p>
+		 </div>
+	  </div>
+   </section>
+   <section class="rec-brand">
+		<div class="yzc-class-tit">
+			<span>推荐商标</span>
+		</div>
+		<ul class="rec-brand-list main">
+			<a href="">
+				<li>
+					<div class="cont">
+						<img src="images/filt-pic.png" />
+					</div>
+
+				</li>
+			</a>
+			<a href="">
+				<li>
+					<div class="cont">
+						<img src="images/filt-pic.png" />
+					</div>
+				</li>
+			</a>
+		</ul>
+   </section>
+   <nav class="refer-buy">
+		<a href="" class="refer"><img src="images/tel-ico.png">立刻咨询价格</a>
+		<a id="buy-btn" class="buy"><img src="images/buy-ico.png">立即购买商品</a>
+   </nav>
+   <!--提交购买信息的弹窗-->
+   <div class="deta-tc-bg"></div>
+   <div class="buy-mess-box">
+	  <span class="gb-tc" id="gb-tc"></span>
+	  <div class="buy-mess-tit">
+		 <img src="images/tjtc-bg.png" />
+		 <h3>提交购买信息</h3>
+	  </div>
+	  <div class="buy-mess-tb buy-table">
+		 <ul>
+				<li>
+					<label><em>*</em>联系电话</label>
+					<input type="tel" placeholder="请输入11位手机号"/>
+				</li>
+				<li class="name">
+					<label><em> </em>您的姓名</label>
+					<input type="text" placeholder="请输入您的姓名"/>
+				</li>
+				<li class="rema">
+					<label><em> </em>备注内容</label>
+					<textarea placeholder="如您还有其他需求可一并填写在此处"></textarea>
+				</li>
+				<li>
+					<a href="" class="tj-btn">提交购买信息</a>
+				</li>
+		   </ul>
+	  </div>
+   </div>
+	<!--fenxiang -->
+	<div class="jiathis_style yzc-share">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tools_1"></a>
+		<a class="jiathis_button_tools_2"></a>
+		<a class="jiathis_button_tools_3"></a>
+		<a class="jiathis_button_tools_4"></a>
+		<a href="" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+		<a class="jiathis_counter_style"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+   <script type="text/javascript">
+	   //详情页基本信息选项卡；
+	   $("#message1").on(tap,function(){
+		 jc('message',1,2);
+	   });
+
+		$("#message2").on(tap,function(){
+		  jc('message',2,2);
+	   });
+	   //提交信息弹窗；
+	   $("#buy-btn").on(tap,function(){
+			$(".deta-tc-bg").show();
+			$(".buy-mess-box").show();
+
+	   })
+	   $("#gb-tc").on(tap,function(){
+			$(".deta-tc-bg").hide();
+			$(".buy-mess-box").hide();
+	   })
+	   //列表页头部点击分享按钮的时候弹出分享页面；
+		$("#share").on(tap,function(){
+		  $(".yzc-share").show();
+		})
+		$(document).on(tap,function(){
+			$(".yzc-share").hide();
+		});
+
+		$("#share,.yzc-share").on(tap,function(e){
+			stopPropagation(e);
+		});
+   </script>
+<? require(ViewDir.'/footer.html'); ?>

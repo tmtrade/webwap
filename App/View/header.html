@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="<?=StaticDir?>1.0/style/common.css?v=<?=$static_version?>">
+		<link rel="stylesheet" href="<?=StaticDir?>1.0/style/style.css?v=<?=$static_version?>">
+		<script type="text/javascript" src="<?=StaticDir?>1.0/script/zepto.min.js?v=<?=$static_version?>"></script>
+	    <script type="text/javascript" src="<?=StaticDir?>1.0/script/touch.js?v=<?=$static_version?>"></script>
+	    <script type="text/javascript" src="<?=StaticDir?>1.0/script/fastclick.js?v=<?=$static_version?>"></script>
+	    <script type="text/javascript">
+	    	//适配rem的兼容代码
+			(function (doc, win) {
+			    var docEl = doc.documentElement,
+			            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+			            recalc = function () {
+			                var clientWidth = docEl.clientWidth;
+			                if (!clientWidth) return;
+			                if(clientWidth>=770){
+			                    docEl.style.fontSize = '100px';
+			                }else{
+			                    docEl.style.fontSize = 100 * (clientWidth / 770) + 'px';
+			                }
+			            };
+			
+			    if (!doc.addEventListener) return;
+			    win.addEventListener(resizeEvt, recalc, false);
+			    doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+	    </script>
+	</head>
+	<body>
+		<!--公用头部-->
+		<header class="yzc-head">
+			<a href="/"><h1><img src="<?=StaticDir?>1.0/images/wap-lg.png"></h1></a>
+			<a href="/">
+				<i><img src="<?=StaticDir?>1.0/images/lg-ico1.png"></i>
+				<h2>商标<br/><label class="">trademark</label></h2>
+			</a>
+			<a href="/">
+				<i><img src="<?=StaticDir?>1.0/images/lg-ico2.png"></i>
+				<h2>专利<br/><label>patent</label></h2>
+			</a>
+			<a href="/">
+				<i><img src="<?=StaticDir?>1.0/images/lg-ico3.png"></i>
+				<h2>客服<br/><label>service</label></h2>
+			</a>
+			
+			<a id="menu">
+				<i><img src="<?=StaticDir?>1.0/images/lg-ico4.png"></i>
+				<h2>菜单<br/><label>list</label></h2>
+			</a>
+			<!--点击菜单出现导航弹窗，默认影藏-->
+			<div class="menu-box" id="menu-box">
+				<a href="">一只蝉首页</a>
+				<a href="list-sell.html">我要出售</a>
+				<a href="list-buy.html">购买登记</a>
+				<a href="list-details.html">我的蝉窝</a>
+				<a href="list_filtrate.html">出售者平台</a>
+			</div>
+		</header>
+		<!--公用头部end-->
