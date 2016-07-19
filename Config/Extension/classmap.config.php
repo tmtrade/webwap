@@ -6,5 +6,6 @@ return array(
 	'AppAction' => ActionDir.'/app.action.php',
 	'AppModel'  => ModelDir.'/app.model.php',
 	'AppModule' => ModuleDir.'/app.module.php',
+    'IncludeAction' => ActionDir.'/include.action.php',
 	);
 ?>
