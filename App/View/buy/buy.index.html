@@ -4,10 +4,17 @@
 			<span>登记购买需求</span><i></i><span>专业客服服务</span><i></i><span>生成购买订单</span>
 		</div>
 	</section>
-	<section class="buy-table">
+    <div class="main buy-tit">
+        <p class="brand-pt-search-tit">
+            <b class="on" id="buy1" onclick="jc('buy',1,2)">商标  trademark</b>
+            <b  id="buy2" onclick="jc('buy',2,2)">专利  patent</b>
+        </p>
+    </div>
+
+	<section class="buy-table" id="con_buy_1" style="display: block">
 		<ul>
 			<li class="dem">
-				<label><em>*</em>购买需求</label>
+				<label><em>*</em>购买需求111</label>
 				<textarea id="content"></textarea>
 			</li>
 			<li>
@@ -19,6 +26,21 @@
 			</li>
 		</ul>
 	</section>
+    <section class="buy-table" id="con_buy_2">
+        <ul>
+            <li class="dem">
+                <label><em>*</em>购买需求222</label>
+                <textarea id="content"></textarea>
+            </li>
+            <li>
+                <label><em>*</em>联系电话</label>
+                <input type="tel" id="mobile"/>
+            </li>
+            <li>
+                <a href="javascript:;" class="tj-btn" id="submit_buy">登记购买信息</a>
+            </li>
+        </ul>
+    </section>
 	<section class="buy-btm-ban">
 		<ul class="buy-btm-list">
 			<li>

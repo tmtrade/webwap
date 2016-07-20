@@ -44,6 +44,12 @@ select::-ms-expand { display: none; }
     line-height:0px;
     zoom: 1;
 }
+.cir{
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius:5px;
+    -o-border-radius:5px;
+}
 a {outline: none;text-decoration: none;color:#666666;}
 a:active {star:expression(this.onFocus=this.blur());}
 :focus { outline:0; }

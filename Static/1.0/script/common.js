@@ -15,7 +15,10 @@
 //}
 //var tap;
 //tap = isMobile() ? 'tap' : 'click';
-
+//
+//$("body").click(function(){
+//    alert("11");
+//})
 //选项卡函数
 function jc(name,curr,n)
     {
@@ -51,14 +54,14 @@ var  tapCount;
 tapCount=0;
 $("#menu").on('click',function(){
 	tapCount++;
-	if(tapCount==2){
+	if(tapCount==1){
 		$("#menu-box").show();
 		$(document).on('click',function(){
 		    $("#menu-box").hide();
-		    tapCount=1;
+		    tapCount=0;
 		});
 	}
-	if(tapCount==4){
+	if(tapCount==2){
 		$("#menu-box").hide();
 		tapCount=0;
 	}

@@ -145,34 +145,15 @@
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/objurl.js"></script>
 	<script type="text/javascript">
 	    //筛选页面下拉列表搜索；
-        var  tapCount;
-	
 	    var olis = $("#search-Ind li.inp span");
 	    var obox = $("#Ind-box");
 	    var oas = $(".search-Ind-list").find("a");
 	    olis.on("click", function() {
-            alert("111");
-		olis.removeClass("on");
-		$(this).addClass("on");
-		$(".search-Ind-bg").hide();
-		$(this).siblings(".search-Ind-bg").show();
-		tapCount=0;
-		$(this).siblings(".search-Ind-bg").find(".search-Ind-list").find("a").each(function(){
-                $(this).on('click', function() {
-                    tapCount++;
-                    alert(tapCount)
-                    if(tapCount==2){
-                        $(this).addClass("on");
-                        $(this).html("03<label>类化工原料3</label><i></i>");
-                        tapCount=2;
-                    }
-                    if(tapCount==4){
-                        $(this).removeClass("on");
-                        $(this).html("03<label>类化工原料3</label>");
-                        tapCount=0;
-                    }
-                });
-            })
+            olis.removeClass("on");
+            $(this).addClass("on");
+            $(".search-Ind-bg").hide();
+            $(this).siblings(".search-Ind-bg").show();
+
 	    });
 	    $(".off,.sure").on('click', function() {
 		$(".search-Ind-bg").hide();
@@ -180,7 +161,23 @@
 		oas.removeClass("on");
 		oas.html("03<label>类化工原料3</label>");
 	    });
-	    
+
+        oas.each(function(){
+            $(this).attr("index","1");
+            $(this).click(function(){
+                var odex=$(this).attr("index");
+                if(odex==1){
+                    $(this).addClass("on");
+                    $(this).html("03<label>类化工原料3</label><i></i>");
+                    $(this).attr("index","2");
+                }
+                if(odex==2){
+                    $(this).removeClass("on");
+                    $(this).html("03<label>类化工原料3</label>");
+                    $(this).attr("index","1");
+                }
+            });
+        })
     var _start      = 1;
     var _startTm    = 1;
     var _whereStr   = "<?=$whereStr?>";
