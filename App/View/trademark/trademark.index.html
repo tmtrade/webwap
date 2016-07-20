@@ -1,7 +1,7 @@
 <? require(ViewDir.'/header.html'); ?>
 	<section class="filt-search top-head">
 	    <div class="main">
-		<p>符合关键字“<label class="point">xxxxxx</label> ”的商品共有 <span>256441487</span> 条</p>
+		<?if(!empty($s['name'])){?><p>符合关键字“<label class="point"><?=$s['name']?></label> ”的商品共有 <span>256441487</span> 条</p><?}?>
 		<ul class="filt-search-Ind" id="search-Ind">
 		    <li class="inp">
 			<span><label>全部分类</label><i></i></span>
@@ -121,29 +121,32 @@
 	    </div>
 	</section>
 	<section class="filt-list">
-	    <ul class="main">
+	    <ul class="main"  id="tm-all-list">
 		<? foreach ($list as $k => $v) {?>
 		<li>
 		    <div class="cont">
 			<a class="pic" href="<?=SITE_URL?>d-<?=$v['tid']?>-<?=$v['class']?>.html" target="_blank">
 			    <span>
-				<img src="<?=$v['pic']['embellish']?>"  onerror="this.src='/Static/1.0/images/img1.png'" width="90" height="60">
+				<img src="<?=$v['pic']['embellish']?>"  onerror="this.src='/Static/1.0/images/img1.png'" width="170" height="100">
 			    <span>
 			</a>
 			<div class="filt-list-btn">
-			    <p><?=$v['name']?> <?=$v['class']?>类</p>
-			    <a>立即询价</a>
+			    <p><?=$v['name']?> <?=mb_substr($v['class'], 0, 5, 'UTF-8')?>类</p>
+			    <a class="xun_price">立即询价</a>
 			</div>
 		    </div>
 		</li>
 		<? }?>
 	    </ul>
 	</section>
+	<div id="s-uploading" style="padding-top:33px;text-align:center;display:none;height:100px;"><img src="<?=StaticDir?>1.0/images/loading.gif"></div>
+	<div id="_tmpDiv" style="display:none"></div>
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/common.js"></script>
+	<script type="text/javascript" src="<?=StaticDir?>1.0/script/objurl.js"></script>
 	<script type="text/javascript">
 	    //筛选页面下拉列表搜索；
         var  tapCount;
-
+	
 	    var olis = $("#search-Ind li.inp span");
 	    var obox = $("#Ind-box");
 	    var oas = $(".search-Ind-list").find("a");
@@ -153,7 +156,7 @@
 		$(this).addClass("on");
 		$(".search-Ind-bg").hide();
 		$(this).siblings(".search-Ind-bg").show();
-        tapCount=0;
+		tapCount=0;
 		$(this).siblings(".search-Ind-bg").find(".search-Ind-list").find("a").each(function(){
                 $(this).on('click', function() {
                     tapCount++;
@@ -176,6 +179,82 @@
 		olis.removeClass("on");
 		oas.removeClass("on");
 		oas.html("03<label>类化工原料3</label>");
-	    })
-	</script>
+	    });
+	    
+    var _start      = 1;
+    var _startTm    = 1;
+    var _whereStr   = "<?=$whereStr?>";
+    var _moreUrl    = '/<?=$_mod_?>/getMore/';
+    var _hasSale    = "<?=$has?>";
+    var _hasTm      = 1;
+    var _times      = 0;
+    var _tmTimes    = 0;
+    var _objTime ;
+    
+        //加载剩余数据
+    function loadMore(){
+        //出售与商标库都没有了
+        if (!_hasSale && !_hasTm) return false;
+
+        $('#s-uploading').show();
+        //是否已经在请求中
+        if ( _times != 0 || _tmTimes != 0 ) return false; 
+
+        var obj = new objURL('/?'+_whereStr);
+
+        if ( !_hasSale ) {
+            if ( _startTm == 1 ) {
+                _start = _startTm;
+            }else{
+                _start++;
+            }
+            obj.set('_from', '2');
+            _tmTimes      = 1;
+        }else{
+            _start++;
+            _times      = 1;
+        }
+        _objTime    = setTimeout(function(){_times = 0;},30000);
+	
+        obj.set('_p', _start);
+        var params = obj.getparams();
+        $("#_tmpDiv").load(_moreUrl, params, function(data,status,xml){
+            if (data) {
+                $("#_tmpDiv").html('');
+                $('#s-uploading').hide();
+                clearTimeout(_objTime);
+                if ( _hasSale ) {
+                    $("#tm-all-list").append(data);
+					
+                    if (_startTm == 1) $("#tm-uploading").show();
+                    _startTm++;
+                    _hasTm = true;
+                    _tmTimes = 0;
+		    _times = 0;
+                }
+            }else{
+                if ( _hasSale ){
+                    _hasSale = false;
+                    _times = 0;
+                    _tmTimes = 0;
+                    loadMore();
+                }else if ( _hasTm ){
+                    _hasTm = false;
+                    _times = 0;
+                    $('#s-uploading').hide();
+                }
+            }
+        });
+    }
+	
+    $(window).scroll(function () {
+        var scrollTop = $(this).scrollTop();
+        var scrollHeight = $(document).height();
+        var windowHeight = $(this).height();
+        if (scrollHeight - scrollTop - windowHeight < 100 && scrollHeight - scrollTop - windowHeight>0)  {
+            loadMore();
+        }
+    });
+	
+</script>
 <? require(ViewDir.'/footer.html'); ?>

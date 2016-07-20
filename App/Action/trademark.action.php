@@ -3,32 +3,39 @@
  * 商标页面
  *
  * @package     Action
- * @author      Xuni
- * @since       2016-07-13
+ * @author      Far
+ * @since       2016-07-20
  */
 class TrademarkAction extends AppAction
 {
     public $caches      = array('trademar');
     public $cacheId     = 'redisHtml';
     public $expire      = 3600;//1小时
-
+    
+    
     public function index()
     {
 	//获得参数
 	$params['name']   = $this->input('name', 'string', '');
         $page = $this->input('page','int',1);
         //得到分页数据
-	$res = $this->load('sale')->getList($params, $page, $size);
-        $count = $res['total'];
-        $data = $res['rows'];
-        //得到分页工具条
-        $pager 	= $this->pagerNew($count, $size);
-        $pageBar 	= empty($data) ? '' : getPageBarNew($pager);
-        $this->set("pageBar",$pageBar);
-        $this->set("list",$data);
-//	echo "<pre>";
-//	print_r($data);
+	$res = $this->load('sale')->getList($params, $page, $this->rowNum);
+	
+        $this->set("list",$res['rows']);
+	$this->set("counts",$res['total']);
 	$this->set("s",$params);
+	$this->set('has', empty($res['rows']) ? false : true);
+        $this->display();
+    }
+    
+    //获取更多的数据
+    public function getMore()
+    {
+        $page   = $this->input('_p', 'int', 1);
+
+        $res = $this->load('sale')->getList($params, $page, $this->rowNum);
+
+        $this->set('searchList', $res['rows']);
         $this->display();
     }
     

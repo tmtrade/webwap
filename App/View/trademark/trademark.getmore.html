@@ -1,0 +1,15 @@
+<? foreach ($searchList as $k => $v) {?>
+    <li>
+	<div class="cont">
+	    <a class="pic" href="<?=SITE_URL?>d-<?=$v['tid']?>-<?=$v['class']?>.html" target="_blank">
+		<span>
+		    <img src="<?=$v['pic']['embellish']?>"  onerror="this.src='/Static/1.0/images/img1.png'" width="170" height="100">
+		<span>
+	    </a>
+	    <div class="filt-list-btn">
+		<p><?=$v['name']?> <?=mb_substr($v['class'], 0, 5, 'UTF-8')?>类</p>
+		<a class="xun_price">立即询价</a>
+	    </div>
+	</div>
+    </li>
+<? } ?>

@@ -47,8 +47,9 @@ class SaleModule extends AppModule{
 		    
 		    $r['raw'] .= " OR `number`='{$params['name']}' ";
         } 
-	
-        $r['order'] = array('date'=>'desc');
+	$r['eq']['status']  = 1;
+        $r['eq']['isSale']  = 1;
+        $r['order']     = array('isTop' => 'desc');
 	
         $res = $this->import('sale')->findAll($r);
 	
