@@ -10,6 +10,12 @@ $tbl['sale'] = array(
 	'configFile'=> $configFile,
 );
 
+$tbl['saleContact'] = array(
+	'name'		=> $prefix.'sale_contact',
+	'dbId'		=> $dbId,
+	'configFile'=> $configFile,
+);
+
 $tbl['saleTminfo'] = array(
 	'name'		=> $prefix.'sale_tminfo',
 	'dbId'		=> $dbId, 
@@ -36,6 +42,18 @@ $tbl['patentInfo'] = array(
 
 $tbl['patentList'] = array(
 	'name'		=> $prefix.'patent_list',
+	'dbId'		=> $dbId,
+	'configFile'=> $configFile,
+);
+
+$tbl['blacklist'] = array(
+	'name'		=> $prefix.'blacklist',
+	'dbId'		=> $dbId,
+	'configFile'=> $configFile,
+);
+
+$tbl['phone'] = array(
+	'name'		=> $prefix.'phone',
 	'dbId'		=> $dbId,
 	'configFile'=> $configFile,
 );

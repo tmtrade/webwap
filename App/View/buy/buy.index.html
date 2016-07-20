@@ -66,24 +66,20 @@
 	</section>
 	<script type="text/javascript">
 		$(function(){
-			//获取焦点时,隐藏提示
-			$('#content,#mobile').focus(function(){
-				success();
-			});
 			//提交事件
 			$('#submit_buy').click(function(){
 				layer_load();
 				//验证需求
-				var content = $.trim($('#content').text());
+				var content = $.trim($('#content').val());
 				if(content==''){
-					error('请填写购买需求');
+					layer_error('请填写购买需求');
 					layer_close_load();
 					return false;
 				}
 				//验证手机
 				var mobile = $.trim($('#mobile').val());
-				if(check_mobile(mobile)){
-					error('请填写正确的手机号码');
+				if(!check_mobile(mobile)){
+					layer_error('请填写正确的手机号码');
 					layer_close_load();
 					return false;
 				}
@@ -93,7 +89,7 @@
 		});
 		//提交求购信息
 		function addBuy(need,mobile){
-			var data	= new Array();
+			var data	= {};
 			data['name'] 	= '';
 			data['tel'] 	= mobile;
 			data['subject'] = need;
@@ -103,48 +99,21 @@
 			ucNetwork.submitData(data);
 		}
 		//提交信息回调
-		function submitDataCallback(Obj){
-			$.each(Obj,function(i,n){
-				clearBuy();
-				var obj ;
-				//用户登录情况下
-				if(n.code==1 || n.code==2){
-					//弹出成功框
-					obj = $('#mj-submitteS');
-				}else{
-					//弹出失败框
-					obj = $('#mj-submitteF');
-				}
-				layer.open({
-					type: 1,
-					title: false,
-					closeBtn: false,
-					area: ['485px', '226px'],
-					content: obj
-				});
-				$(".mj-close").bind("click",function(){
-					layer.closeAll();
-				});
-				layer.closeAll('loading'); //关闭加载层
-			});
+		function submitDataCallback(obj){
+			clearBuy();
+			if(n.code!=0 && n.data.netcode==1){
+				//弹出成功框
+				layer_success('提交成功');
+			}else{
+				//弹出失败框
+				layer_error('提交失败');
+			}
+			layer_close_load();
 		}
 		//清空信息
 		function clearBuy(){
 			$("#content").text('');
 			$("#mobile").val('');
-		}
-		//失败提醒
-		function error(msg){
-			$('#tip').text(msg).show();
-		}
-		//成功提醒 默认隐藏提醒,type为1时提示指定消息
-		function success(type,msg) {
-			if(typeof type == 'undefined') type = 0;
-			if(type){
-				$('#tip').text(msg).show();
-			}else{
-				$('#tip').text('').hide();
-			}
 		}
 	</script>
 <? require(ViewDir.'/footer.html'); ?>

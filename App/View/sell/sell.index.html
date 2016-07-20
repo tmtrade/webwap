@@ -8,19 +8,19 @@
 			<ul>
 				<li>
 					<label><em>*</em>商标号</label>
-					<input type="tel" />
+					<input type="text" id="tm_number"/>
 				</li>
 				<li class="price">
 					<label><em>*</em>出售价格</label>
-					<input type="tel" />
+					<input type="tel" id="tm_price"/>
 					<em>元</em>
 				</li>
 				<li>
 					<label><em>*</em>联系方式</label>
-					<input type="tel" />
+					<input type="tel" id="tm_mobile"/>
 				</li>
 				<li>
-					<a href="" class="tj-btn">提交出售信息</a>
+					<a href="" class="tj-btn" id="sub_tm">提交出售信息</a>
 				</li>
 		   </ul>
 		 </div>
@@ -28,19 +28,19 @@
 			<ul>
 				<li>
 					<label><em>*</em>专利号</label>
-					<input type="tel" />
+					<input type="tel" id="pt_number"/>
 				</li>
 				<li class="price">
 					<label><em>*</em>出售价格</label>
-					<input type="tel" />
+					<input type="tel" id="pt_price"/>
 					<em>元</em>
 				</li>
 				<li>
 					<label><em>*</em>联系方式</label>
-					<input type="tel" />
+					<input type="tel" id="pt_mobile"/>
 				</li>
 				<li>
-					<a href="" class="tj-btn">提交出售信息</a>
+					<a href="" class="tj-btn" id="sub_pt">提交出售信息</a>
 				</li>
 		   </ul>
 		 </div>
@@ -92,9 +92,30 @@
 	   $("#tab1").on('click',function(){
 		 jc('tab',1,2);
 	   });
-
 		$("#tab2").on('click',function(){
 		  jc('tab',2,2);
 	   });
+		//提交商标
+		$('#sub_tm').click(function(){
+			layer_load();
+			//验证商标号
+			var number = $.trim($('#tm_number').val());
+			if(!check_tm(number)){
+				layer_close_load();
+				return false;
+			}
+			//验证价格
+			var price = $.trim($('#tm_price').val());
+			if(!check_price(price)){
+				layer_close_load();
+				return false;
+			}
+			//验证联系人
+			var mobile = $.trim($('#tm_mobile').val());
+			if(!check_mobile(mobile)){
+				layer_close_load();
+				return false;
+			}
+		});
 	</script>
 <? require(ViewDir.'/footer.html'); ?>

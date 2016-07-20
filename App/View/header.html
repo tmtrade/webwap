@@ -11,16 +11,17 @@
 		<script type="text/javascript" src="<?=StaticDir?>1.0/script/jquery-1.8.3.min.js?v=<?=$static_version?>"></script>
 		<script type="text/javascript" src="<?=StaticDir?>1.0/script/layer/layer.js?v=<?=$static_version?>"></script>
 	    <script type="text/javascript" src="<?=StaticDir?>1.0/script/fastclick.js?v=<?=$static_version?>"></script>
-	    <script type="text/javascript" src="<?=StaticDir?>1.0/script/tool.js?v=<?=$static_version?>"></script>
-		<script type="text/javascript" src="<?=UC_URL?>Static/script/user/script/user.js?v=<?=$static_version?>"></script>
+	    <script type="text/javascript" src="<?=StaticDir?>1.0/script/func.js?v=<?=$static_version?>"></script>
+	    <script type="text/javascript" src="<?=StaticDir?>1.0/script/my.js?v=<?=$static_version?>"></script>
 	    <script type="text/javascript">
 			$(function(){
 				//获得登录相关的参数
+				var HOST = '<?=UC_URL?>';
 				var timestamp = '';
 				var nonceStr = '';
 				var signature = '';
 				$.ajax({
-					async: false,
+					async: true,
 					type : 'post',
 					url  : '/index/getLogin',
 					data : '',
