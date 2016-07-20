@@ -1,20 +1,21 @@
 
 //切换移动端和PC端的点击事件
-function isMobile(){
- var sUserAgent= navigator.userAgent.toLowerCase(),
- bIsIpad= sUserAgent.match(/ipad/i) == "ipad",
- bIsIphoneOs= sUserAgent.match(/iphone os/i) == "iphone os",
- bIsMidp= sUserAgent.match(/midp/i) == "midp",
- bIsUc7= sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4",
- bIsUc= sUserAgent.match(/ucweb/i) == "ucweb",
- bIsAndroid= sUserAgent.match(/android/i) == "android",
- bIsCE= sUserAgent.match(/windows ce/i) == "windows ce",
- bIsWM= sUserAgent.match(/windows mobile/i) == "windows mobile",
- bIsWebview = sUserAgent.match(/webview/i) == "webview";
- return (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM);
-}
-var tap;
-tap = isMobile() ? 'tap' : 'click';
+//function isMobile(){
+// var sUserAgent= navigator.userAgent.toLowerCase(),
+// bIsIpad= sUserAgent.match(/ipad/i) == "ipad",
+// bIsIphoneOs= sUserAgent.match(/iphone os/i) == "iphone os",
+// bIsMidp= sUserAgent.match(/midp/i) == "midp",
+// bIsUc7= sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4",
+// bIsUc= sUserAgent.match(/ucweb/i) == "ucweb",
+// bIsAndroid= sUserAgent.match(/android/i) == "android",
+// bIsCE= sUserAgent.match(/windows ce/i) == "windows ce",
+// bIsWM= sUserAgent.match(/windows mobile/i) == "windows mobile",
+// bIsWebview = sUserAgent.match(/webview/i) == "webview";
+// return (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM);
+//}
+//var tap;
+//tap = isMobile() ? 'tap' : 'click';
+
 //选项卡函数
 function jc(name,curr,n)
     {
@@ -48,11 +49,11 @@ window.addEventListener( "load", function() {
 //顶部点击菜单出现弹窗；
 var  tapCount;
 tapCount=0;
-$("#menu").on(tap,function(){
+$("#menu").on('click',function(){
 	tapCount++;
 	if(tapCount==2){
 		$("#menu-box").show();
-		$(document).on(tap,function(){
+		$(document).on('click',function(){
 		    $("#menu-box").hide();
 		    tapCount=1;
 		});
@@ -65,19 +66,20 @@ $("#menu").on(tap,function(){
 
 
 
-$("#menu,#menu-box").on(tap,function(e){
+$("#menu,#menu-box").on('click',function(e){
     stopPropagation(e);
 });
 
 
 
-$("#menu,#menu-box").on(tap,function(e){
+$("#menu,#menu-box").on('click',function(e){
     stopPropagation(e);
 });
 
 //关闭共用谈话框
-$("#gb-btn").on(tap,function(){
+$("#gb-btn").on('click',function(){
 	$(this).parent().hide();
 })
+
 
 

@@ -111,6 +111,7 @@ a[href]:hover{
 	top:0px;
 	left: 0px;
 	z-index: 9;
+    border-bottom:1px solid #dfdfdf;
 }
 
 .yzc-head a{
@@ -123,6 +124,7 @@ a[href]:hover{
 	width:1.476rem;
 	height:0.84rem;
 	border-right:1px solid #dfdfdf;
+    text-align: center;
 }
 .yzc-head>a:first-child{
 	width:1.67rem;
@@ -157,12 +159,13 @@ a[href]:hover{
 	
 }
 .yzc-head h2{
-	width: 0.68rem;
+
 	color: #5e5e5e;
-	float: left;
-	margin-left:0.08rem;
+	/*float: left;*/
+	/*margin-left:0.08rem;*/
 	line-height: 0.26rem;
 	margin-top: 0.2rem;
+    text-align: center;
 }
 .yzc-head h2 label{
 	color: #b1b1b1;
@@ -250,7 +253,7 @@ a[href]:hover{
 	background: url(../images/btm-th.png) no-repeat top center;
 	background-size: 100% auto;
 	position: fixed;
-	bottom:1.53rem;
+	bottom:0;
 	left: 0;
 	z-index:99;
 }
@@ -260,9 +263,9 @@ a[href]:hover{
 	height: 0.45rem;
 	background: url(../images/gb-ico.png) no-repeat top center;
 	background-size: 100% 100%;
-	position:fixed;
-	right: 0.1rem;
-	bottom:2rem;
+    position: absolute;
+    right: 0.1rem;
+    top: 0.8rem;
 }
 .dlg-box a{
 	display: inline-block;

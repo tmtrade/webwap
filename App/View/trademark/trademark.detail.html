@@ -62,8 +62,8 @@
 	   <section class="deta-cont">
 	   	  <div class="main">
 	   	  	 <ul class="deta-cont-tit">
-	   	  	 	<li id="message1" tap="jc('message',1,2)" class="on">商标基本信息</li>
-	   	  	 	<li id="message2" tap="jc('message',2,2)">商标介绍</li>
+	   	  	 	<li id="message1" onclick="jc('message',1,2)" class="on">商标基本信息</li>
+	   	  	 	<li id="message2" onclick="jc('message',2,2)">商标介绍</li>
 	   	  	 </ul>
 	   	  	 <div class="deta-cont-main"  id="con_message_1" style="display: block;">
 	   	  	 	<p class="basic-info">商标分类第1类 - 化工原料   当前群组0109</p>
@@ -146,32 +146,32 @@
 	   <script type="text/javascript" src="js/common.js"></script>
 	   <script type="text/javascript">
 	   	   //详情页基本信息选项卡；
-		   $("#message1").on(tap,function(){
+		   $("#message1").on('click',function(){
 		   	 jc('message',1,2);
 		   });
 		   
-		    $("#message2").on(tap,function(){
+		    $("#message2").on('click',function(){
 		   	  jc('message',2,2);
 		   });
 		   //提交信息弹窗；
-		   $("#buy-btn").on(tap,function(){
+		   $("#buy-btn").on('click',function(){
 		   	    $(".deta-tc-bg").show();
 		   	    $(".buy-mess-box").show();
 		   	
 		   })
-		   $("#gb-tc").on(tap,function(){
+		   $("#gb-tc").on('click',function(){
 		   	  	$(".deta-tc-bg").hide();
 		   	    $(".buy-mess-box").hide();
 		   })
 		   //列表页头部点击分享按钮的时候弹出分享页面；
-		    $("#share").on(tap,function(){
+		    $("#share").on('click',function(){
 		   	  $(".yzc-share").show();
 		    })
-			$(document).on(tap,function(){
+			$(document).on('click',function(){
 			    $(".yzc-share").hide();
 			});
 			
-			$("#share,.yzc-share").on(tap,function(e){
+			$("#share,.yzc-share").on('click',function(e){
 			    stopPropagation(e);
 			});
 	   </script>

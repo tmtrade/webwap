@@ -141,6 +141,7 @@
 	/*flex: 1;*/
 	display: inline-block;
 	width: 32.4%;
+    height: 100%;
 }
 
 .yzc-class-show a p{

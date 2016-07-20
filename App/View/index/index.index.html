@@ -142,14 +142,14 @@
 		</section>
 		
 		<!--公用弹话框-->
-		<div class="dlg-box">
+		<div class="dlg-box" id="dlg-box">
 			<a href=""></a>
 			<span id="gb-btn"></span>
 		</div>
 		<!--共用底部-->
 		<section class="yzc-btm">
-			<div class="yzc-btm-main">
-				<h2><a>4006-929-199</a></h2>
+			<div class="yzc-btm-main" >
+				<h2><a href="tel:4006-929-199">4006-929-199</a></h2>
 				<p>ICP证：蜀ICP备15035613号-1 <a href=""></a>电脑版</p>
 			</div>
 		</section>
@@ -157,12 +157,24 @@
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/common.js"></script>
 	<script type="text/javascript">
 	   //首页商标专利搜索选项卡；
-	   $("#search1").on(tap,function(){
+	   $("#search1").on('click',function(){
 	   	 jc('search',1,2);
 	   });
-	   
-	    $("#search2").on(tap,function(){
+
+	    $("#search2").on('click',function(){
 	   	  jc('search',2,2);
 	   });
+
+       //判断弹出框在滚动时候的定位变化；
+       $(window).scroll(function(){
+           if($(window).scrollTop() == $(document).height() - $(window).height()){
+               $("#dlg-box").css({"bottom":"1.46rem"})
+           }
+           else{
+               $("#dlg-box").css({"bottom":"0"})
+           }
+       })
+
+
 	</script>
 <? require(ViewDir.'/footer.html'); ?>

@@ -142,20 +142,36 @@
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/common.js"></script>
 	<script type="text/javascript">
 	    //筛选页面下拉列表搜索；
+        var  tapCount;
+
 	    var olis = $("#search-Ind li.inp span");
 	    var obox = $("#Ind-box");
 	    var oas = $(".search-Ind-list").find("a");
-	    olis.on(tap, function() {
+	    olis.on("click", function() {
+            alert("111");
 		olis.removeClass("on");
 		$(this).addClass("on");
 		$(".search-Ind-bg").hide();
 		$(this).siblings(".search-Ind-bg").show();
-		$(this).siblings(".search-Ind-bg").find(".search-Ind-list").find("a").on(tap, function() {
-		    $(this).addClass("on");
-		    $(this).html("03<label>类化工原料3</label><i></i>");
-		});
+        tapCount=0;
+		$(this).siblings(".search-Ind-bg").find(".search-Ind-list").find("a").each(function(){
+                $(this).on('click', function() {
+                    tapCount++;
+                    alert(tapCount)
+                    if(tapCount==2){
+                        $(this).addClass("on");
+                        $(this).html("03<label>类化工原料3</label><i></i>");
+                        tapCount=2;
+                    }
+                    if(tapCount==4){
+                        $(this).removeClass("on");
+                        $(this).html("03<label>类化工原料3</label>");
+                        tapCount=0;
+                    }
+                });
+            })
 	    });
-	    $(".off,.sure").on(tap, function() {
+	    $(".off,.sure").on('click', function() {
 		$(".search-Ind-bg").hide();
 		olis.removeClass("on");
 		oas.removeClass("on");
