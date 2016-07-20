@@ -122,58 +122,21 @@
 	</section>
 	<section class="filt-list">
 	    <ul class="main">
+		<? foreach ($list as $k => $v) {?>
 		<li>
 		    <div class="cont">
-			<a href="">
+			<a class="pic" href="<?=SITE_URL?>d-<?=$v['tid']?>-<?=$v['class']?>.html" target="_blank">
 			    <span>
-				<img src="images/filt-pic.png" />
-			    </span>	
+				<img src="<?=$v['pic']['embellish']?>"  onerror="this.src='/Static/1.0/images/img1.png'" width="90" height="60">
+			    <span>
 			</a>
 			<div class="filt-list-btn">
-			    <p>她意美 25类</p>
+			    <p><?=$v['name']?> <?=$v['class']?>类</p>
 			    <a>立即询价</a>
 			</div>
 		    </div>
-		</li>	
-		<li>
-		    <div class="cont">
-			<a href="">
-			    <span>
-				<img src="images/filt-pic.png" />
-			    </span>	
-			</a>
-			<div class="filt-list-btn">
-			    <p>她意美 25类</p>
-			    <a>立即询价</a>
-			</div>
-		    </div>
-		</li>	
-		<li>
-		    <div class="cont">
-			<a href="">
-			    <span>
-				<img src="images/filt-pic.png" />
-			    </span>	
-			</a>
-			<div class="filt-list-btn">
-			    <p>她意美 25类</p>
-			    <a>立即询价</a>
-			</div>
-		    </div>
-		</li>	
-		<li>
-		    <div class="cont">
-			<a href="">
-			    <span>
-				<img src="images/filt-pic.png" />
-			    </span>	
-			</a>
-			<div class="filt-list-btn">
-			    <p>她意美 25类</p>
-			    <a>立即询价</a>
-			</div>
-		    </div>
-		</li>	
+		</li>
+		<? }?>
 	    </ul>
 	</section>
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/common.js"></script>

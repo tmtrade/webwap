@@ -2,7 +2,7 @@
 $prefix		= 't_';
 $dbId		= 'trade_new';
 $prefixs	= 's_'; //出售者平台
-$configFile	= array( ConfigDir.'/Db/trade_new.master.config.php' );
+$configFile	= array( ConfigDir.'/Db/trade.master.config.php' );
 
 $tbl['sale'] = array(
 	'name'		=> $prefix.'sale',
