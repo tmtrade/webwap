@@ -1,41 +1,45 @@
 <? require(ViewDir.'/header.html'); ?>
 		<section class="brand-pt-search">
 			<div class="search-main">
-				<p class="brand-pt-search-tit">
-					<b class="on" id="search1">商标  trademark</b>
-					<b id="search2">专利  patent</b>
+				<p class="brand-pt-search-tit tabs">
+					<b class="on">商标  trademark</b>
+					<b>专利  patent</b>
 				</p>
-				<div class="brand-box" id="con_search_1" style="display: block;">
-					<div class="brand-inp">
-					    <form action="/trademark/index"  method="post" id="seachfrom">
-						<input class="search-inp" type="text" name="name" placeholder="请输入您要搜索的商标名或商标号"/>
-						<input type="submit" class="search-btn" value="">
-					    </form>
-					</div>
-					<p>
-						<a href="#">我特么是推荐商标 </a>
-						<a href="#">我特么是推荐商标 </a>
-						<a href="#">我特么是推荐商标 </a>
-						<a href="#">我特么是推荐商标 </a>
-						<a href="#">我特么是推荐商标 </a>
-					</p>
-				</div>
-				<div class="brand-box" id="con_search_2">
-					<div class="brand-inp f-hidden">
-						<form action="/ptseach/index"  method="post" id="seachfrom">
-						<input class="search-inp" type="text" name="name" placeholder="请输入您要搜索的商标名或商标号"/>
-						<input type="submit" class="search-btn" value="">
-					    </form>
-					</div>
-					<p>
-						<a href="#">我特么是推荐专利 </a>
-						<a href="#">我特么是推荐专利 </a>
-						<a href="#">我特么是推荐专利 </a>
-						<a href="#">我特么是推荐专利 </a>
-						<a href="#">我特么是推荐专利 </a>
-					</p>
-				</div>
-			</div>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="brand-box swiper-slide">
+                            <div class="brand-inp">
+                                <form action="/trademark/index"  method="post" id="seachfrom">
+                                <input class="search-inp" type="text" name="name" placeholder="请输入您要搜索的商标名或商标号"/>
+                                <input type="submit" class="search-btn" value="">
+                                </form>
+                            </div>
+                            <p>
+                                <a href="#">我特么是推荐商标 </a>
+                                <a href="#">我特么是推荐商标 </a>
+                                <a href="#">我特么是推荐商标 </a>
+                                <a href="#">我特么是推荐商标 </a>
+                                <a href="#">我特么是推荐商标 </a>
+                            </p>
+                        </div>
+                        <div class="brand-box swiper-slide">
+                            <div class="brand-inp f-hidden">
+                                <form action="/ptseach/index"  method="post" id="seachfrom">
+                                <input class="search-inp" type="text" name="name" placeholder="请输入您要搜索的专利名或专利号"/>
+                                <input type="submit" class="search-btn" value="">
+                                </form>
+                            </div>
+                            <p>
+                                <a href="#">我特么是推荐专利 </a>
+                                <a href="#">我特么是推荐专利 </a>
+                                <a href="#">我特么是推荐专利 </a>
+                                <a href="#">我特么是推荐专利 </a>
+                                <a href="#">我特么是推荐专利 </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 		</section>
 		<nav class="yzc-nav">
 			<a href="#">
@@ -108,7 +112,7 @@
 					</p>
 				</a>
 			</div>
-			<ul class="yzc-class-list">
+			<ul class="yzc-class-list odd-cg">
 				<li>
 					<a href=""><label>&bull;</label>01类 化工原料</a>
 					<a href=""><label>&bull;</label>01类 化工原料</a>
@@ -133,7 +137,7 @@
 			<div class="yzc-class-tit">
 				<span>热门专利类别</span>
 			</div>
-			<ul class="yzc-class-list pat-list">
+			<ul class="yzc-class-list pat-list odd-cg">
 				<li>
 					<a href=""><label>&bull;</label>01类 化工原料</a>
 					<a href=""><label>&bull;</label>01类 化工原料</a>
@@ -159,25 +163,50 @@
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/common.js"></script>
 	<script type="text/javascript">
 	   //首页商标专利搜索选项卡；
-	   $("#search1").on('click',function(){
-	   	 jc('search',1,2);
-	   });
-
-	    $("#search2").on('click',function(){
-	   	  jc('search',2,2);
-		  
-	   });
+//	   $("#search1").on('click',function(){
+//	   	 jc('search',1,2);
+//	   });
+//
+//	    $("#search2").on('click',function(){
+//	   	  jc('search',2,2);
+//
+//	   });
 
        //判断弹出框在滚动时候的定位变化；
        $(window).scroll(function(){
            if($(window).scrollTop() == $(document).height() - $(window).height()){
-               $("#dlg-box").css({"bottom":"1.46rem"})
+               $("#dlg-box").css({"bottom":"1.46rem","transitionDuration":"0.8s"})
            }
            else{
-               $("#dlg-box").css({"bottom":"0"})
+               $("#dlg-box").css({"bottom":"0","transitionDuration":"0.4s"})
+           }
+       })
+       //定义奇数行变色
+       $(document).ready(function(){
+           var odds=$(".odd-cg").find("li");
+           for(var i=0;i<odds.length;i++){
+               if(i%2!=0){
+                   $(odds[i-1]).css({"backgroundColor":"#f6f6f6"})
+               }
            }
        })
 
-
+       //首页商标专利搜索选项卡；
+       var tabsSwiper = new Swiper('.swiper-container',{
+           speed:500,
+           onSlideChangeStart: function(){
+               $(".tabs .on").removeClass('on')
+               $(".tabs b").eq(tabsSwiper.activeIndex).addClass('on')
+           }
+       })
+       $(".tabs b").on('touchstart mousedown',function(e){
+           e.preventDefault()
+           $(".tabs .on").removeClass('on')
+           $(this).addClass('on')
+           tabsSwiper.swipeTo( $(this).index() )
+       })
+       $(".tabs b").click(function(e){
+           e.preventDefault()
+       })
 	</script>
 <? require(ViewDir.'/footer.html'); ?>

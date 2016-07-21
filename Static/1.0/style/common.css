@@ -111,7 +111,7 @@ a[href]:hover{
 /*公用头部样式*/
 .yzc-head{
 	width: 100%;
-	height:0.84rem;
+	/*height:84px;*/
 	background: #FFFFFF;
 	position: fixed;
 	top:0px;

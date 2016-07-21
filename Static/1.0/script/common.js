@@ -54,14 +54,14 @@ var  tapCount;
 tapCount=0;
 $("#menu").on('click',function(){
 	tapCount++;
-	if(tapCount==1){
+	if(tapCount==2){
 		$("#menu-box").show();
 		$(document).on('click',function(){
 		    $("#menu-box").hide();
-		    tapCount=0;
+		    tapCount=1;
 		});
 	}
-	if(tapCount==2){
+	if(tapCount==4){
 		$("#menu-box").hide();
 		tapCount=0;
 	}

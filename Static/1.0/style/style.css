@@ -32,10 +32,12 @@
 .brand-pt-search-tit b.on{
 	border-bottom: 1px solid #f38e8e;
 	color: #FFFFFF;
+    transition:all 0.4s;
 }
 .buy-tit b.on{
     border-bottom: 1px solid #f38e8e;
     color: #f38e8e;
+    transition:all 0.4s;
 }
 .search-main .brand-inp{
 	width: 100%;
@@ -61,9 +63,9 @@
     text-indent: 0.2rem;
     color: #999999;
 }
-.brand-box{
-	display: none;
-}
+/*.brand-box{*/
+	/*display: none;*/
+/*}*/
 .brand-box p {
 	display:block;
 	margin-top: 0.18rem;
@@ -198,8 +200,8 @@
 /*筛选列表页*/
 .filt-search{
   width: 100%;
-  padding-top: 0.08rem;
-  padding-bottom: 0.24rem;
+  padding-top:26px;
+  padding-bottom:26px;
   background: #353535;
   overflow: hidden;
 }
@@ -213,14 +215,13 @@
 	margin-right: 0.02rem;
 }
 .filt-search-Ind{
-	margin-top: 0.27rem;
 	margin-left:-0.2rem;
 }
 .filt-search-Ind li.inp span{
 	display: inline-block;
 	width:2.2rem;
 	height: 0.4rem;
-	line-height: 0.5rem;
+	line-height: 0.4rem;
 	text-indent: 0.23rem;
 	border: 1px solid #e3e3e3;
 	background: #FFFFFF;
@@ -269,26 +270,27 @@
 .search-Ind-list{
 	min-height: 6rem;
 }
-.search-Ind-list ul li p{
+.search-Ind-list  p{
 	width: 33.33%;
 	float: left;
 }
-.search-Ind-list ul li p a{
+.search-Ind-list  p a{
 	display: inline-block;
-	width: 2.12rem;
+	width: 2.22rem;
 	height: 0.68rem;
 	line-height: 0.68rem;	
 	color: #FFFFFF;
 	border-bottom: 1px solid #6f6f6f;
-	margin-left: 0.46rem;
+	margin-left: 0.18rem;
+    font-size: 0.16rem;
 }
-.search-Ind-list ul li p a.on{
+.search-Ind-list  p a.on{
 	border-bottom: 1px solid #ff5b5b;
 }
-.search-Ind-list ul li p a label{
+.search-Ind-list  p a label{
 	margin-left: 0.08rem;
 }
-.search-Ind-list ul li p a i{
+.search-Ind-list  p a i{
 	display: inline-block;
 	width:0.3rem;
 	height: 0.2rem;
