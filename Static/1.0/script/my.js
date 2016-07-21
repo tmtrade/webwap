@@ -89,7 +89,7 @@ var ucUser = {
 //-- 登录相关
 var ucNetwork = {
     //数据提交到分配系统
-    submitData : function(data){
+    submitData : function(data,func){
         //验证参数
         var remindArray = verifyPost(data);
         if( remindArray['code'] != 1 ){
@@ -105,7 +105,7 @@ var ucNetwork = {
             async : false,
             data : {},
             complete : function(xhr,status){
-                submitDataCallback(ObjJsonp);
+                submitDataCallback(ObjJsonp,func);
             },
             error : function(msg){},
             success	: function(json){

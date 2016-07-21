@@ -10,34 +10,33 @@
             <b  id="buy2" onclick="jc('buy',2,2)">专利  patent</b>
         </p>
     </div>
-
 	<section class="buy-table" id="con_buy_1" style="display: block">
 		<ul>
 			<li class="dem">
-				<label><em>*</em>购买需求111</label>
-				<textarea id="content"></textarea>
+				<label><em>*</em>购买需求</label>
+				<textarea id="tm_content"></textarea>
 			</li>
 			<li>
 				<label><em>*</em>联系电话</label>
-				<input type="tel" id="mobile"/>
+				<input type="tel" id="tm_mobile"/>
 			</li>
 			<li>
-				<a href="javascript:;" class="tj-btn" id="submit_buy">登记购买信息</a>
+				<a href="javascript:;" class="tj-btn" id="submit_tm">登记购买信息</a>
 			</li>
 		</ul>
 	</section>
     <section class="buy-table" id="con_buy_2">
         <ul>
             <li class="dem">
-                <label><em>*</em>购买需求222</label>
-                <textarea id="content"></textarea>
+                <label><em>*</em>购买需求</label>
+                <textarea id="pt_content"></textarea>
             </li>
             <li>
                 <label><em>*</em>联系电话</label>
-                <input type="tel" id="mobile"/>
+                <input type="tel" id="pt_mobile"/>
             </li>
             <li>
-                <a href="javascript:;" class="tj-btn" id="submit_buy">登记购买信息</a>
+                <a href="javascript:;" class="tj-btn" id="submit_pt">登记购买信息</a>
             </li>
         </ul>
     </section>
@@ -66,49 +65,58 @@
 	</section>
 	<script type="text/javascript">
 		$(function(){
-			//提交事件
-			$('#submit_buy').click(function(){
+			//提交商标事件
+			$('#submit_tm').click(function(){
 				layer_load();
 				//验证需求
-				var content = $.trim($('#content').val());
+				var content = $.trim($('#tm_content').val());
 				if(content==''){
 					layer_error('请填写购买需求');
 					layer_close_load();
 					return false;
 				}
 				//验证手机
-				var mobile = $.trim($('#mobile').val());
+				var mobile = $.trim($('#tm_mobile').val());
 				if(!check_mobile(mobile)){
 					layer_error('请填写正确的手机号码');
 					layer_close_load();
 					return false;
 				}
 				//提交数据
-				addBuy(content,mobile);
+				addBuy(content,mobile,5);
+			});
+			//提交专利事件
+			$('#submit_pt').click(function(){
+				layer_load();
+				//验证需求
+				var content = $.trim($('#pt_content').val());
+				if(content==''){
+					layer_error('请填写购买需求');
+					layer_close_load();
+					return false;
+				}
+				//验证手机
+				var mobile = $.trim($('#pt_mobile').val());
+				if(!check_mobile(mobile)){
+					layer_error('请填写正确的手机号码');
+					layer_close_load();
+					return false;
+				}
+				//提交数据
+				addBuy(content,mobile,7);
 			});
 		});
 		//提交求购信息
-		function addBuy(need,mobile){
-			var data	= {};
-			data['name'] 	= '';
-			data['tel'] 	= mobile;
+		function addBuy(need,mobile,type){
+			var data = {};
+			data['name'] = '';
+			data['tel'] = mobile;
 			data['subject'] = need;
 			data['remarks'] = need;
+			data['type'] = type;
 			data['pttype'] = "求购";
 //			sendBehavior(1,12, 0, 0,'tel:'+mobile+' 需求:'+need);//保存操作信息
-			ucNetwork.submitData(data);
-		}
-		//提交信息回调
-		function submitDataCallback(obj){
-			clearBuy();
-			if(n.code!=0 && n.data.netcode==1){
-				//弹出成功框
-				layer_success('提交成功');
-			}else{
-				//弹出失败框
-				layer_error('提交失败');
-			}
-			layer_close_load();
+			buyGoods(data,clearBuy);
 		}
 		//清空信息
 		function clearBuy(){

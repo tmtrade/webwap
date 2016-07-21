@@ -4,7 +4,7 @@
  */
 //通用 code==-1   key验证失败
 //数据提交到分配系统
-function submitDataCallback(obj){
+function submitDataCallback(obj,func){
     //obj.code = 0; //格式错误
     //
     //obj.code = 1; //账户不存在

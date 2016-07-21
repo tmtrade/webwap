@@ -1,201 +1,188 @@
 <? require(ViewDir.'/header.html'); ?>
 	<section class="filt-search top-head">
-		<div class="main">
-			<p>符合关键字“<label class="point">xxxxxx</label> ”的商品共有 <span>256441487</span> 条</p>
-			<ul class="filt-search-Ind" id="search-Ind">
-				<li class="inp">
-					<span><label>全部分类</label><i></i></span>
-					<!--全部分类影藏下拉列表选项-->
-					<div class="search-Ind-bg">
-						<div class="search-Ind-box">
-							<div class="search-Ind-list">
-								<ul>
-									<li>
-										<p><a>01<label>类化工原料1</label></a></p>
-										<p><a>02<label>类化工原料2</label></a></p>
-										<p><a>03<label>类化工原料3</label></a></p>
-									</li>
-									<li>
-										<p><a>01<label>类化工原料4</label></a></p>
-										<p><a>02<label>类化工原料5</label></a></p>
-										<p><a>03<label>类化工原料6</label></a></p>
-									</li>
-									<li>
-										<p><a>01<label>类化工原料7</label></a></p>
-										<p><a>02<label>类化工原料8</label></a></p>
-										<p><a>03<label>类化工原料9</label></a></p>
-									</li>
-									<li>
-										<p><a>01<label>类化工原料10</label></a></p>
-										<p><a>02<label>类化工原料11</label></a></p>
-										<p><a>03<label>类化工原料12</label></a></p>
-									</li>
-								</ul>
-
-							</div>
-							<div class="search-Ind-btn">
-								<a class="off">取消</a>
-								<a class="sure">确定</a>
-							</div>
+	    <div class="main">
+		<? if($kw): ?>
+			<p>符合关键字“<label class="point">未完成 ”的商品共有 <span><?=$total?></span> 条</label></p>
+		<? endif; ?>
+		<ul class="filt-search-Ind" id="search-Ind">
+		    <li class="inp">
+				<span><label>专利类型</label><i></i></span>
+				<div class="search-Ind-bg">
+					<div class="search-Ind-box">
+						<div class="search-Ind-list">
+							<ul>
+								<li>
+									<p><a>01<label>类化工原料1</label></a></p>
+									<p><a>02<label>类化工原料2</label></a></p>
+									<p><a>03<label>类化工原料3</label></a></p>
+								</li>
+								<li>
+									<p><a>01<label>类化工原料4</label></a></p>
+									<p><a>02<label>类化工原料5</label></a></p>
+									<p><a>03<label>类化工原料6</label></a></p>
+								</li>
+								<li>
+									<p><a>01<label>类化工原料7</label></a></p>
+									<p><a>02<label>类化工原料8</label></a></p>
+									<p><a>03<label>类化工原料9</label></a></p>
+								</li>
+								<li>
+									<p><a>01<label>类化工原料10</label></a></p>
+									<p><a>02<label>类化工原料11</label></a></p>
+									<p><a>03<label>类化工原料12</label></a></p>
+								</li>
+							</ul>
+						</div>
+						<div class="search-Ind-btn">
+							<a class="off">取消</a>
+							<a class="sure">确定</a>
 						</div>
 					</div>
-					<!--全部分类影藏下拉列表选项END-->
-				</li>
-				<li class="inp">
-					<span><label>组合类型</label><i></i></span>
-					<!--全部分类影藏下拉列表选项-->
-					<div class="search-Ind-bg">
-						<div class="search-Ind-box">
-							<div class="search-Ind-list">
-								<ul>
-									<li>
-										<p><a>01<label>类化工原料1</label></a></p>
-										<p><a>02<label>类化工原料2</label></a></p>
-										<p><a>03<label>类化工原料3</label></a></p>
-									</li>
-									<li>
-										<p><a>01<label>类化工原料4</label></a></p>
-										<p><a>02<label>类化工原料5</label></a></p>
-										<p><a>03<label>类化工原料6</label></a></p>
-									</li>
-									<li>
-										<p><a>01<label>类化工原料7</label></a></p>
-										<p><a>02<label>类化工原料8</label></a></p>
-										<p><a>03<label>类化工原料9</label></a></p>
-									</li>
-									<li>
-										<p><a>01<label>类化工原料10</label></a></p>
-										<p><a>02<label>类化工原料11</label></a></p>
-										<p><a>03<label>类化工原料12</label></a></p>
-									</li>
-								</ul>
+				</div>
+		    </li>
+		    <li class="inp">
+			<span><label>类型分类</label><i></i></span>
+			<!--全部分类影藏下拉列表选项-->
+			<div class="search-Ind-bg">
+			    <div class="search-Ind-box">
+				<div class="search-Ind-list">
+				    <ul>
+					<li>
+					    <p><a>01<label>类化工原料1</label></a></p>
+					    <p><a>02<label>类化工原料2</label></a></p>
+					    <p><a>03<label>类化工原料3</label></a></p>
+					</li>
+					<li>
+					    <p><a>01<label>类化工原料4</label></a></p>
+					    <p><a>02<label>类化工原料5</label></a></p>
+					    <p><a>03<label>类化工原料6</label></a></p>
+					</li>
+					<li>
+					    <p><a>01<label>类化工原料7</label></a></p>
+					    <p><a>02<label>类化工原料8</label></a></p>
+					    <p><a>03<label>类化工原料9</label></a></p>
+					</li>
+					<li>
+					    <p><a>01<label>类化工原料10</label></a></p>
+					    <p><a>02<label>类化工原料11</label></a></p>
+					    <p><a>03<label>类化工原料12</label></a></p>
+					</li>
+				    </ul>
 
-							</div>
-							<div class="search-Ind-btn">
-								<a class="off">取消</a>
-								<a class="sure">确定</a>
-							</div>
-						</div>
-					</div>
-					<!--全部分类影藏下拉列表选项END-->
-				</li>
-				<li class="inp">
-					<span><label>商标字数</label><i></i></span>
-					<!--全部分类影藏下拉列表选项-->
-					<div class="search-Ind-bg">
-						<div class="search-Ind-box">
-							<div class="search-Ind-list">
-								<ul>
-									<li>
-										<p><a>01<label>类化工原料1</label></a></p>
-										<p><a>02<label>类化工原料2</label></a></p>
-										<p><a>03<label>类化工原料3</label></a></p>
-									</li>
-									<li>
-										<p><a>01<label>类化工原料4</label></a></p>
-										<p><a>02<label>类化工原料5</label></a></p>
-										<p><a>03<label>类化工原料6</label></a></p>
-									</li>
-									<li>
-										<p><a>01<label>类化工原料7</label></a></p>
-										<p><a>02<label>类化工原料8</label></a></p>
-										<p><a>03<label>类化工原料9</label></a></p>
-									</li>
-									<li>
-										<p><a>01<label>类化工原料10</label></a></p>
-										<p><a>02<label>类化工原料11</label></a></p>
-										<p><a>03<label>类化工原料12</label></a></p>
-									</li>
-								</ul>
-
-							</div>
-							<div class="search-Ind-btn">
-								<a class="off">取消</a>
-								<a class="sure">确定</a>
-							</div>
-						</div>
-					</div>
-					<!--全部分类影藏下拉列表选项END-->
-				</li>
-			</ul>
-		</div>
+				</div>
+				<div class="search-Ind-btn">
+				    <a class="off">取消</a>
+				    <a class="sure">确定</a>
+				</div>
+			    </div>
+			</div>
+			<!--全部分类影藏下拉列表选项END-->
+		    </li>
+		</ul>
+	    </div>
 	</section>
 	<section class="filt-list">
-		<ul class="main">
+	    <ul class="main"  id="tm-all-list">
+			<? foreach($searchList as $k => $v): ?>
 			<li>
 				<div class="cont">
-					<a href="">
-					<span>
-						<img src="images/filt-pic.png" />
-					</span>
+					<a class="pic" href="/pt-<?=$v['number']?>.html">
+				<span>
+					<img src="<?=$v['imgUrl']?>"  onerror="this.src='/Static/1.0/images/img1.png'" width="170" height="100">
+				</span>
 					</a>
 					<div class="filt-list-btn">
-						<p>她意美 25类</p>
-						<a>立即询价</a>
+						<p><?=$v['title']?></p>
+						<a class="xun_price" href="javascript:;" onclick="goChat()">立即询价</a>
 					</div>
 				</div>
 			</li>
-			<li>
-				<div class="cont">
-					<a href="">
-					<span>
-						<img src="images/filt-pic.png" />
-					</span>
-					</a>
-					<div class="filt-list-btn">
-						<p>她意美 25类</p>
-						<a>立即询价</a>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class="cont">
-					<a href="">
-					<span>
-						<img src="images/filt-pic.png" />
-					</span>
-					</a>
-					<div class="filt-list-btn">
-						<p>她意美 25类</p>
-						<a>立即询价</a>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class="cont">
-					<a href="">
-					<span>
-						<img src="images/filt-pic.png" />
-					</span>
-					</a>
-					<div class="filt-list-btn">
-						<p>她意美 25类</p>
-						<a>立即询价</a>
-					</div>
-				</div>
-			</li>
-		</ul>
+			<? endforeach; ?>
+	    </ul>
 	</section>
+	<div id="s-uploading" style="padding-top:33px;text-align:center;display:none;height:100px;"><img src="<?=StaticDir?>1.0/images/loading.gif"></div>
+	<div id="_tmpDiv" style="display:none"></div>
+	<script type="text/javascript" src="<?=StaticDir?>1.0/script/common.js"></script>
+	<script type="text/javascript" src="<?=StaticDir?>1.0/script/objurl.js"></script>
 	<script type="text/javascript">
-		//筛选页面下拉列表搜索；
-		var olis=$("#search-Ind li.inp span");
-		var obox=$("#Ind-box");
-		var oas=$(".search-Ind-list").find("a");
-		olis.on('click',function(){
-			olis.removeClass("on");
-			$(this).addClass("on");
-			$(".search-Ind-bg").hide();
-			$(this).siblings(".search-Ind-bg").show();
-			$(this).siblings(".search-Ind-bg").find(".search-Ind-list").find("a").on('click',function(){
-				$(this).addClass("on");
-				$(this).html("03<label>类化工原料3</label><i></i>");
+	    //筛选页面下拉列表搜索；
+	    var olis = $("#search-Ind li.inp span");
+	    var obox = $("#Ind-box");
+	    var oas = $(".search-Ind-list").find("a");
+	    olis.on("click", function() {
+            olis.removeClass("on");
+            $(this).addClass("on");
+            $(".search-Ind-bg").hide();
+            $(this).siblings(".search-Ind-bg").show();
+	    });
+	    $(".off,.sure").on('click', function() {
+		$(".search-Ind-bg").hide();
+		olis.removeClass("on");
+		oas.removeClass("on");
+		oas.html("03<label>类化工原料3</label>");
+	    });
+        oas.each(function(){
+            $(this).attr("index","1");
+            $(this).click(function(){
+                var odex=$(this).attr("index");
+                if(odex==1){
+                    $(this).addClass("on");
+                    $(this).html("03<label>类化工原料3</label><i></i>");
+                    $(this).attr("index","2");
+                }
+                if(odex==2){
+                    $(this).removeClass("on");
+                    $(this).html("03<label>类化工原料3</label>");
+                    $(this).attr("index","1");
+                }
+            });
+        });
+
+		//加载剩余数据
+		var more_url = 'ptsearch/getMore/';
+		var now_param = '<?=$whereStr?>';
+		var pt_total = '<?=$total?>';
+		var pt_now = '<?=$p_size?>';
+		var pt_step = '<?=$p_size?>';
+		var is_load = false;
+		var _p = 2;
+		function loadMore(){
+			//数据加载完毕,直接返回
+			if(pt_now>=pt_total) return false;
+			//设置正在加载数据
+			if(is_load) return false;
+			is_load = true;
+			//加载层
+			$('#s-uploading').show();
+			//构造url
+			var obj = new objURL('/?'+now_param);
+			obj.set('_p', _p);
+			//请求数据
+			var params = obj.getparams();
+			$("#_tmpDiv").load(_moreUrl, params, function(data,status,xml){
+				if(data){
+					//追加数据
+					$("#_tmpDiv").html('');
+					$("#tm-all-list").append(data);
+					//关闭加载层
+					$('#s-uploading').hide();
+					//改变当前数据
+					++_p;
+					pt_now += pt_step;
+					setTimeout(function(){is_load = false;},1000);
+				}else{
+					is_load = false;
+				}
 			});
+		}
+		//滚动事件
+		$(window).scroll(function () {
+			var scrollTop = $(this).scrollTop();
+			var scrollHeight = $(document).height();
+			var windowHeight = $(this).height();
+			if (scrollHeight - scrollTop - windowHeight < 100 && scrollHeight - scrollTop - windowHeight>0)  {
+				loadMore();
+			}
 		});
-		$(".off,.sure").on('click',function(){
-			$(".search-Ind-bg").hide();
-			olis.removeClass("on");
-			oas.removeClass("on");
-			oas.html("03<label>类化工原料3</label>");
-		})
-	</script>
+</script>
 <? require(ViewDir.'/footer.html'); ?>
