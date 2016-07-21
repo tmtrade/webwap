@@ -2,7 +2,7 @@
  * 回调函数--模板
  * Created by dower on 2016/7/20 0020.
  */
-
+//通用 code==-1   key验证失败
 //数据提交到分配系统
 function submitDataCallback(obj){
     //obj.code = 0; //格式错误
@@ -63,10 +63,11 @@ function editPasswordCallback(obj){
 }
 
 //购买商标
-function buyAddCallback(obj,data){
+function buyAddCallback(obj,func){
     //obj.code = 0;//已添加
     //obj.code = 1;//成功
     //obj.code = 2;//失败
+    //func 传过来的函数
 }
 
 //验证是否购买过商标

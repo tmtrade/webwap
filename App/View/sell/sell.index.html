@@ -95,27 +95,74 @@
 		$("#tab2").on('click',function(){
 		  jc('tab',2,2);
 	   });
-		//提交商标
-		$('#sub_tm').click(function(){
-			layer_load();
-			//验证商标号
-			var number = $.trim($('#tm_number').val());
-			if(!check_tm(number)){
+	   $(function(){
+		   //提交商标
+		   $('#sub_tm').click(function(){
+			   layer_load();
+			   //验证商标号
+			   var number = $.trim($('#tm_number').val());
+			   if(!check_tm(number)){
+				   layer_close_load();
+				   return false;
+			   }
+			   //验证价格
+			   var price = $.trim($('#tm_price').val());
+			   if(!check_price(price)){
+				   layer_close_load();
+				   return false;
+			   }
+			   //验证联系人
+			   var mobile = $.trim($('#tm_mobile').val());
+			   if(!check_mobile(mobile)){
+				   layer_close_load();
+				   return false;
+			   }
+			   submit_data('/sell/addsell',{'number':number,'mobile':mobile,'price':price});
+		   });
+		   //提交专利
+		   $('#sub_pt').click(function(){
+			   layer_load();
+			   //验证商标号
+			   var number = $.trim($('#pt_number').val());
+			   if(!check_pt(number)){
+				   layer_close_load();
+				   return false;
+			   }
+			   //验证价格
+			   var price = $.trim($('#pt_price').val());
+			   if(!check_price(price)){
+				   layer_close_load();
+				   return false;
+			   }
+			   //验证联系人
+			   var mobile = $.trim($('#pt_mobile').val());
+			   if(!check_mobile(mobile)){
+				   layer_close_load();
+				   return false;
+			   }
+			   submit_data('/sell/addPtSell',{'number':number,'mobile':mobile,'price':price});
+		   });
+	   });
+	   //提交数据
+	   function submit_data(url,data){
+			$.post(url,data,function(res){
+				if(res.code==0){
+					layer_success('提交成功');
+					empty_data();
+				}else{
+					layer_error(res.msg);
+				}
 				layer_close_load();
-				return false;
-			}
-			//验证价格
-			var price = $.trim($('#tm_price').val());
-			if(!check_price(price)){
-				layer_close_load();
-				return false;
-			}
-			//验证联系人
-			var mobile = $.trim($('#tm_mobile').val());
-			if(!check_mobile(mobile)){
-				layer_close_load();
-				return false;
-			}
-		});
+			},'json');
+	   }
+	   //情空数据
+	   function empty_data(){
+			$('#tm_number').val('');
+			$('#tm_mobile').val('');
+			$('#tm_price').val('');
+			$('#pt_number').val('');
+			$('#pt_mobile').val('');
+			$('#pt_price').val('');
+	   }
 	</script>
 <? require(ViewDir.'/footer.html'); ?>

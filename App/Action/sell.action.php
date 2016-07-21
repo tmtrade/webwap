@@ -16,29 +16,26 @@ class SellAction extends AppAction{
 
     /**
      * 检测商标状态
+     * @param $number
+     * @param $mobile
+     * @return array|bool
      */
-    public function check(){
-        //获取数据
-        $number	= $this->input("number","string");
-        $mobile	= $this->input("mobile","int");
-        $price	= $this->input("price","int");
-        if ( empty($number) || empty($mobile) || empty($price) ) $this->returnAjax(array('code'=>1,'msg'=>'数据不完整'));
+    private function check($number,$mobile){
         //判断用户是否已出售过
         $isSale         = $this->load("sell")->existContact($number,$mobile);
-        if($isSale) $this->returnAjax(array('code'=>2,'msg'=>'您已经提交过该商标'));
+        if($isSale) return array('code'=>2,'msg'=>'您已经提交过该商标');
         //判断商标是否存在
         $info   = $this->load('sell')->getTmInfo($number,1);
-        if ( empty($info) ) $this->returnAjax(array('code'=>3,'msg'=>'找不到对应商标，请查证重新输入'));
+        if ( empty($info) ) return array('code'=>3,'msg'=>'找不到对应商标，请查证重新输入');
         //不能出售的商标
         $status = array('商标已无效','冻结中');
         foreach ($status as $s) {
             if( in_array($s, $info['second']) ){
-                $this->returnAjax(array('code'=>4,'msg'=>'该商标状态不适合出售'));
+                return array('code'=>4,'msg'=>'该商标状态不适合出售');
             }
         }
         //正常状态结果
-        $data['code'] = 0;
-        $this->returnAjax($data);
+       return false;
     }
 
     /**
@@ -50,6 +47,11 @@ class SellAction extends AppAction{
         $mobile	= $this->input("mobile","int");
         $price	= $this->input("price","int");
         if ( empty($number) || empty($mobile) || empty($price) ) $this->returnAjax(array('code'=>1,'msg'=>'数据不完整'));
+        //检测商标能否出售
+        $res = $this->check($number,$mobile);
+        if($res){
+            $this->returnAjax($res);
+        }
         //判断商标是否为商品
         $saleId = $this->load('sell')->existSale($number);
         //得到联系人的用户id
@@ -59,13 +61,13 @@ class SellAction extends AppAction{
             //追加联系人信息
             $res = $this->add_contact($saleId,$number,$price,$mobile,$uid);
             if(!$res){
-                $this->returnAjax(array('code'=>2,'msg'=>'添加联系信息失败'));
+                $this->returnAjax(array('code'=>5,'msg'=>'添加联系信息失败'));
             }
         }else{
             //添加商品
             $res = $this->add_goods($saleId,$number,$price,$mobile,$uid);
             if(!$res){
-                $this->returnAjax(array('code'=>2,'msg'=>'添加商标信息失败'));
+                $this->returnAjax(array('code'=>6,'msg'=>'添加商标信息失败'));
             }
         }
         $this->returnAjax(array('code'=>0));
@@ -175,5 +177,56 @@ class SellAction extends AppAction{
             'memo'      	=> '一只蝉前台添加联系人',
         );
         return $this->load('internal')->addContact($contact, $saleId);
+    }
+
+    /**
+     * 添加专利数据
+     */
+    public function addPtSell(){
+        //获取数据
+        $number	= $this->input("number","string");
+        $mobile	= $this->input("mobile","int");
+        $price	= $this->input("price","int");
+        if ( empty($number) || empty($mobile) || empty($price) ) $this->returnAjax(array('code'=>1,'msg'=>'数据不完整'));
+        //判断专利是否存在
+        $info = $this->load('patent')->getPatentInfoByWanxiang($number,2);
+        if ( empty($info['id']) ) $this->returnAjax(array('code'=>2,'msg'=>'找不到对应的专利数据'));
+        //判断商标是否为商品
+        $saleId = $this->load("patent")->existSale($number);
+        //得到联系人的用户id
+        $uid = 0;
+        if($this->loginId) $uid = $this->loginId;
+        //联系人数据
+        $dataContat = array();
+        $code   = (strpos($number, '.') !== false) ? strstr($number, '.', true) : $number;
+        $dataContat['source']       = 10;
+        $dataContat['phone']        = $mobile;
+        $dataContat['saleType']     = 1;
+        $dataContat['number']       = $number;
+        $dataContat['code']         = $code;
+        $dataContat['price']        = $price;
+        $dataContat['uid']          = $uid;
+        $dataContat['isVerify']     = 2;
+        $dataContat['date']         = time();
+        if($saleId){
+            //追加联系人信息
+            $saleBContact = $this->load('patent')->getSaleContactByPhone($number,$mobile);
+            //如果没有这个联系人，就写入这个联系人信息
+            if(!$saleBContact){
+                $dataContat['patentId']     = $saleId;
+                $isOk = $this->load('patent')->addContact($dataContat,$saleId);
+                if(!$isOk){
+                    $this->returnAjax(array('code'=>3,'msg'=>'添加联系信息失败'));
+                }
+            }
+        }else{
+            //添加商品
+            $info = $this->load('patent')->getPatentInfoByWanxiang($number);
+            $isOk = $this->load('patent')->addDefault($number,$info,$dataContat);
+            if(!$isOk){
+                $this->returnAjax(array('code'=>4,'msg'=>'添加商标信息失败'));
+            }
+        }
+        $this->returnAjax(array('code'=>0));
     }
 }

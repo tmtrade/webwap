@@ -84,5 +84,24 @@ $("#gb-btn").on('click',function(){
 	$(this).parent().hide();
 })
 
-
-
+//聊天函数
+function goChat(){
+    window.open("http://p.qiao.baidu.com/im/index?siteid=7918603&ucid=1268165");
+}
+//购买商品--func成功的回调
+function buyGoods(data,func){
+    ucBuy.buyAdd(data,func);
+}
+function buyAddCallback(obj,func){
+    if(obj.code==0){
+        layer_error('商品已添加到系统中');
+    }else if(obj.code==-1){
+        layer_error('验证失败');
+    }else if (obj.code==1){
+        if(typeof func=='function') func();
+        layer_success('商品添加失败');
+    }else{
+        layer_error('添加失败');
+    }
+    layer_close_load();
+}

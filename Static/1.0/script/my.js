@@ -287,7 +287,7 @@ var ucNetwork = {
 //--购买商标
 var ucBuy = {
     //购买商标
-    buyAdd : function(data){
+    buyAdd : function(data,fun){
         var	ObjJsonp = '';
         var url = ucConfig.setPostUrl(data);
         $.ajax({
@@ -297,7 +297,7 @@ var ucBuy = {
             async : false,
             data : data,
             complete : function(xhr,status){
-                buyAddCallback(ObjJsonp,data);
+                buyAddCallback(ObjJsonp,fun);
             },
             error : function(msg){
             },
