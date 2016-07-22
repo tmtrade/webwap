@@ -157,6 +157,7 @@
 					createUrl(type,value);
 				}
 				layer_close_load();
+                $("body, html").css({"overflow":"auto"});
 			});
 			//取消
 			$('.off').click(function(){
@@ -170,6 +171,7 @@
 					}
 				});
 				tem = [];//清空暂存数组
+                $("body, html").css({"overflow":"auto"});
 			});
 			//滚动事件
 			$(window).scroll(function () {
