@@ -1,4 +1,5 @@
 <? require(ViewDir.'/header.html'); ?>
+<? require(ViewDir.'/header1.html'); ?>
 		<section class="brand-pt-search">
 			<div class="search-main">
 				<p class="brand-pt-search-tit tabs">
@@ -24,10 +25,8 @@
                         </div>
                         <div class="brand-box swiper-slide">
                             <div class="brand-inp f-hidden">
-                                <form action="/ptseach/index"  method="post" id="seachfrom">
-                                <input class="search-inp" type="text" name="name" placeholder="请输入您要搜索的专利名或专利号"/>
-                                <input type="submit" class="search-btn" value="">
-                                </form>
+                                <input class="search-inp" type="text" name="name" id="pt_kw" placeholder="请输入您要搜索的专利名或专利号"/>
+                                <input type="button" class="search-btn" value="" id="pt_search">
                             </div>
                             <p>
                                 <a href="#">我特么是推荐专利 </a>
@@ -160,7 +159,8 @@
 			</div>
 		</section>
 	
-	<script type="text/javascript" src="<?=StaticDir?>1.0/script/common.js"></script>
+	<script type="text/javascript" src="<?=StaticDir?>1.0/script/common.js?v=<?=$static_version?>"></script>
+	<script type="text/javascript" src="<?=StaticDir?>1.0/script/search.js?v=<?=$static_version?>"></script>
 	<script type="text/javascript">
 	   //首页商标专利搜索选项卡；
 //	   $("#search1").on('click',function(){

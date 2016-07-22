@@ -8,6 +8,7 @@
 class BuyAction extends AppAction{
 
     public function index(){
+        $this->set("page_title", '购买登记');
         $this->display();
     }
 }

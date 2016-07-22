@@ -61,5 +61,5 @@ function check_tm(tm){
 }
 //验证专利号
 function check_pt(pt){
-    return /^\d+(\.[\dxX])?$/.test(pt);
+    return /^([a-zA-Z]{2})?\d+(\.[\dxX])?$/.test(pt);
 }

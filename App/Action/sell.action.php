@@ -11,6 +11,7 @@ class SellAction extends AppAction{
      * 渲染页面
      */
     public function index(){
+        $this->set("page_title", '我要出售');
         $this->display();
     }
 
@@ -126,7 +127,7 @@ class SellAction extends AppAction{
             'intro'     => '',
         );
         $contact = array(
-            'source'        => 10,
+            'source'        => 13,
             'uid'           => $uid,
             'tid'           => intval($info['tid']),
             'number'        => $number,
@@ -163,7 +164,7 @@ class SellAction extends AppAction{
         $info = $this->load('trademark')->getTmInfo($number);
         if ( empty($info) || empty($info['tid']) ) return false;
         $contact = array(
-            'source'        => 10,
+            'source'        => 13,
             'uid'           => intval($uid),
             'tid'           => intval($info['tid']),
             'number'        => $number,
@@ -199,7 +200,7 @@ class SellAction extends AppAction{
         //联系人数据
         $dataContat = array();
         $code   = (strpos($number, '.') !== false) ? strstr($number, '.', true) : $number;
-        $dataContat['source']       = 10;
+        $dataContat['source']       = 13;
         $dataContat['phone']        = $mobile;
         $dataContat['saleType']     = 1;
         $dataContat['number']       = $number;

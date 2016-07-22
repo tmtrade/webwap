@@ -43,6 +43,15 @@ class PtModule extends AppModule
         }
         $r['eq']['status']  = 1;
         $r['eq']['isSale']  = 1;
+        //数据量较少,暂时可用like模糊查询
+        if(!empty($params['kw'])){
+            //是否检测专利号
+            if(preg_match('/^([a-zA-Z]{2})?\d+(\.[\dxX])?$/',$params['kw'])){
+                $r['raw'] = "`title` like '%{$params['kw']}%' or `number` like '%{$params['kw']}%'";
+            }else{
+                $r['raw'] = "`title` like '%{$params['kw']}%'";
+            }
+        }
         if ( empty($col) ){
             $r['col']   = array('id', 'number', 'code', 'class', 'type', 'title', 'price');
         }else{
@@ -103,4 +112,5 @@ class PtModule extends AppModule
         if ($img) $data['imgUrl']     = $this->load('pdetail')->getPTImg($data['number']);
         return $data;
     }
+
 }

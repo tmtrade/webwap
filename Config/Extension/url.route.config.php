@@ -5,7 +5,7 @@
 //定义专利详情规则
 $rules[] = array(
     '#/pt-#',
-    array('mod' => 'patent', 'action' => 'view'),
+    array('mod' => 'ptdetail', 'action' => 'index'),
     array(
         'short' => '#(-\w+(\.[\dxX])?)#',
     ),

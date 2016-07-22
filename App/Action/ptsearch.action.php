@@ -5,7 +5,7 @@
  * Date: 2016/7/19 0019
  * Time: 下午 14:48
  */
-class PtseachAction extends AppAction{
+class PtsearchAction extends AppAction{
 
     private $row_num = 8;
 
@@ -21,14 +21,23 @@ class PtseachAction extends AppAction{
         //解析数据
         $_type = array_filter( array_unique( explode(',', $type)));
         $_class = array_filter( array_unique( explode(',', $class)));
-        if ( empty($type) && empty($class) ){
-            $params = array();
-        }else{
-            $params = array(
-                'type'      => count($_type) > 1 ? $_type : current($_type),
-                'class'     => implode(',', $_class),
-            );
+        //得到当前的url参数字符串的查询参数
+        $_whereArr = array();
+        $params = array();
+        if($type){
+            $_whereArr['t'] = $type;
+            $params['type'] = count($_type) > 1 ? $_type : current($_type);
         }
+        if($class){
+            $_whereArr['c'] = $class;
+            $params['class'] =implode(',', $_class);
+        }
+        if($kw){
+            $_whereArr['kw'] = $kw;
+            $params['kw'] = $kw;
+        }
+        //当前的参数串
+        $whereStr = http_build_query($_whereArr);
         //得到数据
         $list = $this->load('pt')->getPtList($params, $page, $this->row_num);
         $ptType     = C('PATENT_TYPE');
@@ -41,19 +50,10 @@ class PtseachAction extends AppAction{
         list($t_title, $c_title) = $this->getWhereTitle($type, $class);
         $this->set('t_title', $t_title);
         $this->set('c_title', $c_title);
-        //是否有数据
-        if ( !empty($list['rows']) ){
-            $this->set('has', true);
-        }
-        //得到当前的url参数字符串
-        $_whereArr = array(
-            't'     => $type,
-            'c'     => $class
-        );
-        $whereStr = http_build_query($_whereArr);
         //渲染页面
-        $this->set('t', $type);
-        $this->set('c', $class);
+        $this->set('kw', $kw);
+        $this->set('t_arr', $_type);
+        $this->set('c_arr', $_class);
         $this->set('whereStr', $whereStr);
         $this->set('list', $list['rows']);
         $this->set('total', $list['total']);
@@ -65,21 +65,26 @@ class PtseachAction extends AppAction{
     /**
      * 加载更多
      */
-    public function getMore(){
+    public function getmore(){
         //获得数据
+        $kw = $this->input('kw', 'string', '');
         $page   = $this->input('_p', 'int', 2);
         $type   = $this->input('t', 'string', '');
         $class  = $this->input('c', 'string', '');
         //解析类型和分类
+        $kw = urldecode($kw);
         $_type  = array_filter( array_unique( explode(',', $type) ) );
         $_class = array_filter( array_unique( explode(',', $class) ) );
-        if ( empty($type) && empty($class) ){
-            $params = array();
-        }else{
-            $params = array(
-                'type'      => implode(',', $_type),
-                'class'     => implode(',', $_class),
-            );
+        //获取查询参数
+        $params = array();
+        if($type){
+            $params['type'] = count($_type) > 1 ? $_type : current($_type);
+        }
+        if($class){
+            $params['class'] =implode(',', $_class);
+        }
+        if($kw){
+            $params['kw'] = $kw;
         }
         //得到专利数据
         $res = $this->load('pt')->getPtList($params, $page, $this->row_num);

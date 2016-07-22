@@ -79,6 +79,7 @@ class PtdetailAction extends AppAction{
         $this->set("need", $need);
         $this->set("tj", $tj);
         $this->set("number", $number);
+        $this->set("page_title", '专利详情');
         $this->display();
     }
 }
