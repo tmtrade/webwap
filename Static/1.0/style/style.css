@@ -200,16 +200,15 @@
 /*筛选列表页*/
 .filt-search{
   width: 100%;
-  padding-top:26px;
-  padding-bottom:26px;
+  padding-top:15px;
+  padding-bottom:15px;
+  min-height:25px;
   background: #353535;
   overflow: hidden;
-  /*position: fixed;*/
-  top:0;
 }
 .filt-search p{
 	color: #FFFFFF;
-	margin-top: 0.22rem;
+    margin-bottom: 0.12rem;
 }
 
 .filt-search p span{
@@ -282,6 +281,7 @@
 .search-Ind-list  p a{
 	display: inline-block;
 	min-width: 2rem;
+    overflow: hidden;
 	height: 0.68rem;
 	line-height: 0.68rem;	
 	color: #FFFFFF;
@@ -293,7 +293,12 @@
 	border-bottom: 1px solid #ff5b5b;
 }
 .search-Ind-list  p a label{
+    display: inline-block;
+    max-width:1.6rem ;
+    overflow: hidden;
 	margin-left: 0.08rem;
+    vertical-align: middle;
+    float: left;
 }
 .search-Ind-list  p a i{
 	display: inline-block;
@@ -302,7 +307,9 @@
 	background: url(../images/pitch.png) no-repeat top center;
 	background-size: 100% auto;
 	vertical-align: middle;
+    float: left;
 	margin-left: 0.08rem;
+    margin-top: 0.26rem;
 }
 .search-Ind-btn{
     width: 100%;
@@ -360,9 +367,17 @@
 	background: #f8f8f8;
 }
 .filt-list ul li div.filt-list-btn p{
+    text-align: center;
 	color: #666666;
 	font-size: 0.26rem;
+    margin:auto ;
 	margin-top: 0.12rem;
+    width:95%;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:1;
+    -webkit-box-orient: vertical;
 }
 .filt-list ul li div.filt-list-btn a{
 	display:block;
@@ -434,10 +449,15 @@
 	color: #999999;
 	overflow: hidden;
 	display: none;
-	padding-bottom: 0.24rem;
+	padding-bottom: 0.6rem;
 }
 .deta-cont-main .enter,.deta-cont-main .intr{
 	padding-left: 0.35rem;
+}
+.deta-cont-main p.desc{
+    margin-top: 0.24rem;
+    text-indent: 2em;
+    line-height: 24px;
 }
 .basic-info{
 	width:99%;
@@ -687,6 +707,7 @@
 	margin-top: -0.2rem;
 }
 .buy-mess-tb{
+    display: block !important;
 	padding-left: 0.37rem;
 	padding-right: 0.37rem;
 	border-top:1px solid #e3e3e3;

@@ -10,7 +10,7 @@
 					<div class="search-Ind-box">
 						<div class="search-Ind-list" id="pt_type2">
 							<?foreach ($_TYPE as $k => $v) {?>
-							<p><a i="<?=$k?>" class="<?=(in_array($k,$t_arr))?'on':''?>"><?=$v?><?=(in_array($k,$t_arr))?'<i></i>':''?></a></p>
+							<p><a i="<?=$k?>" class="<?=(in_array($k,$t_arr))?'on':''?>"> <label><?=$v?><?=(in_array($k,$t_arr))?'</label><i></i>':''?></a></p>
 							<?}?>
 						</div>
 						<div class="search-Ind-btn">
@@ -27,12 +27,13 @@
 					<div class="search-Ind-box">
 						<div class="search-Ind-list" id="pt_class2">
 							<?foreach ($_CLASS as $k => $v) {?>
-							<p><a i="<?=$k?>" class="<?=(in_array($k,$c_arr))?'on':''?>"><?=$v?><?=(in_array($k,$c_arr))?'<i></i>':''?></a></p>
+							<p><a i="<?=$k?>" class="<?=(in_array($k,$c_arr))?'on':''?>"> <label><?=$v?><?=(in_array($k,$c_arr))?'</label><i></i>':''?></a></p>
 							<?}?>
 						</div>
 						<div class="search-Ind-btn">
 							<a class="off">取消</a>
 							<a class="sure">确定</a>
+
 						</div>
 					</div>
 				</div>
@@ -62,9 +63,30 @@
 	</section>
 	<div id="s-uploading" style="padding-top:33px;text-align:center;display:none;height:100px;"><img src="<?=StaticDir?>1.0/images/loading.gif"></div>
 	<div id="_tmpDiv" style="display:none"></div>
+    <!--咨询价格弹窗-->
+    <div class="refer-cost" >
+        <div class="refer-cost-pic"></div>
+        <div class="refer-cost-main">
+            <input type="tel" placeholder="请输入11位手机号"/>
+            <label>输入错误</label>
+            <a>咨询价格</a>
+        </div>
+    </div>
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/common.js"></script>
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/objurl.js"></script>
 	<script type="text/javascript">
+        //咨询价格弹窗
+        $(".xun_price").on("click",function(){
+            layer.open({
+                area:["80%","4.86rem"],
+                type: 1,
+                title: false,
+                closeBtn:1,
+                shadeClose:false,
+                content:$(".refer-cost")
+
+            });
+        })
 		//加载剩余数据
 		var more_url = '/ptsearch/index/?';
 		var _moreUrl = '/ptsearch/getmore/';
@@ -89,12 +111,14 @@
 						}
 					});
 					$(".search-Ind-bg").hide();//下拉效果
+                    $("body, html").css({"overflow":"auto"});
 				}else{
 					//打开
 					$(this).closest('#search-Ind').find('li.inp span').removeClass('on');//选中效果
 					$(this).addClass('on');
 					$(".search-Ind-bg").hide();//下拉效果
 					$(this).siblings(".search-Ind-bg").show();
+                    $("body, html").css({"overflow":"hidden"});
 				}
 				tem = [];//清空暂存
 			});
