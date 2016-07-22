@@ -216,6 +216,12 @@ a[href]:hover{
 .yzc-head>a:first-child{
 	width:1.67rem;
 }
+.yzc-head a.on h2{
+    color:#fb6362;
+}
+.yzc-head a.on label{
+    color:#fb6362;
+}
 .yzc-head a#menu{
 	border-right: none;
 }

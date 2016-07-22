@@ -29,7 +29,7 @@
 	text-align: center;
 	cursor: pointer;
 }
-.brand-pt-search-tit b.on{
+.brand-pt-search-tit b.active{
 	border-bottom: 1px solid #f38e8e;
 	color: #FFFFFF;
     transition:all 0.4s;
@@ -40,7 +40,7 @@
     transition:all 0.4s;
 }
 .search-main .brand-inp{
-	width: 100%;
+	width:95%;
 	height: 0.7rem;
 	margin-top: 0.13rem;
 }
@@ -63,9 +63,9 @@
     text-indent: 0.2rem;
     color: #999999;
 }
-/*.brand-box{*/
-	/*display: none;*/
-/*}*/
+.brand-box{
+	height: auto !important;
+}
 .brand-box p {
 	display:block;
 	margin-top: 0.18rem;

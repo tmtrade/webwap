@@ -3,7 +3,7 @@
 		<section class="brand-pt-search">
 			<div class="search-main">
 				<p class="brand-pt-search-tit tabs">
-					<b class="on">商标  trademark</b>
+					<b class="active">商标  trademark</b>
 					<b>专利  patent</b>
 				</p>
                 <div class="swiper-container">
@@ -171,7 +171,13 @@
 //	   	  jc('search',2,2);
 //
 //	   });
-
+       var oas= $(".yzc-head a");
+           oas.each(function(){
+           $(this).click(function(){
+               oas.removeClass("on");
+               $(this).addClass("on");
+           })
+       })
        //判断弹出框在滚动时候的定位变化；
        $(window).scroll(function(){
            if($(window).scrollTop() == $(document).height() - $(window).height()){
@@ -195,14 +201,14 @@
        var tabsSwiper = new Swiper('.swiper-container',{
            speed:500,
            onSlideChangeStart: function(){
-               $(".tabs .on").removeClass('on')
-               $(".tabs b").eq(tabsSwiper.activeIndex).addClass('on')
+               $(".tabs .active").removeClass('active')
+               $(".tabs b").eq(tabsSwiper.activeIndex).addClass('active')
            }
        })
        $(".tabs b").on('touchstart mousedown',function(e){
            e.preventDefault()
-           $(".tabs .on").removeClass('on')
-           $(this).addClass('on')
+           $(".tabs .active").removeClass('active')
+           $(this).addClass('active')
            tabsSwiper.swipeTo( $(this).index() )
        })
        $(".tabs b").click(function(e){
