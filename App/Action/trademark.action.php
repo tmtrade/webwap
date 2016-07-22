@@ -8,21 +8,21 @@
  */
 class TrademarkAction extends AppAction
 {
-    public $caches      = array('trademar');
-    public $cacheId     = 'redisHtml';
-    public $expire      = 3600;//1小时
-    
     
     public function index()
     {
 	//获得参数
-	$params['name']   = $this->input('name', 'string', '');
+	$params = $this->getFormData();
         $page = $this->input('page','int',1);
+	
         //得到分页数据
 	$res = $this->load('sale')->getList($params, $page, $this->rowNum);
 	
         $this->set("list",$res['rows']);
 	$this->set("counts",$res['total']);
+	$this->set('_CLASSES', C('CLASSES'));//商标分类
+	$this->set('_NUMBER', C('SBNUMBER'));//商标字数
+        $this->set('_TYPE', C('TYPES'));//组合类型
 	$this->set("s",$params);
 	$this->set('has', empty($res['rows']) ? false : true);
         $this->display();
@@ -31,6 +31,8 @@ class TrademarkAction extends AppAction
     //获取更多的数据
     public function getMore()
     {
+	//获得参数
+	$params = $this->getFormData();
         $page   = $this->input('_p', 'int', 1);
 
         $res = $this->load('sale')->getList($params, $page, $this->rowNum);

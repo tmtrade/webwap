@@ -1,7 +1,7 @@
 <? require(ViewDir.'/header.html'); ?>
 	<section class="filt-search top-head">
 	    <div class="main">
-		<?if(!empty($s['name'])){?><p>符合关键字“<label class="point"><?=$s['name']?></label> ”的商品共有 <span>256441487</span> 条</p><?}?>
+		<?if(!empty($s['name'])){?><p>符合关键字“<label class="point"><?=$s['name']?></label> ”的商品共有 <span><?=$counts?></span> 条</p><?}?>
 		<ul class="filt-search-Ind" id="search-Ind">
 		    <li class="inp">
 			<span><label>全部分类</label><i></i></span>
@@ -9,22 +9,26 @@
 			<div class="search-Ind-bg">
 			    <div class="search-Ind-box">
 				<div class="search-Ind-list">
-                    <p><a>01<label>类化工原料1</label></a></p>
-                    <p><a>02<label>类化工原料2</label></a></p>
-                    <p><a>03<label>类化工原料3</label></a></p>
-                    <p><a>01<label>类化工原料4</label></a></p>
-                    <p><a>02<label>类化工原料5</label></a></p>
-                    <p><a>03<label>类化工原料6</label></a></p>
-                    <p><a>01<label>类化工原料7</label></a></p>
-                    <p><a>02<label>类化工原料8</label></a></p>
-                    <p><a>03<label>类化工原料9</label></a></p>
-                    <p><a>01<label>类化工原料10</label></a></p>
-                    <p><a>02<label>类化工原料11</label></a></p>
-                    <p><a>03<label>类化工原料12</label></a></p>
+				    <ul>
+					<li>
+					<?foreach ($_CLASSES as $k => $v) {
+					if(($k+1)%3==0 && $k>0) echo "</li><li>";
+					?>
+					    <p>
+						<a <?if(in_array($k,  explode(",", $s['class']))) echo 'class="on" index="2"'; else  echo 'index="1"'; ?>>
+						    <label><?=$v?></label>
+						    <input type="checkbox" name="class_str" value="<?=$k?>" <?if(in_array($k,  explode(",", $s['class']))) echo 'checked="checked"';?> style="display:none;">
+						
+						<?if(in_array($k,  explode(",", $s['class']))) echo '<i></i>';?>
+						</a>
+					    </p>
+					<?}?>
+					</li>
+				    </ul>
 				</div>
 				<div class="search-Ind-btn">
 				    <a class="off">取消</a>
-				    <a class="sure">确定</a>
+				    <a class="sure" data-name="class_str">确定</a>
 				</div>
 			    </div>
 			</div>
@@ -36,26 +40,27 @@
 			<div class="search-Ind-bg">
 			    <div class="search-Ind-box">
 				<div class="search-Ind-list">
-                    <p><a>01<label>类化工原料1</label></a></p>
-                    <p><a>02<label>类化工原料2</label></a></p>
-                    <p><a>03<label>类化工原料3</label></a></p>
-
-                    <p><a>01<label>类化工原料4</label></a></p>
-                    <p><a>02<label>类化工原料5</label></a></p>
-                    <p><a>03<label>类化工原料6</label></a></p>
-
-                    <p><a>01<label>类化工原料7</label></a></p>
-                    <p><a>02<label>类化工原料8</label></a></p>
-                    <p><a>03<label>类化工原料9</label></a></p>
-
-                    <p><a>01<label>类化工原料10</label></a></p>
-                    <p><a>02<label>类化工原料11</label></a></p>
-                    <p><a>03<label>类化工原料12</label></a></p>
+				    <ul>
+					<li>
+					<?foreach ($_TYPE as $k => $v) {
+					if(($k+1)%3==0 && $k>0) echo "</li><li>";
+					?>
+					    <p>
+						<a <?if(in_array($k,  explode(",", $s['type']))) echo 'class="on" index="2"'; else  echo 'index="1"'; ?>>
+						    <label><?=$v?></label>
+						    <input type="checkbox" name="type_str" value="<?=$k?>" <?if(in_array($k,  explode(",", $s['type']))) echo 'checked="checked"';?> style="display:none;">
+						
+						<?if(in_array($k,  explode(",", $s['type']))) echo '<i></i>';?>
+						</a>
+					    </p>
+					<?}?>
+					</li>
+				    </ul>
 
 				</div>
 				<div class="search-Ind-btn">
 				    <a class="off">取消</a>
-				    <a class="sure">确定</a>
+				    <a class="sure" data-name="type_str">确定</a>
 				</div>
 			    </div>
 			</div>
@@ -67,25 +72,26 @@
 			<div class="search-Ind-bg">
 			    <div class="search-Ind-box">
 				<div class="search-Ind-list">
-                    <p><a>01<label>类化工原料1</label></a></p>
-                    <p><a>02<label>类化工原料2</label></a></p>
-                    <p><a>03<label>类化工原料3</label></a></p>
-
-                    <p><a>01<label>类化工原料4</label></a></p>
-                    <p><a>02<label>类化工原料5</label></a></p>
-                    <p><a>03<label>类化工原料6</label></a></p>
-
-                    <p><a>01<label>类化工原料7</label></a></p>
-                    <p><a>02<label>类化工原料8</label></a></p>
-                    <p><a>03<label>类化工原料9</label></a></p>
-
-                    <p><a>01<label>类化工原料10</label></a></p>
-                    <p><a>02<label>类化工原料11</label></a></p>
-                    <p><a>03<label>类化工原料12</label></a></p>
+				    <ul>
+					<li>
+					<?foreach ($_NUMBER as $k => $v) {
+					if(($k+1)%3==0 && $k>0) echo "</li><li>";
+					?>
+					    <p>
+						<a <?if(in_array($k,  explode(",", $s['length']))) echo 'class="on" index="2"'; else  echo 'index="1"'; ?>>
+						    <label><?=$v?></label>
+						    <input type="checkbox" name="length_str" value="<?=$k?>" <?if(in_array($k,  explode(",", $s['length']))) echo 'checked="checked"';?> style="display:none;">
+						
+						<?if(in_array($k,  explode(",", $s['length']))) echo '<i></i>';?>
+						</a>
+					    </p>
+					<?}?>
+					</li>
+				    </ul>
 				</div>
 				<div class="search-Ind-btn">
 				    <a class="off">取消</a>
-				    <a class="sure">确定</a>
+				    <a class="sure" data-name="length_str">确定</a>
 				</div>
 			    </div>
 			</div>
@@ -105,7 +111,7 @@
 			    <span>
 			</a>
 			<div class="filt-list-btn">
-			    <p><?=$v['name']?> <?=mb_substr($v['class'], 0, 5, 'UTF-8')?>类</p>
+			    <p><?=mb_substr($v['name'], 0, 10, 'UTF-8')?> <?=mb_substr($v['class'], 0, 5, 'UTF-8')?>类</p>
 			    <a class="xun_price">立即询价</a>
 			</div>
 		    </div>
@@ -113,9 +119,14 @@
 		<? }?>
 	    </ul>
 	</section>
+	<form action="/trademark/index"  method="post" id="seachfrom">
+	    <input  type="hidden"  name="name"  value="<?=$s['name']?>"/>
+	    <input  type="hidden" name="class"  value="<?=$s['class']?>" id="class_str">
+	    <input  type="hidden" name="type"   value="<?=$s['type']?>" id="type_str">
+	    <input  type="hidden" name="length" value="<?=$s['length']?>" id="length_str">
+	</form>
 	<div id="s-uploading" style="padding-top:33px;text-align:center;display:none;height:100px;"><img src="<?=StaticDir?>1.0/images/loading.gif"></div>
 	<div id="_tmpDiv" style="display:none"></div>
-	<script type="text/javascript" src="<?=StaticDir?>1.0/script/common.js"></script>
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/objurl.js"></script>
 	<script type="text/javascript">
 	    //筛选页面下拉列表搜索；
@@ -133,25 +144,40 @@
 		$(".search-Ind-bg").hide();
 		olis.removeClass("on");
 		oas.removeClass("on");
-		oas.html("03<label>类化工原料3</label>");
 	    });
 
         oas.each(function(){
-            $(this).attr("index","1");
             $(this).click(function(){
                 var odex=$(this).attr("index");
                 if(odex==1){
                     $(this).addClass("on");
-                    $(this).html("03<label>类化工原料3</label><i></i>");
+                    $(this).append("<i></i>");
                     $(this).attr("index","2");
+		    $(this).find("input").attr("checked", true);
                 }
                 if(odex==2){
                     $(this).removeClass("on");
-                    $(this).html("03<label>类化工原料3</label>");
+		    $(this).find("i").remove();
                     $(this).attr("index","1");
+		    $(this).find("input").attr("checked", false);
                 }
             });
-        })
+        });
+	
+	//筛选条件提交
+	$(".search-Ind-btn .sure").on("click", function() {
+	    var names = $(this).data("name");
+	    var  str = '';
+            $("[name = "+names+"]:checked").each(function () {
+		if(str===""){
+                        str =$(this).val();
+		}else{
+                        str +=","+$(this).val();
+		}
+	    });
+	    $("#"+names).val(str);
+	    $("#seachfrom").submit();
+	});
     var _start      = 1;
     var _startTm    = 1;
     var _whereStr   = "<?=$whereStr?>";
@@ -188,6 +214,10 @@
         _objTime    = setTimeout(function(){_times = 0;},30000);
 	
         obj.set('_p', _start);
+	obj.set('name', "<?=$s['name']?$s['name']:0;?>");
+	obj.set('class', "<?=$s['class']?>");
+	obj.set('type', "<?=$s['type']?>");
+	obj.set('length', "<?=$s['length']?>");
         var params = obj.getparams();
         $("#_tmpDiv").load(_moreUrl, params, function(data,status,xml){
             if (data) {
