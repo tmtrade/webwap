@@ -45,8 +45,8 @@ class SellAction extends AppAction{
     public function addsell(){
         //获取数据
         $number	= $this->input("number","string");
-        $mobile	= $this->input("mobile","int");
-        $price	= $this->input("price","int");
+        $mobile	= $this->input("mobile","string");
+        $price	= $this->input("price","string");
         if ( empty($number) || empty($mobile) || empty($price) ) $this->returnAjax(array('code'=>1,'msg'=>'数据不完整'));
         //检测商标能否出售
         $res = $this->check($number,$mobile);
@@ -186,8 +186,8 @@ class SellAction extends AppAction{
     public function addPtSell(){
         //获取数据
         $number	= $this->input("number","string");
-        $mobile	= $this->input("mobile","int");
-        $price	= $this->input("price","int");
+        $mobile	= $this->input("mobile","string");
+        $price	= $this->input("price","string");
         if ( empty($number) || empty($mobile) || empty($price) ) $this->returnAjax(array('code'=>1,'msg'=>'数据不完整'));
         //判断专利是否存在
         $info = $this->load('patent')->getPatentInfoByWanxiang($number,2);
@@ -219,6 +219,8 @@ class SellAction extends AppAction{
                 if(!$isOk){
                     $this->returnAjax(array('code'=>3,'msg'=>'添加联系信息失败'));
                 }
+            }else{
+                $this->returnAjax(array('code'=>5,'msg'=>'您已经提交过该专利'));
             }
         }else{
             //添加商品

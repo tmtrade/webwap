@@ -21,7 +21,7 @@
 					<input type="tel" id="tm_mobile"/>
 				</li>
 				<li>
-					<a href="" class="tj-btn" id="sub_tm">提交出售信息</a>
+					<a href="javascript:;" class="tj-btn" id="sub_tm">提交出售信息</a>
 				</li>
 		   </ul>
 		 </div>
@@ -41,7 +41,7 @@
 					<input type="tel" id="pt_mobile"/>
 				</li>
 				<li>
-					<a href="" class="tj-btn" id="sub_pt">提交出售信息</a>
+					<a href="javascript:;" class="tj-btn" id="sub_pt">提交出售信息</a>
 				</li>
 		   </ul>
 		 </div>
@@ -103,18 +103,21 @@
 			   //验证商标号
 			   var number = $.trim($('#tm_number').val());
 			   if(!check_tm(number)){
+				   layer_error('请输入正确的商标号');
 				   layer_close_load();
 				   return false;
 			   }
 			   //验证价格
 			   var price = $.trim($('#tm_price').val());
 			   if(!check_price(price)){
+				   layer_error('请输入正确的价格');
 				   layer_close_load();
 				   return false;
 			   }
 			   //验证联系人
 			   var mobile = $.trim($('#tm_mobile').val());
 			   if(!check_mobile(mobile)){
+				   layer_error('请输入正确的手机号');
 				   layer_close_load();
 				   return false;
 			   }
@@ -126,18 +129,21 @@
 			   //验证商标号
 			   var number = $.trim($('#pt_number').val());
 			   if(!check_pt(number)){
+				   layer_error('请输入正确的专利号');
 				   layer_close_load();
 				   return false;
 			   }
 			   //验证价格
 			   var price = $.trim($('#pt_price').val());
 			   if(!check_price(price)){
+				   layer_error('请输入正确的价格');
 				   layer_close_load();
 				   return false;
 			   }
 			   //验证联系人
 			   var mobile = $.trim($('#pt_mobile').val());
 			   if(!check_mobile(mobile)){
+				   layer_error('请输入正确的手机号');
 				   layer_close_load();
 				   return false;
 			   }

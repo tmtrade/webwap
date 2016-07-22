@@ -2,7 +2,7 @@
 <? require(ViewDir.'/header1.html'); ?>
 	<section class="filt-search top-head">
 	    <div class="main">
-			<p><? if($kw): ?>符合关键字“ <label class="point"><?=$kw?></label> ”的<? endif; ?>商品共有 <span><?=$total?></span> 条</label></p>
+			<? if($kw): ?><p>符合关键字“ <label class="point"><?=$kw?></label> ”的商品共有 <span><?=$total?></span> 条</label></p><? endif; ?>
 		<ul class="filt-search-Ind" id="search-Ind">
 		    <li class="inp">
 				<span><label id="pt_type1">专利类型</label><i></i></span>
@@ -54,7 +54,7 @@
 					</a>
 					<div class="filt-list-btn">
 						<p><?=$v['title']?></p>
-						<a class="xun_price" href="javascript:;" onclick="goChat()">立即询价</a>
+						<a class="xun_price" href="javascript:;">立即询价</a>
 					</div>
 				</div>
 			</li>
@@ -72,21 +72,8 @@
             <a>咨询价格</a>
         </div>
     </div>
-	<script type="text/javascript" src="<?=StaticDir?>1.0/script/common.js"></script>
-	<script type="text/javascript" src="<?=StaticDir?>1.0/script/objurl.js"></script>
+	<script type="text/javascript" src="<?=StaticDir?>1.0/script/objurl.js?v=<?=$static_version?>"></script>
 	<script type="text/javascript">
-        //咨询价格弹窗
-        $(".xun_price").on("click",function(){
-            layer.open({
-                area:["80%","4.86rem"],
-                type: 1,
-                title: false,
-                closeBtn:1,
-                shadeClose:false,
-                content:$(".refer-cost")
-
-            });
-        })
 		//加载剩余数据
 		var more_url = '/ptsearch/index/?';
 		var _moreUrl = '/ptsearch/getmore/';
@@ -98,6 +85,17 @@
 		var _p = 2;
 		$(function () {
 			var tem = [];//暂存下拉选取的元素值, 用于取消
+			//咨询价格弹窗
+			$(".xun_price").on("click",function(){
+				layer.open({
+					area:["80%","4.86rem"],
+					type: 1,
+					title: false,
+					closeBtn:1,
+					shadeClose:false,
+					content:$(".refer-cost")
+				});
+			});
 			//下拉效果
 			$('#search-Ind li.inp span').click(function(){
 				if($(this).hasClass('on')){
