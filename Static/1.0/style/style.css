@@ -204,6 +204,8 @@
   padding-bottom:26px;
   background: #353535;
   overflow: hidden;
+  /*position: fixed;*/
+  top:0;
 }
 .filt-search p{
 	color: #FFFFFF;
@@ -265,7 +267,10 @@
 }
 .search-Ind-box{
 	background: #424242;
-	overflow: hidden;
+    height: 70%;
+    padding-bottom: 0.24rem;
+    overflow: auto;
+    position: relative;
 }
 .search-Ind-list{
 	min-height: 6rem;
@@ -276,13 +281,13 @@
 }
 .search-Ind-list  p a{
 	display: inline-block;
-	width: 2.22rem;
+	min-width: 2rem;
 	height: 0.68rem;
 	line-height: 0.68rem;	
 	color: #FFFFFF;
 	border-bottom: 1px solid #6f6f6f;
-	margin-left: 0.18rem;
-    font-size: 0.16rem;
+    margin-left: 0.28rem;
+    font-size: 0.3rem;
 }
 .search-Ind-list  p a.on{
 	border-bottom: 1px solid #ff5b5b;
@@ -298,6 +303,12 @@
 	background-size: 100% auto;
 	vertical-align: middle;
 	margin-left: 0.08rem;
+}
+.search-Ind-btn{
+    width: 100%;
+    position:fixed;
+    bottom:0.69rem;
+    left: 0px;
 }
 .search-Ind-btn a{
 	display: inline-block;
@@ -823,4 +834,64 @@
     }
     
    
+}
+
+
+/*咨询价格弹窗*/
+.refer-cost{
+    margin:0.32rem auto;
+    display: none;
+    overflow: visible !important;
+}
+.refer-cost-pic{
+    width: 90%;
+    height: 2.29rem;
+    background: url("../images/cost-bg.png") no-repeat top center;
+    background-size: 100% auto;
+    margin: auto;
+    margin-top: -0.64rem;
+    border-bottom: 1px solid #e3e3e3;
+}
+.refer-cost-main{
+    text-align: center;
+}
+.refer-cost-main input{
+    width:80%;
+    height: 0.75rem;
+    line-height: 0.75rem;
+    margin-top: 0.22rem;
+    border: 1px solid #e3e3e3;
+    text-align:center;
+    color: #bebebe;
+    font-size: 0.28rem;
+    border-radius:15px;
+    -webkit-border-radius:15px;
+    -moz-border-radius:15px;
+    -o-border-radius:15px;
+}
+.refer-cost-main  label{
+    display: block;
+    color: #fb6362;
+    font-size: 0.28rem;
+    margin: auto;
+    margin-top: 3px;
+}
+.refer-cost-main  a{
+    display: block;
+    width:80%;
+    height: 0.8rem;
+    line-height: 0.7rem;
+    margin: auto;
+    background: url("../images/xj-btn.png") no-repeat top center;
+    background-size: 100% 100%;
+    color: #ffffff;
+    font-size: 0.28rem;
+    margin-top: 0.22rem;
+}
+.layui-layer-page .layui-layer-content{
+    overflow: visible !important;
+}
+.layui-layer-ico{
+    background: url("../images/gb-ico.png") no-repeat !important;
+    background-size: 100% 100% !important;;
 }

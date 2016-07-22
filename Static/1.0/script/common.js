@@ -55,13 +55,16 @@ tapCount=0;
 $("#menu").on('click',function(){
 	tapCount++;
 	if(tapCount==2){
-		$("#menu-box").show();
+        $("#menu-box").addClass("slideInDown animated infinite");
+		$("#menu-box").css({"display":"block"});
 		$(document).on('click',function(){
+            $("#menu-box").removeClass("slideInDown animated infinite");
 		    $("#menu-box").hide();
 		    tapCount=1;
 		});
 	}
 	if(tapCount==4){
+        $("#menu-box").removeClass("slideInDown animated infinite");
 		$("#menu-box").hide();
 		tapCount=0;
 	}
@@ -73,11 +76,6 @@ $("#menu,#menu-box").on('click',function(e){
     stopPropagation(e);
 });
 
-
-
-$("#menu,#menu-box").on('click',function(e){
-    stopPropagation(e);
-});
 
 //关闭共用谈话框
 $("#gb-btn").on('click',function(){

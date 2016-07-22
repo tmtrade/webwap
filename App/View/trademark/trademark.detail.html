@@ -131,6 +131,15 @@
 			   </ul>
 	   	  </div>
 	   </div>
+        <!--咨询价格弹窗-->
+        <div class="refer-cost" >
+            <div class="refer-cost-pic"></div>
+            <div class="refer-cost-main">
+                <input type="tel" placeholder="请输入11位手机号"/>
+                <label>输入错误</label>
+                <a>咨询价格</a>
+            </div>
+        </div>
 	    <!--fenxiang -->
 		<div class="jiathis_style yzc-share">
 			<span class="jiathis_txt">分享到：</span>
@@ -145,6 +154,19 @@
 		<!-- JiaThis Button END -->
 	   <script type="text/javascript" src="js/common.js"></script>
 	   <script type="text/javascript">
+           //咨询价格弹窗
+           $(".xun_price").on("click",function(){
+               layer.open({
+                   area:["80%","4.86rem"],
+                   type: 1,
+                   title: false,
+                   closeBtn:1,
+                   shadeClose:false,
+                   content:$(".refer-cost")
+
+               });
+           })
+
 	   	   //详情页基本信息选项卡；
 		   $("#message1").on('click',function(){
 		   	 jc('message',1,2);
