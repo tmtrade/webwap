@@ -55,7 +55,7 @@ a:active {star:expression(this.onFocus=this.blur());}
 :focus { outline:0; }
 a[href]:hover{
     cursor: pointer;
-    text-decoration: underline;
+    /*text-decoration: underline;*/
 }
 .animated {
     -webkit-animation-duration: 0.4s;
@@ -299,6 +299,7 @@ a[href]:hover{
 	position:fixed;
 	top:0px;
 	left: 0px;
+    border-bottom: 5px solid #353535;
 	
 }
 .list-head a.fl {
@@ -313,6 +314,7 @@ a[href]:hover{
 	background-size: 100% auto;
 	margin-right: 0.24rem;
 	vertical-align: middle;
+    margin-bottom: 4px;
 }
 .list-head div.fr {
 	height: 0.86rem;

@@ -136,7 +136,12 @@
 
             });
         })
-	    //筛选页面下拉列表搜索；
+
+
+        //筛选页面下拉列表搜索；
+        var oh1=$(".yzc-head").outerHeight();
+        var oh2=$(".filt-search").outerHeight();
+        var otp=oh1+oh2;
 	    var olis = $("#search-Ind li.inp span");
 	    var obox = $("#Ind-box");
 	    var oas = $(".search-Ind-list").find("a");
@@ -145,6 +150,8 @@
             $(this).addClass("on");
             $(".search-Ind-bg").hide();
             $(this).siblings(".search-Ind-bg").show();
+            alert(oh2)
+            $(this).siblings(".search-Ind-bg").css({"top":otp})
             $("body, html").css({"overflow":"hidden"});
 
 	    });
@@ -266,12 +273,6 @@
         }
     });
 
-    $(document).ready(function(){
-        var oh1=$(".yzc-head").outerHeight();
-        var oh2=$(".filt-search").outerHeight();
-        var otp=oh1+oh2
-        $(".search-Ind-bg").css({"top":otp+42});
-    })
 
 	
 </script>

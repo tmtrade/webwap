@@ -75,6 +75,9 @@
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/objurl.js?v=<?=$static_version?>"></script>
 	<script type="text/javascript">
 		//加载剩余数据
+        var oh1=$(".yzc-head").outerHeight();
+        var oh2=$(".filt-search").outerHeight();
+        var otp=oh1+oh2;
 		var more_url = '/ptsearch/index/?';
 		var _moreUrl = '/ptsearch/getmore/';
 		var now_param = '<?=$whereStr?>';
@@ -116,6 +119,8 @@
 					$(this).addClass('on');
 					$(".search-Ind-bg").hide();//下拉效果
 					$(this).siblings(".search-Ind-bg").show();
+                    alert(oh2)
+                    $(this).siblings(".search-Ind-bg").css({"top":otp+28+19})
                     $("body, html").css({"overflow":"hidden"});
 				}
 				tem = [];//清空暂存

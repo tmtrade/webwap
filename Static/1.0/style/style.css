@@ -154,6 +154,7 @@
 	float: right;
 	margin-top:0.24rem;
 	margin-right: 0.12rem;
+    font-size: 0.24rem;
 }
 
 .yzc-class-show a p b{
@@ -202,7 +203,7 @@
   width: 100%;
   padding-top:15px;
   padding-bottom:15px;
-  min-height:25px;
+  /*min-height:25px;*/
   background: #353535;
   overflow: hidden;
 }
@@ -260,7 +261,6 @@
 	height: 100%;
 	background-color:rgba(0,0,0,0.4);
 	position: fixed;
-    top: 2.43rem;
 	left: 0px;
 	display: none;
 }
@@ -314,7 +314,7 @@
 .search-Ind-btn{
     width: 100%;
     position:fixed;
-    bottom:0.69rem;
+    bottom:0.86rem;
     left: 0px;
 }
 .search-Ind-btn a{
@@ -571,6 +571,7 @@
 	vertical-align: middle;
 	margin-top: 0.22rem;
 	margin-left: 0.26rem;
+    font-size: 0.24rem;
 }
 .buy-flow i{
 	display: inline-block;
@@ -613,7 +614,9 @@
     display: inline-block;
 }
 .buy-table ul li  textarea{
+    text-indent: 10px;
 	height: 2.4rem;
+    padding-top: 5px;
 }
 .buy-table ul li  input{
 	height:0.55rem;
@@ -741,15 +744,14 @@
 .sell-table{
 	width: 100%;
 	min-height: 4.8rem;
-	border-top:5px solid #353535;
 }
 .sell-table ul li.price input{
 	width: 2rem !important;
 }
-.sell-table ul li.price em{
-	color: #bebebe;
-	font-size: 0.17rem;
-}
+/*.sell-table ul li.price em{*/
+	/*color: #bebebe;*/
+	/*font-size: 0.17rem;*/
+/*}*/
 .sell-btm-ban{
 	width: 100%;
 	
@@ -792,6 +794,7 @@
 	box-shadow:2px 2px 2px 2px #333;
 	-webkit-box-shadow:2px 2px 2px 2px #333;
 	color:#FFFFFF;
+    font-size: 0.24rem;
 }
 .sell-zx-btn a img{
 	display: inline-block;
