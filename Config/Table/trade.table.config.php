@@ -2,6 +2,7 @@
 $prefix		= 't_';
 $dbId		= 'trade_new';
 $prefixs	= 's_'; //出售者平台
+$prefix_my      = "my_";
 $configFile	= array( ConfigDir.'/Db/trade.master.config.php' );
 
 $tbl['sale'] = array(
@@ -9,7 +10,11 @@ $tbl['sale'] = array(
 	'dbId'		=> $dbId, 
 	'configFile'=> $configFile,
 );
-
+$tbl['classGroup'] = array(
+	'name'		=> $prefix.'class_group',
+	'dbId'		=> $dbId,
+	'configFile'=> $configFile,
+);
 $tbl['saleContact'] = array(
 	'name'		=> $prefix.'sale_contact',
 	'dbId'		=> $dbId,
@@ -61,6 +66,16 @@ $tbl['blacklist'] = array(
 $tbl['phone'] = array(
 	'name'		=> $prefix.'phone',
 	'dbId'		=> $dbId,
+	'configFile'=> $configFile,
+);
+$tbl['phoneEnquiry'] = array(
+	'name'		=> $prefix.'phone_enquiry',
+	'dbId'		=> $dbId,
+	'configFile'=> $configFile,
+);
+$tbl['user'] = array(
+	'name'		=> $prefix_my.'user',
+	'dbId'		=> $dbId, 
 	'configFile'=> $configFile,
 );
 ?>

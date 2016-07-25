@@ -296,6 +296,9 @@ class InternalModule extends AppModule
             $r['limit'] = $limit;
         }
         $res = $this->import('sale')->find($r);
+        foreach($res as &$v){
+	    $v['pic'] = $this->load("sale")->getSaltTminfoByNumber($v['number']);
+	}
         return $res;
     }
 

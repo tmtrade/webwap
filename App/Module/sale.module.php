@@ -12,7 +12,7 @@ class SaleModule extends AppModule{
     );
 
         
-    //获取出售中和审核中的数据
+    //获取列表数据
     public function getList($params, $page, $limit=20)
     {
         $r = array();
@@ -60,6 +60,8 @@ class SaleModule extends AppModule{
         return $res;
     }
     
+    
+
     /**
      * 近似查询调用
      *

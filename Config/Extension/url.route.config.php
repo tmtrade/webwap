@@ -10,4 +10,11 @@ $rules[] = array(
         'short' => '#(-\w+(\.[\dxX])?)#',
     ),
 );
+$rules[] = array(
+    '#/d-#',
+    array('mod' => 'trademark', 'action' => 'detail'),
+    array(
+        'short' => '#((\d+-)([\w-])*)#',
+        ),
+);
 ?>

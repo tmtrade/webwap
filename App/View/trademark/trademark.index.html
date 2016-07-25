@@ -66,11 +66,11 @@
 					<?foreach ($_NUMBER as $k => $v) {
 					?>
 					    <p>
-						<a <?if(in_array($k,  explode(",", $s['length']))) echo 'class="on" index="2"'; else  echo 'index="1"'; ?>>
+						<a <?if(in_array($k,  explode(",", $s['length'])) || ($k=="1,2" && in_array(1,  explode(",", $s['length'])))) echo 'class="on" index="2"'; else  echo 'index="1"'; ?>>
 						    <label><?=$v?></label>
-						    <input type="checkbox" name="length_str" value="<?=$k?>" <?if(in_array($k,  explode(",", $s['length']))) echo 'checked="checked"';?> style="display:none;">
+						    <input type="checkbox" name="length_str" value="<?=$k?>" <?if(in_array($k,  explode(",", $s['length'])) || ($k=="1,2" && in_array(1,  explode(",", $s['length'])))) echo 'checked="checked"';?> style="display:none;">
 						
-						<?if(in_array($k,  explode(",", $s['length']))) echo '<i></i>';?>
+						<?if(in_array($k,  explode(",", $s['length'])) || ($k=="1,2" && in_array(1,  explode(",", $s['length'])))) echo '<i></i>';?>
 						</a>
 					    </p>
 					<?}?>
@@ -91,14 +91,14 @@
 		<? foreach ($list as $k => $v) {?>
 		<li>
 		    <div class="cont">
-			<a class="pic" href="<?=SITE_URL?>d-<?=$v['tid']?>-<?=$v['class']?>.html" target="_blank">
+			<a class="pic" href="/d-<?=$v['tid']?>-<?=$v['class']?>.html" target="_blank" title="<?=$v['name']?>" > 
 			    <span>
 				<img src="<?=$v['pic']['embellish']?>"  onerror="this.src='/Static/1.0/images/img1.png'" width="170" height="100">
 			    <span>
 			</a>
 			<div class="filt-list-btn">
 			    <p><?=mb_substr($v['name'], 0, 10, 'UTF-8')?> <?=mb_substr($v['class'], 0, 5, 'UTF-8')?>类</p>
-			    <a class="xun_price">立即询价</a>
+			    <a class="xun_price" data-type="1" data-number="<?=$v['number']?>">立即询价</a>
 			</div>
 		    </div>
 		</li>
@@ -117,25 +117,17 @@
     <div class="refer-cost" >
         <div class="refer-cost-pic"></div>
         <div class="refer-cost-main">
-            <input type="tel" placeholder="请输入11位手机号"/>
-            <label>输入错误</label>
-            <a>咨询价格</a>
+            <input type="tel" placeholder="请输入11位手机号" id="xun_phone"/>
+            <label id="tips" style="display: none;">输入错误</label>
+            <a href="javascript:void(0)" id="xun_submit">咨询价格</a>
+	    <input type="hidden" value="" id="xun_number">
+	    <input type="hidden" value="1" id="xun_type">
         </div>
     </div>
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/objurl.js"></script>
+	<script type="text/javascript" src="<?=StaticDir?>1.0/script/xun.js"></script>
 	<script type="text/javascript">
-        //咨询价格弹窗
-        $(".xun_price").on("click",function(){
-            layer.open({
-                area:["80%","4.86rem"],
-                type: 1,
-                title: false,
-                closeBtn:1,
-                shadeClose:false,
-                content:$(".refer-cost")
 
-            });
-        })
 
 
         //筛选页面下拉列表搜索；

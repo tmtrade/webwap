@@ -13,10 +13,9 @@ class TrademarkModule extends AppModule
     public $models = array(
         'img'		=> 'imgurl',
         'tm'		=> 'trademark',
-        'second'	=> 'secondstatus',
         'third'		=> 'statusnew',
-        'tmclass'   => 'tmclass',
         'tminfo'        => 'saleTminfo',
+        'class'         => 'tmClass',
     );
 
     protected $col = array(
@@ -171,11 +170,9 @@ class TrademarkModule extends AppModule
 
         $info['items']      = $items;
         $info['class']      = array_filter( $class );
-        $info['imgUrl']     = $this->getImg($number);
+        $info['imgUrl']     = $this->load("sale")->getSaltTminfoByNumber($number);
+        
         $info['group']      = $this->groupReplace($info['group']);
-        $info['status']     = $this->getFirst($info['tid']);
-        $info['second']     = $this->getSecond($info['tid']);
-        $info['proName']    = $this->load('proposer')->getNewName($info['pid']);
 
         return $info;
     }
@@ -243,7 +240,23 @@ class TrademarkModule extends AppModule
     {
         return $this->import('tm')->find($role);
     }
-
+    
+    
+    /**
+     * 得到分类描述
+     * @param $class
+     * @return mixed
+     */
+    public function getClassInfo($class){
+        $r['eq']['id'] = $class;
+        $r['col'] = array('label','title','name');
+        $res = $this->import('class')->find($r);
+        if($res){
+            return $res;
+        }
+        return '';
+    }
+    
     /**
     * 商标基础信息
     *
