@@ -34,7 +34,7 @@
 	color: #FFFFFF;
     transition:all 0.4s;
 }
-.buy-tit b.on{
+.buy-tit b.active{
     border-bottom: 1px solid #f38e8e;
     color: #f38e8e;
     transition:all 0.4s;
@@ -460,7 +460,6 @@
     line-height: 24px;
 }
 .basic-info{
-	width:99%;
 	padding-top:0.12rem;
 	padding-bottom:0.12rem;
 	background: #f6f6f6;
@@ -468,8 +467,13 @@
 	border-radius:5px;
 	-webkit-border-radius:5px;
 	text-indent:0.35rem;
+    padding-left:5px;
+    padding-right: 5px;
+    line-height: 20px;
 }
 .deta-cont-main .enter{
+    padding-left:5px;
+    padding-right: 5px;
 	margin-top:0.17rem;
 }
 .deta-cont-main .enter a{
@@ -584,7 +588,7 @@
 	margin-left: 0.22rem;
 }
 .buy-table{
-    display:none;
+    /*display:none;*/
 	padding-left: 0.94rem;
 	padding-right: 0.94rem;
 	margin-top: 0.22rem;
