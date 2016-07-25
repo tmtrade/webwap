@@ -124,7 +124,7 @@
                content:$(".refer-cost")
 
            });
-       })
+       });
 
 	   $(function(){
 		   var trademark = "<?=$number?>";
@@ -143,6 +143,11 @@
 		   });
 		   //提交信息弹窗；
 		   $("#buy-btn").on('click',function(){
+			   //清空数据
+			   $('#mobile').val('');
+			   $('#name').val('');
+			   $('#content').val('');
+			   //弹层
 			   $(".deta-tc-bg").show();
 			   $(".buy-mess-box").show();
 
@@ -166,11 +171,11 @@
 				   layer_close_load();
 				   return false;
 			   }
-			   var content = $.trim($('#content').text());
+			   var content = $.trim($('#content').val());
 			   //组装数据
 			   //获得数据
 			   var remarks 	= $('#remarks').val();
-			   remarks += (';电话号码：' + tel+';联系人:'+name);
+			   remarks += (';电话号码：' + mobile+';联系人:'+name);
 			   if(content){
 				   remarks += (';备注:'+content);
 			   }
@@ -184,7 +189,6 @@
 			   buyData['remarks'] 		= remarks;
 			   //提交数据
 			   buyGoods(buyData,function(){
-				   //清空数据
 				   //关闭弹窗
 				   $("#gb-tc").click();
 			   });

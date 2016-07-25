@@ -86,37 +86,28 @@ $("#gb-btn").on('click',function(){
 function goChat(){
     window.open("http://p.qiao.baidu.com/im/index?siteid=7918603&ucid=1268165");
 }
-//购买商品--func成功的回调---- 不允许重复
-//function buyGoods(data,func){
-//    ucBuy.buyAdd(data,func);
-//}
-//function buyAddCallback(obj,func){
-//    if(obj.code==0){
-//        layer_error('商品已添加到系统中');
-//    }else if(obj.code==-1){
-//        layer_error('验证失败');
-//    }else if (obj.code==1){
-//        if(typeof func=='function') func();
-//        layer_success('商品添加失败');
-//    }else{
-//        layer_error('添加失败');
-//    }
-//    layer_close_load();
-//}
-
 //购买商品--func成功的回调---- 允许重复
 function buyGoods(data,func){
     ucNetwork.submitData(data,func);
 }
 //提交信息回调
 function submitDataCallback(obj,func){
-    if(obj.code!=0 && obj.data.netcode==1){
-        if(typeof func=='function') func();
-        //弹出成功框
-        layer_success('提交成功');
-    }else{
-        //弹出失败框
-        layer_error('提交失败');
-    }
-    layer_close_load();
+    $.each(obj,function(i,n){
+        if(n.code==-1){
+            layer.msg('key验证失败',{
+                time:1500,
+                icon:2
+            },function(){
+                location.reload();
+            })
+        }else if(n.code!=0 && n.data.netcode==1){
+            if(typeof func=='function') func();
+            //弹出成功框
+            layer_success('提交成功');
+        }else{
+            //弹出失败框
+            layer_error('提交失败');
+        }
+        layer_close_load();
+    });
 }

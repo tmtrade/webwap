@@ -76,6 +76,7 @@
 					layer_close_load();
 					return false;
 				}
+				content = '商标需求:'+content;
 				//验证手机
 				var mobile = $.trim($('#tm_mobile').val());
 				if(!check_mobile(mobile)){
@@ -96,6 +97,7 @@
 					layer_close_load();
 					return false;
 				}
+				content = '专利需求:'+content;
 				//验证手机
 				var mobile = $.trim($('#pt_mobile').val());
 				if(!check_mobile(mobile)){

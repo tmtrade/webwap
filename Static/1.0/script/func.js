@@ -15,15 +15,15 @@ function layer_load(){
     });
 }
 //成功失败弹窗
-function layer_success(msg){
-    if(typeof time == 'undefined') time=2000;
+function layer_success(msg,time){
+    if(typeof time == 'undefined') time=1500;
     layer.msg(msg,{
         time:time,
         icon:1
     })
 }
-function layer_error(msg){
-    if(typeof time == 'undefined') time=2000;
+function layer_error(msg,time){
+    if(typeof time == 'undefined') time=1500;
     layer.msg(msg,{
         time:time,
         icon:2

@@ -34,6 +34,12 @@ $tbl['patent'] = array(
 	'configFile'=> $configFile,
 );
 
+$tbl['patentContact'] = array(
+	'name'		=> $prefix.'patent_contact',
+	'dbId'		=> $dbId,
+	'configFile'=> $configFile,
+);
+
 $tbl['patentInfo'] = array(
 	'name'		=> $prefix.'patent_info',
 	'dbId'		=> $dbId,

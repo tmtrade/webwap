@@ -16,9 +16,9 @@
 	    <script type="text/javascript" src="<?=StaticDir?>1.0/script/func.js?v=<?=$static_version?>"></script>
 	    <script type="text/javascript" src="<?=StaticDir?>1.0/script/my.js?v=<?=$static_version?>"></script>
 	    <script type="text/javascript">
+			var HOST = '<?=UC_URL?>';
 			$(function(){
 				//获得登录相关的参数
-				var HOST = '<?=UC_URL?>';
 				var timestamp = '';
 				var nonceStr = '';
 				var signature = '';
@@ -28,6 +28,9 @@
 					url  : '/index/getLogin',
 					data : '',
 					dataType : 'json',
+					complete : function(xhr,status){
+						ucConfig.setConfig(timestamp,nonceStr,signature);
+					},
 					success : function (data){
 						timestamp = data.timestamp;
 						nonceStr = data.nonceStr;
@@ -37,7 +40,6 @@
 						layer_msg('初始化登录失败');
 					}
 				});
-				ucConfig.setConfig(timestamp,nonceStr,signature);
 			});
 	    	//适配rem的兼容代码
 			(function (doc, win) {
