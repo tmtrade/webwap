@@ -86,6 +86,7 @@
 		var pt_step = <?=$p_size?>;
 		var is_load = false;
 		var _p = 2;
+		var now_type = '<?=$now_type?>';
 		$(function () {
 			var tem = [];//暂存下拉选取的元素值, 用于取消
 			//咨询价格弹窗
@@ -119,7 +120,6 @@
 					$(this).addClass('on');
 					$(".search-Ind-bg").hide();//下拉效果
 					$(this).siblings(".search-Ind-bg").show();
-                    alert(oh2)
                     $(this).siblings(".search-Ind-bg").css({"top":otp+28+19})
                     $("body, html").css({"overflow":"hidden"});
 				}
@@ -243,7 +243,7 @@
 			switch(parameter){
 				case "_type" :
 					obj.set('t', value);
-					if ( value == '' || value == 0 ) obj.set('c', '');
+					if ( value != now_type) obj.set('c', '');
 					break;
 				case "_class" :
 					obj.set('c', value);

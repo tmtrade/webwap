@@ -52,6 +52,7 @@ class PtsearchAction extends AppAction{
         $this->set('c_title', $c_title);
         //渲染页面
         $this->set('kw', $kw);
+        $this->set('now_type', $type);
         $this->set('t_arr', $_type);
         $this->set('c_arr', $_class);
         $this->set('whereStr', $whereStr);
@@ -59,6 +60,7 @@ class PtsearchAction extends AppAction{
         $this->set('total', $list['total']);
         $this->set('p_size', $this->row_num);
         $this->set('_TYPE', $ptType);
+        $this->set('head_type', 2);
         $this->display();
     }
 

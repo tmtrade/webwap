@@ -24,6 +24,7 @@ class TrademarkAction extends AppAction
         $this->set('_TYPE', C('TYPES'));//组合类型
 	$this->set("s",$params);
 	$this->set('has', empty($res['rows']) ? false : true);
+        $this->set('head_type', 1);
         $this->display();
     }
     

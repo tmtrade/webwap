@@ -1,7 +1,7 @@
 <!--公用头部-->
 <header class="yzc-head">
     <a href="/"><h1><img src="<?=StaticDir?>1.0/images/wap-lg.png"></h1></a>
-    <a class="on" href="/trademark">
+    <a href="/trademark">
         <!--<i><img src="<?=StaticDir?>1.0/images/lg-ico1.png"></i>-->
         <h2>商标<br/><label>trademark</label></h2>
     </a>
@@ -27,4 +27,12 @@
         <a href="<?=SELLER_URL?>">出售者平台</a>
     </div>
 </header>
+<script type="text/javascript">
+    $(function(){
+        var head_type = '<?=$head_type?>';
+        if(head_type){
+            $('.yzc-head a').removeClass('on').eq(head_type).addClass('on');
+        }
+    });
+</script>
 <!--公用头部end-->
