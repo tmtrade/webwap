@@ -16,6 +16,7 @@ class TrademarkModule extends AppModule
         'third'		=> 'statusnew',
         'tminfo'        => 'saleTminfo',
         'class'         => 'tmClass',
+        'kwcount'       => 'keywordCount',
     );
 
     protected $col = array(
@@ -296,138 +297,136 @@ class TrademarkModule extends AppModule
         return empty($img) ? $default : $img['url'];
     }
 
-    public function getFirst($tid, $type='c')
+ /**
+     * 获取商标分类与群组相关标题
+     *
+     * 获取商标分类与群组相关标题
+     * 
+     * @author  Xuni
+     * @since   2016-03-08
+     *
+     * @return  array
+     */
+    public function getClassGroup($class=0, $group=1)
     {
-        if ( intval($tid) <= 0 ) return '';
-
-        $r['eq']    = array('tid'=>$tid);
-        $r['col']   = array('three_status');
-        $second     = $this->import('second')->find($r);
-        //返回数字
-        if ( $type == 'n' ){
-            return $second['three_status'];
+        if ( $class == 0 && $group != 1 ){
+            $r['eq'] = array('parent'=>0);
+        }elseif ( $class != 0 && $group == 1 ){
+            //$r['eq'] = array('parent'=>$class);
+            $r['raw'] = " (`parent` = '$class' OR `number` = '$class') ";
+        }elseif ( $class != 0 ){
+            $r['eq'] = array('number'=>$class);
         }
-        //返回字符(中文)
-        $Seconds    = C("SecondStatus");
-        return $Seconds[$second['three_status']];
-    }
+        //$r['order'] = array('parent'=>'asc','number'=>'asc');
+        $r['limit'] = 1000;
 
-    /**
-    * 商标二级状态数据列表
-    *
-    * @author   Xuni
-    * @since    2015-10-22
-    *
-    * @access   public
-    * @return   void
-    */
-    public function getSecond($tid)
-    {
-        if ( intval($tid) <= 0 ) return array();
+        $_class = $_group = array();
+        $res    = $this->import('class')->find($r);
+        if ( empty($res) ) return array();
 
-        $r['eq']    = array('tid'=>$tid);
-        $second     = $this->import('second')->find($r);
-
-        if ( empty($second) ) return array();
-
-        $list       = array();
-        $Seconds    = C("SecondStatus");
-        foreach (range(1, 28) as $v) {
-            $key = 'status'.$v;
-            if ($second[$key] == 1){
-                $list[$v] = $Seconds[$v];
+        foreach ($res as $k => $v) {
+            if ( $v['parent'] == '0' ){
+                $_class[$v['number']] = empty($v['title']) ? $v['name'] : $v['title'];
+            }elseif ( $v['parent'] != 0 ){
+                $_group[$v['parent']][$v['number']] = empty($v['title']) ? $v['name'] : $v['title'];
             }
         }
-        return $list;
+        ksort($_class);
+        return array($_class, $_group);
     }
 
-    /**
-    * 通过商标号获取商标信息(多条数据)
-    *
-    * @author  haydn
-    * @since   2015-12-06
-    *
-    * @access  public
-    * @param   int     $tmid    商标号
-    * @return  array   $data   数据包
-    */
-    public function getTrademarkByIds($tmid)
+    //获取查询的TITLE
+    public function getSeo($all)
     {
-        $r['eq']    = array('id' => $tmid);
-        $r['col']   = array('auto','id','class as class_id');
-        $r['limit'] = 100;
-        $data       = $this->import('tm')->findAll($r);
-        return $data;
-    }
-    /**
-    * 获取二级状态信息
-    *
-    * @author  haydn
-    * @since   2015-12-06
-    *
-    * @access  public
-    * @param   string  $tmid   商标号
-    * @param   int     $class  国际分类
-    * @return  array   $data   数据包
-    */
-    public function getTwoStageInfo($tmid,$class)
-    {
-        $r['eq']        = array('trademark_id' => $tmid , 'class_id' => $class);
-        $r['col']       = array('tid','trademark_id','class_id','three_status');
-        $r['limit']     = 100;
-        $data           = $this->import('second')->find($r);
-        return !empty($data) ? $data[0] : array();
-    }
-    /**
-    * 获取三级状态信息
-    *
-    * @author  haydn
-    * @since   2015-12-06
-    *
-    * @access  public
-    * @param   string  $tmid   商标号
-    * @param   int     $class  国际分类
-    * @return  array   $data   数据包
-    */
-    public function getThreeStageInfo($tmid,$class)
-    {
-        $array          = array();
-        $r['eq']        = array('trademark_id' => $tmid , 'class' => $class);
-        $r['col']       = array('tid','trademark_id','class','status','date');
-        $r['limit']     = 100;
-        $data           = $this->import('third')->findAll($r);
-        if( !empty($data['total']) ){
-            foreach( $data['rows'] as $key => $val ){
-                $array[] = $val;
+        foreach ($all as $k => $value) {
+                if (empty($value) && count($all)==1) return;
+                $_arr = array_filter( explode(',', $value) );
+                switch ($k) {
+                    case 'name':
+                        $S      = C('SBSEARCH');
+                        $kt     = intval($all['kt']) <= 0 ? 1 : intval($all['kt']);
+                        if(!empty($value)) $kname   = $S[$kt].':'.$value.' ';
+                         $this->createKeywordCount($value,1,$k,$value);
+                        break;
+                    case 'class':
+                        list($cArr,) = $this->getClassGroup(0, 0);
+                        foreach ($_arr as $v) {
+                            if(count($all)>=2){
+                                $c_str .= $cArr[$v].' '.$v.'类 ';
+                                $c_name_str .= $cArr[$v].' ';
+                                $c_id_str = '第'.$v.'类'.$cArr[$v].' ';
+                                $c_name = $cArr[$v];
+                                $c_id = $v;
+                            }else{
+                                $c_name = $cArr[$v];
+                                $c_id = $v;
+                            }
+                             $this->createKeywordCount("$v-".$cArr[$v],4,$k,$value);
+                        }
+                        break;
+                    case 'type':
+                        $T = C('TYPES');/*组合类型*/
+                        foreach ($_arr as $v) {
+                            $t_str .= $T[$v].' ';
+                            $this->createKeywordCount("$v-".$T[$v],6,$k,$value);
+                        }
+                        break;
+                    case 'length':
+                        $N      = C('SBNUMBER');/*商标字数*/
+                        $_hasN  = false;
+                        foreach ($_arr as $v) {
+                            if ( $v == '1' || $v == '2' ){
+                                $_hasN = true;
+                            }else{
+                                $sn_str .= $N[$v].' ';
+                                $this->createKeywordCount($N[$v],7,$k,$value);
+                            }
+                        }
+                        if ( $_hasN ){
+                             $sn_str = $N['1,2'].' '.$sn_str;
+                             $this->createKeywordCount($N['1,2'],7,$k,$value);
+                        }
+                        break;
+                }
             }
-        }
-        return $array;
+            if(count($all)<=3 && !empty($c_name) && empty($g_name) && count($_arr)==1){
+                $title = '第'.$c_id.'类'.$c_name.' 商标转让交易买卖价格|一只蝉商标转让平台网';
+                $description = '第'.$c_id.'类商标转让价格要多少钱？了解'.$c_name.'商标转让价格到一只蝉'.$c_name.'商标交易平台第一时间获取'.$c_id.'类商标交易价格动态变化；一只蝉商标转让平台-独家签订交易损失赔付保障协议商标交易平台';
+            }else{
+                $title = $kname.$p_str.$g_str.$c_str.$sn_str.$t_str.'商标转让交易买卖价格|一只蝉商标转让平台网';
+                $description =$kname.$p_str.$g_name_str.'商标转让价格要多少钱？了解'.$c_name_str.$sn_str.$t_str.'商标转让价格到一只蝉'.$c_id_str.'商标交易平台第一时间获取'.$g_name_str.'商标交易价格动态变化；一只蝉商标转让平台-独家签订交易损失赔付保障协议商标买卖平台';
+            }
+            return array("title"=>$title,"description"=>$description);
     }
+    
     /**
-    * 获取申请人下的相同名称的商标数量
-    *
-    * @author  haydn
-    * @since   2015-12-06
-    *
-    * @access  public
-    * @param   string  $tmid   商标号
-    * @param   int     $class  国际分类
-    * @return  int     $total  商标数量
-    */
-    public function getAlikeBrand($tmid,$class)
+     * 写入搜索数据
+     * 
+     * @author  Far
+     * @since   2016-05-20
+     * @access  public
+     * @param   string      $kw        搜索关键词
+     * @param   int         $type      搜索类型
+     * @param   int         $type      搜索类型关键词KEY
+     * @param   int         $type      搜索类型关键词的值（简写）
+     */
+    public function createKeywordCount($kw, $type, $ktype,$val)
     {
-        $total      = 0;
-        $r1['eq']   = array('id' => $tmid , 'class' => $class);
-        $r1['col']  = array('auto','proposer_id','trademark');
-        $tmArr      = $this->import('tm')->find($r1);
-        if( !empty($tmArr) ){
-            $r['eq']    = array('proposer_id' => $tmArr['proposer_id'],'trademark' => $tmArr['trademark']);
-            $r['notIn'] = array('auto'=>array($tmArr['auto']));
-            $r['col']   = array('COUNT( * ) AS total');
-            $data       = $this->import('tm')->find($r);
-            $total      = $data['total'];
-        }
-        return $total;
+        if ( empty($kw) || empty($type)) return '0';
+        $ip =  getClientIp();
+        //判断上一次搜索是否有相同的
+        $list = $this->com('redisHtml')->get('kw_'.$ip);
+        if($list[$ktype]==$val) return '0';
+        
+            
+        $data = array(
+           'keyword'   => $kw,
+           'type'      => $type,
+           'sid'       => $_COOKIE['sat5_sid'],
+           'ip'        => $ip,
+           'date'      => time(),
+           );
+           return $this->import('kwcount')->create($data);
     }
 }
 ?>

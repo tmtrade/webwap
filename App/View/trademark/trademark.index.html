@@ -14,7 +14,7 @@
 					?>
 					    <p>
 						<a <?if(in_array($k,  explode(",", $s['class']))) echo 'class="on" index="2"'; else  echo 'index="1"'; ?>>
-						    <label><?=$v?></label>
+						    <label><?=$k.'-'.$v?></label>
 						    <input type="checkbox" name="class_str" value="<?=$k?>" <?if(in_array($k,  explode(",", $s['class']))) echo 'checked="checked"';?> style="display:none;">
 						
 						<?if(in_array($k,  explode(",", $s['class']))) echo '<i></i>';?>
@@ -105,7 +105,7 @@
 		<? }?>
 	    </ul>
 	</section>
-	<form action="/trademark/index"  method="post" id="seachfrom">
+	<form action="/trademark/index"  method="get" id="seachfrom">
 	    <input  type="hidden"  name="name"  value="<?=$s['name']?>"/>
 	    <input  type="hidden" name="class"  value="<?=$s['class']?>" id="class_str">
 	    <input  type="hidden" name="type"   value="<?=$s['type']?>" id="type_str">

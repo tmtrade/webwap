@@ -11,12 +11,25 @@ class TrademarkAction extends AppAction
     
     public function index()
     {
+        
 	//获得参数
 	$params = $this->getFormData();
         $page = $this->input('page','int',1);
 	
         //得到分页数据
 	$res = $this->load('sale')->getList($params, $page, $this->rowNum);
+        
+        //设置页面TITLE
+        $seoList = $this->load('trademark')->getSeo($params);
+        if(!empty($seoList['title'])){
+            $this->set('title', $seoList['title']);
+            $this->set('description', $seoList['description']);
+        }
+        
+        //存储每个用户当次的搜索条件为下次搜索去比较
+        $ip =  getClientIp();
+        $this->com('redisHtml')->set('kw_'.$ip, $params, 300);
+            
         $this->set("list",$res['rows']);
 	$this->set("counts",$res['total']);
 	$this->set('_CLASSES', C('CLASSES'));//商标分类
@@ -103,6 +116,17 @@ class TrademarkAction extends AppAction
 		}
 		//读取推荐商标
 		 $refer	= $this->load("internal")->getReferrer($_class, 2, $number);
+                 
+                 //设置标题
+		$title['name'] 	= $info['name'];
+		$title['class']	= $class;
+		$goods 			= current( explode(',', $info['goods']) );
+                //设置SEO
+                $seoList = $this->getTitle($title,$goods);
+		$this->set('title', $seoList['title']);
+                $this->set('keywords', $seoList['keywords']);
+                $this->set('description', $seoList['description']);
+                
 		//分配数据
 		$this->set("info", $info);
 		$this->set("sale", $sale);
@@ -112,6 +136,14 @@ class TrademarkAction extends AppAction
                 $this->set("page_title", '商标详情');
 		$this->display();
     }
-
+    
+    private function getTitle($data,$goods)
+	{
+                list($cArr,) = $this->load('trademark')->getClassGroup(0, 0);
+                $title = $data['name']."_".$data['class']."类_".$goods."商标转让|买卖|交易|价格 – 一只蝉商标转让平台网";
+                $keywords = $data['name'].'商标转让,第'.$data['class'].'类'.$goods.' 商标转让,'.$cArr[$data['class']].'商标转让,商标转让,注册商标交易买卖';
+                $description = $data['name'].'第'.$data['class'].'类'.$goods.'类'.$cArr[$data['class']].'商标转让交易买卖价格信息。购买商品名商标到一只蝉第'.$data['class'].'类'.$cArr[$data['class']].'商标交易平台第一时间获取'.$goods.'商标价格信息,一只蝉商标转让平台网-独家签订交易损失赔付保障协议商标交易买卖平台';
+                return array("title"=>$title,"keywords"=>$keywords,"description"=>$description);
+	}
 }
 ?>
