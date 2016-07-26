@@ -91,7 +91,7 @@
 		<? foreach ($list as $k => $v) {?>
 		<li>
 		    <div class="cont">
-			<a class="pic" href="/d-<?=$v['tid']?>-<?=$v['class']?>.html" target="_blank" title="<?=$v['name']?>" > 
+			<a class="pic" href="/d-<?=$v['tid']?>-<?=$v['class']?>.html" title="<?=$v['name']?>" > 
 			    <span>
 				<img src="<?=$v['pic']['embellish']?>"  onerror="this.src='/Static/1.0/images/img1.png'" width="170" height="100">
 			    <span>
@@ -111,7 +111,7 @@
 	    <input  type="hidden" name="type"   value="<?=$s['type']?>" id="type_str">
 	    <input  type="hidden" name="length" value="<?=$s['length']?>" id="length_str">
 	</form>
-	<div id="s-uploading" style="padding-top:33px;text-align:center;display:none;height:100px;"><img src="<?=StaticDir?>1.0/images/loading.gif"></div>
+	<div id="s-uploading" style="padding-top:33px;margin-left: 45%;display:none;height:100px;"><img src="<?=StaticDir?>1.0/script/layer/skin/default/loading-1.gif"></div>
 	<div id="_tmpDiv" style="display:none"></div>
 
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/objurl.js"></script>
