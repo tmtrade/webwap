@@ -1,24 +1,25 @@
+//顶部点击菜单出现弹窗；
+var  tapCount;
+tapCount=0;
+$("#menu").on('click',function(){
 
-//切换移动端和PC端的点击事件
-//function isMobile(){
-// var sUserAgent= navigator.userAgent.toLowerCase(),
-// bIsIpad= sUserAgent.match(/ipad/i) == "ipad",
-// bIsIphoneOs= sUserAgent.match(/iphone os/i) == "iphone os",
-// bIsMidp= sUserAgent.match(/midp/i) == "midp",
-// bIsUc7= sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4",
-// bIsUc= sUserAgent.match(/ucweb/i) == "ucweb",
-// bIsAndroid= sUserAgent.match(/android/i) == "android",
-// bIsCE= sUserAgent.match(/windows ce/i) == "windows ce",
-// bIsWM= sUserAgent.match(/windows mobile/i) == "windows mobile",
-// bIsWebview = sUserAgent.match(/webview/i) == "webview";
-// return (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM);
-//}
-//var tap;
-//tap = isMobile() ? 'tap' : 'click';
-//
-//$("body").click(function(){
-//    alert("11");
-//})
+    tapCount++;
+    if(tapCount==1){
+        $("#menu-box").addClass("slideInDown animated infinite");
+        $("#menu-box").css({"display":"block"});
+        $(document).on('click',function(){
+            $("#menu-box").removeClass("slideInDown animated infinite");
+            $("#menu-box").hide();
+            tapCount=0;
+        });
+        tapCount=1;
+    }
+    if(tapCount==2){
+        $("#menu-box").removeClass("slideInDown animated infinite");
+        $("#menu-box").hide();
+        tapCount=0;
+    }
+})
 //选项卡函数
 function jc(name,curr,n)
     {
@@ -28,9 +29,9 @@ function jc(name,curr,n)
             var cont=document.getElementById("con_"+name+"_"+i);
         menu.className=i==curr ? "on" : "";
         if(i==curr){
-            cont.style.display="block";    
+            cont.style.display="block";
         }else{
-            cont.style.display="none";    
+            cont.style.display="none";
         }
     }
 }
@@ -48,27 +49,7 @@ window.addEventListener( "load", function() {
         e.cancelBubble = true;
 }
 
-//顶部点击菜单出现弹窗；
-//顶部点击菜单出现弹窗；
-var  tapCount;
-tapCount=0;
-$("#menu").on('click',function(){
-	tapCount++;
-	if(tapCount==2){
-        $("#menu-box").addClass("slideInDown animated infinite");
-		$("#menu-box").css({"display":"block"});
-		$(document).on('click',function(){
-            $("#menu-box").removeClass("slideInDown animated infinite");
-		    $("#menu-box").hide();
-		    tapCount=1;
-		});
-	}
-	if(tapCount==4){
-        $("#menu-box").removeClass("slideInDown animated infinite");
-		$("#menu-box").hide();
-		tapCount=0;
-	}
-})
+
 
 
 
@@ -112,3 +93,22 @@ function submitDataCallback(obj,func){
         layer_close_load();
     });
 }
+
+
+//公用切换选项卡；
+var tabsSwiper = new Swiper('.swiper-container',{
+    speed:500,
+    onSlideChangeStart: function(){
+        $(".tabs .active").removeClass('active')
+        $(".tabs b").eq(tabsSwiper.activeIndex).addClass('active')
+    }
+})
+$(".tabs b").on('touchstart mousedown',function(e){
+    e.preventDefault()
+    $(".tabs .active").removeClass('active')
+    $(this).addClass('active')
+    tabsSwiper.swipeTo( $(this).index() )
+})
+$(".tabs b").click(function(e){
+    e.preventDefault()
+})

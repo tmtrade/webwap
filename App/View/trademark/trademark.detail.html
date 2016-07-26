@@ -9,43 +9,47 @@
 </section>
 <section class="deta-cont">
     <div class="main">
-	<ul class="deta-cont-tit">
-	    <li id="message1" onclick="jc('message', 1, 2)" class="on">商标基本信息</li>
-	    <li id="message2" onclick="jc('message', 2, 2)">商标介绍</li>
-	</ul>
-	<div class="deta-cont-main"  id="con_message_1" style="display: block;">
-	    <p class="basic-info">商标分类第<?=$class?>类 - <?=$info['className']?>   当前群组<?=$info['items'][0]['group']?></p>
-	    <p class="enter">此商标可入驻：
-		<?php
-		//定义一个函数
-		function checkIn($arr1,$arr2){
-		foreach($arr1 as $item){
-		if(in_array($item,$arr2)){
-		return true;
-		}
-		}
-		return false;
-		}
-		if(empty($sale['platform'])){//根据类别规则显示
-		foreach($platformIn as $k=>$v){
-		if(checkIn($info['class'],$platformItems[$k])){
-		echo " <a href='".$platformUrl[$k]."' webid='2' addmsg='".$v."' target='_blank' class='cur' >".$v."</a>";
-		}
-		}
-		}else{//根据包装信息显示
-		foreach($platformIn as $k=>$v){
-		if(in_array($k, array_filter(explode(',',$sale['platform'])))){
-		echo " <a href='".$platformUrl[$k]."' webid='2' addmsg='".$v."' target='_blank' class='cur' >".$v."</a>";
-		}
-		}
-		}
-		?>
-	    </p>
-	    <p class="intr">商品列表：<?=$info['goods']?></p>
-	</div>
-	<div class="deta-cont-main" id="con_message_2">
-	    <?=$sale['tminfo']['intro']?>
-	</div>
+        <p class="deta-cont-tit tabs">
+            <b class="active">商标基本信息</b>
+            <b>商标介绍</b>
+        </p>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="deta-cont-main swiper-slide">
+                    <p class="basic-info">商标分类第<?=$class?>类 - <?=$info['className']?>   当前群组<?=$info['items'][0]['group']?></p>
+                    <p class="enter">此商标可入驻：
+                    <?php
+                    //定义一个函数
+                    function checkIn($arr1,$arr2){
+                    foreach($arr1 as $item){
+                    if(in_array($item,$arr2)){
+                    return true;
+                    }
+                    }
+                    return false;
+                    }
+                    if(empty($sale['platform'])){//根据类别规则显示
+                    foreach($platformIn as $k=>$v){
+                    if(checkIn($info['class'],$platformItems[$k])){
+                    echo " <a href='".$platformUrl[$k]."' webid='2' addmsg='".$v."' target='_blank' class='cur' >".$v."</a>";
+                    }
+                    }
+                    }else{//根据包装信息显示
+                    foreach($platformIn as $k=>$v){
+                    if(in_array($k, array_filter(explode(',',$sale['platform'])))){
+                    echo " <a href='".$platformUrl[$k]."' webid='2' addmsg='".$v."' target='_blank' class='cur' >".$v."</a>";
+                    }
+                    }
+                    }
+                    ?>
+                    </p>
+                    <p class="intr">商品列表：<?=$info['goods']?></p>
+                </div>
+                <div class="deta-cont-main swiper-slide">
+                    <p class="desc"><?=$sale['tminfo']['intro']?></p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 <section class="rec-brand">
@@ -83,7 +87,7 @@
 				<input type="tel" id="mobile" placeholder="请输入11位手机号"/>
 			</li>
 			<li class="name">
-				<label><em> </em>您的姓名</label>
+				<label><em>*</em>您的姓名</label>
 				<input type="text" id="name" placeholder="请输入您的姓名"/>
 			</li>
 			<li class="rema">
@@ -116,7 +120,6 @@
 <!-- JiaThis Button END -->
 <script type="text/javascript" src="<?=StaticDir?>1.0/script/xun.js"></script>
 <script type="text/javascript">
-    
      //提交需求
     $('#sub_pt').click(function(){
 	    layer_load();
@@ -154,14 +157,6 @@
 		    //关闭弹窗
 		    $("#gb-tc").click();
 	    });
-    });
-    //详情页基本信息选项卡；
-    $("#message1").on('click', function() {
-	jc('message', 1, 2);
-    });
-
-    $("#message2").on('click', function() {
-	jc('message', 2, 2);
     });
     //提交信息弹窗；
     $("#buy-btn").on('click', function() {

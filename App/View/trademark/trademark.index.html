@@ -117,22 +117,20 @@
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/objurl.js"></script>
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/xun.js"></script>
 	<script type="text/javascript">
-
-
-
         //筛选页面下拉列表搜索；
-        var oh1=$(".yzc-head").outerHeight();
-        var oh2=$(".filt-search").outerHeight();
-        var otp=oh1+oh2;
+//        var oh1=($(".yzc-head").outerHeight())/0.69;
+        var oh2=($(".filt-search").outerHeight())/0.68;
+        var otp=oh2;
 	    var olis = $("#search-Ind li.inp span");
 	    var obox = $("#Ind-box");
 	    var oas = $(".search-Ind-list").find("a");
 	    olis.on("click", function() {
+            alert(oh2)
             olis.removeClass("on");
             $(this).addClass("on");
             $(".search-Ind-bg").hide();
             $(this).siblings(".search-Ind-bg").show();
-            $(this).siblings(".search-Ind-bg").css({"top":otp})
+            $(this).siblings(".search-Ind-bg").css({"top":45+otp})
             $("body, html").css({"overflow":"hidden"});
 
 	    });

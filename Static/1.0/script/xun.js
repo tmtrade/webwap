@@ -1,7 +1,7 @@
 document.write('<script type="text/javascript"  data-lxb-uid="1268165" data-lxb-gid="139337" src="http://lxbjs.baidu.com/api/asset/api.js?t=' + new Date().getTime() + '" charset="utf-8"></scr' + 'ipt>' );
 
 //咨询价格弹窗
-$(".xun_price").on("click",function(){
+$(".xun_price").live("click",function(){
     $("#xun_number").val($(this).data("number"));
     $("#xun_type").val($(this).data("type"));
     layer.open({

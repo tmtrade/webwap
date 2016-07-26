@@ -6,41 +6,45 @@
 		</div>
 	</section>
     <div class="main buy-tit">
-        <p class="brand-pt-search-tit">
-            <b class="on" id="buy1" onclick="jc('buy',1,2)">商标  trademark</b>
-            <b  id="buy2" onclick="jc('buy',2,2)">专利  patent</b>
+        <p class="brand-pt-search-tit tabs">
+            <b class="active">商标  trademark</b>
+            <b>专利  patent</b>
         </p>
     </div>
-	<section class="buy-table" id="con_buy_1" style="display: block">
-		<ul>
-			<li class="dem">
-				<label><em>*</em>购买需求</label>
-				<textarea id="tm_content"></textarea>
-			</li>
-			<li>
-				<label><em>*</em>联系电话</label>
-				<input type="tel" id="tm_mobile"/>
-			</li>
-			<li>
-				<a href="javascript:;" class="tj-btn" id="submit_tm">登记购买信息</a>
-			</li>
-		</ul>
-	</section>
-    <section class="buy-table" id="con_buy_2">
-        <ul>
-            <li class="dem">
-                <label><em>*</em>购买需求</label>
-                <textarea id="pt_content"></textarea>
-            </li>
-            <li>
-                <label><em>*</em>联系电话</label>
-                <input type="tel" id="pt_mobile"/>
-            </li>
-            <li>
-                <a href="javascript:;" class="tj-btn" id="submit_pt">登记购买信息</a>
-            </li>
-        </ul>
-    </section>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <section class="buy-table swiper-slide">
+                <ul>
+                    <li class="dem">
+                        <label><em>*</em>购买需求1</label>
+                        <textarea id="tm_content"></textarea>
+                    </li>
+                    <li>
+                        <label><em>*</em>联系电话</label>
+                        <input type="tel" id="tm_mobile"/>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="tj-btn" id="submit_tm">登记购买信息</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="buy-table swiper-slide">
+                <ul>
+                    <li class="dem">
+                        <label><em>*</em>购买需求2</label>
+                        <textarea id="pt_content"></textarea>
+                    </li>
+                    <li>
+                        <label><em>*</em>联系电话</label>
+                        <input type="tel" id="pt_mobile"/>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="tj-btn" id="submit_pt">登记购买信息</a>
+                    </li>
+                </ul>
+            </section>
+         </div>
+    </div>
 	<section class="buy-btm-ban">
 		<ul class="buy-btm-list">
 			<li>

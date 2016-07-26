@@ -58,8 +58,8 @@ a[href]:hover{
     /*text-decoration: underline;*/
 }
 .animated {
-    -webkit-animation-duration: 0.4s;
-    animation-duration: 0.4s;
+    -webkit-animation-duration: 0.1s;
+    animation-duration: 0.1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both
 }
@@ -184,7 +184,7 @@ a[href]:hover{
 	flex-grow: 1;
 }
 .top-head{
-	margin-top: 0.84rem;
+    margin-top: 0.94rem;
 }
 
 /*公用组件*/
@@ -276,6 +276,7 @@ a[href]:hover{
 	right: 0.10rem;
     top: 0.85rem;
 	display: none;
+    z-index: 99;
 }
 .menu-box a{
 	display:block;
@@ -300,6 +301,7 @@ a[href]:hover{
 	top:0px;
 	left: 0px;
     border-bottom: 5px solid #353535;
+    z-index: 99;
 	
 }
 .list-head a.fl {
@@ -376,7 +378,7 @@ a[href]:hover{
 	width: 100%;
 	height: 1.46rem;
     background: #4d4d4d;
-    margin-top: 0.24rem;
+    /*margin-top: 0.24rem;*/
 }
 .yzc-btm-main{
 	padding-left: 0.54rem;
@@ -399,15 +401,16 @@ a[href]:hover{
 	height: 0.58rem;
 	line-height: 0.58rem;
 }
-.yzc-btm-main p a{
+.yzc-btm-main p a i{
 	display: inline-block;
 	width: 0.21rem;
-	height: 0.2rem;
+	height: 0.18rem;
 	background: url(../images/btm-ico.png) no-repeat center top;
 	background-size: 100% auto;
 	margin-left:0.26rem;
 	margin-right:0.08rem;
 	vertical-align: middle;
+    margin-bottom: 3px;
 }
 
 /*弹窗共用样式*/
@@ -422,12 +425,20 @@ a[href]:hover{
 }
 /*分享*/
 .yzc-share{
+    width: 100%;
+    background-color: #333;
 	position: fixed;
-	right:10px;
+	/*right:10px;*/
 	top:0.84rem;
 	display: none;
 	color: #FFFFFF;
+    padding-bottom: 10px;
+    padding-top:10px;
 }
 .yzc-share a{
 	color: #FFFFFF;
+    margin-top: 10px;
+}
+.jiathis_style  .button, .jiathis_style .jiathis_txt{
+    margin-left: 15px;
 }
