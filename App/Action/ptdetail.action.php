@@ -6,6 +6,7 @@
  * Time: 下午 14:48
  */
 class PtdetailAction extends AppAction{
+    public $ptype       = 11;
     /**
      * 设置标题
      * @param $data
@@ -13,7 +14,7 @@ class PtdetailAction extends AppAction{
      */
     private function getTitle($data)
     {
-        $title = $data['name']."_".$data['class']."类_"."专利转让|买卖|交易|价格 – 一只蝉商标转让平台网";
+        $title = $data['name']."_".$data['class']."类_"."专利转让|买卖|交易|价格 – 一只蝉商标专利转让平台网";
         $keywords = $data['name'].'专利转让,'.$data['class'].'类专利转让'.',商标转让,注册商标交易买卖';
         $description = $data['name'].','.$data['class'].'类专利转让交易买卖价格信息。购买专利商标到一只蝉商标交易平台第一时间获取商标价格信息,一只蝉商标转让平台网-独家签订交易损失赔付保障协议商标交易买卖平台';
         return array("title"=>$title,"keywords"=>$keywords,"description"=>$description);

@@ -8,6 +8,7 @@
 class PtsearchAction extends AppAction{
 
     private $row_num = 8;
+    public $ptype = 10;
 
     /**
      * 获取列表
@@ -50,6 +51,13 @@ class PtsearchAction extends AppAction{
         list($t_title, $c_title) = $this->getWhereTitle($type, $class);
         $this->set('t_title', $t_title);
         $this->set('c_title', $c_title);
+        //seo
+        $this->pageTitle = '专利购买,专利转让,买卖专利信息网-- 一只蝉专利转让网';
+        $this->pageKey  = '专利购买,专利转让,专利转让信息,买卖专利,专利买卖信息';
+        $this->pageDescription = '一只蝉为你提供购买专利,专利转让信息,买卖专利信息,专利申请等服务，一只蝉是超凡集团资产交易平台。多年专利行业经验，为你提供专业的专利转让买卖服务。';
+        $this->set('title', $this->pageTitle);
+        $this->set('keywords', $this->pageKey);
+        $this->set('description', $this->pageDescription);
         //渲染页面
         $this->set('kw', $kw);
         $this->set('now_type', $type);

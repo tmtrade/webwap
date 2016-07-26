@@ -19,7 +19,9 @@
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/func.js?v=<?=$static_version?>"></script>
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/my.js?v=<?=$static_version?>"></script>
 	<script type="text/javascript">
-	    var HOST = '<?=UC_URL?>';
+	    var HOST = '<?=UC_URL?>';//后台站点
+	    var tj_host = '<?=TRADE_STATIC?>';//统计站点
+		var ptype = '<?=$ptype?>';//页面标识
 	    $(function() {
 		//获得登录相关的参数
 		var timestamp = '';

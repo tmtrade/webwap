@@ -6,7 +6,7 @@
  * Time: 下午 14:48
  */
 class SellAction extends AppAction{
-
+    public $ptype = 13;
     /**
      * 渲染页面
      */

@@ -14,20 +14,14 @@ abstract class AppAction extends Action
      * 每页显示多少行
      */
     public $rowNum      = 10;
-    
     public $username     = '';
-    
     public $userId       = '';
-    
     public $isLogin      = false;
-
     public $pageTitle     = '商标转让-百万注册商标转让交易买卖平台- 一只蝉商标转让平台网';
-    
     public $pageKey     = '商标转让,一只蝉,商标转让网,注册商标转让,转让商标,商标买卖,商标交易,商标交易网';
-    
     public $pageDescription = '商标转让上一只蝉商标转让平台网,一只蝉是超凡集团商标交易平台：13年积累约200余万商标转让信息-也是中国独家签订交易损失赔付协议保障风险平台。提供专业的商标交易,商标买卖等服务';
-        
     public $seotime = "一只蝉商标转让平台网";
+    public $ptype = 0;
 
     /**
      * 前置操作(框架自动调用)
@@ -48,7 +42,7 @@ abstract class AppAction extends Action
         $this->set('title', $this->pageTitle);//页面title
         $this->set('keywords', $this->pageKey);//页面keywords
         $this->set('description', $this->pageDescription);//页面description
-        
+        $this->set('ptype',$this->ptype);//设置页面标识
         $this->set('static_version', 1234);//静态文件版本号>>控制js,css缓存
     }
 
