@@ -37,7 +37,7 @@ function jc(name,curr,n)
 }
 //解决zepto的点头事件
 window.addEventListener( "load", function() {
-     FastClick.attach( document.body );
+    FastClick.attach( document.body );
 }, false );
 
 //阻止默认事件执行的函数
