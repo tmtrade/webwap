@@ -121,7 +121,7 @@
 				   layer_close_load();
 				   return false;
 			   }
-			   submit_data('/sell/addsell',{'number':number,'mobile':mobile,'price':price});
+			   submit_data('/sell/addsell',{'number':number,'mobile':mobile,'price':price},1);
 		   });
 		   //提交专利
 		   $('#sub_pt').click(function(){
@@ -147,14 +147,16 @@
 				   layer_close_load();
 				   return false;
 			   }
-			   submit_data('/sell/addPtSell',{'number':number,'mobile':mobile,'price':price});
+			   submit_data('/sell/addPtSell',{'number':number,'mobile':mobile,'price':price},2);
 		   });
 	   });
 	   //提交数据
-	   function submit_data(url,data){
+	   function submit_data(url,data,type){
 			$.post(url,data,function(res){
 				if(res.code==0){
 					layer_success('提交成功');
+					var content_0 = '编号:'+data.number+';电话:'+data.mobile+';价格:'+data.price;
+					sendBehavior(type,13,0,0,content_0);//发送统计数据
 					empty_data();
 				}else{
 					layer_error(res.msg);

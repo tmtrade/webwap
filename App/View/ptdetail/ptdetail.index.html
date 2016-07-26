@@ -171,6 +171,8 @@
 			   buyGoods(buyData,function(){
 				   //关闭弹窗
 				   $("#gb-tc").click();
+				   //提交数据
+				   sendBehavior(30,ptype,0,0,buyData.remarks);//发送统计数据
 			   });
 		   });
 		   //列表页头部点击分享按钮的时候弹出分享页面；

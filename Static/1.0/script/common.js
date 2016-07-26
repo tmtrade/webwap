@@ -102,6 +102,7 @@ function submitDataCallback(obj,func){
             })
         }else if(n.code!=0 && n.data.netcode==1){
             if(typeof func=='function') func();
+            sendBehavior(1,ptype, 0, 0,'tel:'+mobile+' 需求:'+need);//保存操作信息
             //弹出成功框
             layer_success('提交成功');
         }else{

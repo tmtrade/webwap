@@ -118,13 +118,14 @@
 			data['remarks'] = need;
 			data['type'] = type;
 			data['pttype'] = "求购";
-//			sendBehavior(1,12, 0, 0,'tel:'+mobile+' 需求:'+need);//保存操作信息
-			buyGoods(data,clearBuy);
-		}
-		//清空信息
-		function clearBuy(){
-			$("#content").text('');
-			$("#mobile").val('');
+			buyGoods(data,function(){
+				$("#content").text('');
+				$("#mobile").val('');
+				//提交数据
+				var type_0 = 1;
+				if(type==7) type_0=2;
+				sendBehavior(type_0,ptype,0,0,data.remarks);//发送统计数据
+			});
 		}
 	</script>
 <? require(ViewDir.'/footer.html'); ?>

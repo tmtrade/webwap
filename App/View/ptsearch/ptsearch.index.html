@@ -10,7 +10,7 @@
 					<div class="search-Ind-box">
 						<div class="search-Ind-list" id="pt_type2">
 							<?foreach ($_TYPE as $k => $v) {?>
-							<p><a i="<?=$k?>" class="<?=(in_array($k,$t_arr))?'on':''?>"> <label><?=$v?><?=(in_array($k,$t_arr))?'</label><i></i>':''?></a></p>
+							<p><a i="<?=$k?>" tj='<?=$k?>' class="<?=(in_array($k,$t_arr))?'on':''?>"> <label><?=$v?><?=(in_array($k,$t_arr))?'</label><i></i>':''?></a></p>
 							<?}?>
 						</div>
 						<div class="search-Ind-btn">
@@ -27,7 +27,7 @@
 					<div class="search-Ind-box">
 						<div class="search-Ind-list" id="pt_class2">
 							<?foreach ($_CLASS as $k => $v) {?>
-							<p><a i="<?=$k?>" class="<?=(in_array($k,$c_arr))?'on':''?>"> <label><?=$v?><?=(in_array($k,$c_arr))?'</label><i></i>':''?></a></p>
+							<p><a i="<?=$k?>" webid="2" addmsg="<?=$v?>" class="<?=(in_array($k,$c_arr))?'on':''?>"> <label><?=$v?><?=(in_array($k,$c_arr))?'</label><i></i>':''?></a></p>
 							<?}?>
 						</div>
 						<div class="search-Ind-btn">
@@ -131,15 +131,18 @@
 				var type = $(this).closest('.search-Ind-bg').attr('i');
 				//得到选中的值
 				var value = '';
+				var value_0 = '';//数据统计用
 				as.each(function(){
 					if($(this).hasClass('on')){
 						value += (','+$(this).attr('i'));
+						value_0 += (','+$(this).attr('tj'));
 					}
 				});
 				if(value){
 					//加载数据
 					value = value.substring(1);
-					createUrl(type,value);
+					value_0 = value_0.substring(1);
+					createUrl(type,value,value_0);
 				}
 				layer_close_load();
                 $("body, html").css({"overflow":"auto"});
@@ -218,7 +221,8 @@
 			});
 		}
 		//处理url
-		function createUrl(parameter,value){
+		function createUrl(parameter,value,value_0){
+			//提交统计数据
 			//得到url对象
 			var obj = new objURL('/?'+now_param);
 			//设置url
@@ -226,9 +230,11 @@
 				case "_type" :
 					obj.set('t', value);
 					if ( value != now_type) obj.set('c', '');
+					sendBehavior(1,ptype,0,0,value_0);//发送统计数据
 					break;
 				case "_class" :
 					obj.set('c', value);
+					sendBehavior(2,ptype,0,0,value_0);//发送统计数据
 					break;
 			}
 			//得到当前url
