@@ -133,7 +133,7 @@
 	color: #FFFFFF;
 	position: absolute;
 	left:33.3%;
-	top:-0.3rem
+	top:-0.34rem
 }
 .yzc-class-show{
 	/*display:-webkit-flex;
@@ -339,6 +339,7 @@
 }
 .filt-list{
     overflow: hidden;
+    padding-bottom: 0.24rem;
 }
 .filt-list ul{
 	margin-left: -15px;
@@ -456,7 +457,7 @@
 	color: #999999;
 	overflow: hidden;
 	/*display: none;*/
-	padding-bottom: 0.6rem;
+	/*padding-bottom: 0.6rem;*/
 }
 .deta-cont-main .enter,.deta-cont-main .intr{
 	padding-left: 0.35rem;
@@ -498,7 +499,7 @@
 .rec-brand .yzc-class-tit span{
 	padding-left: 0.9rem !important;
 	padding-right: 0.9rem !important;
-	left: 32% !important;
+	left: 30.8% !important;
 }
 .rec-brand .rec-brand-list{
 	width: 100%;
