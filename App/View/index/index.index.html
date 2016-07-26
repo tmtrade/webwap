@@ -10,19 +10,19 @@
                     <div class="swiper-wrapper">
                         <div class="brand-box swiper-slide">
                             <div class="brand-inp">
-                                <form action="/trademark/index"  method="post" id="seachfrom">
-                                <input class="search-inp" type="text" name="name" placeholder="请输入您要搜索的商标名或商标号"/>
-                                <input type="submit" class="search-btn" value="">
+                                <form action="/trademark/index"  method="post" id="trademarkfrom">
+                                <input class="search-inp" type="text" name="name" id="td_kw" placeholder="请输入您要搜索的商标名或商标号"/>
+                                <input type="button" class="search-btn" value="" id="td_search">
                                 </form>
                             </div>
                             <p>
-                                <a href="/trademark/index/?c=25">服装</a>
-                                <a href="/trademark/index/?c=18">箱包</a>
-                                <a href="/trademark/index/?c=9">电子数码 </a>
-                                <a href="/trademark/index/?c=3">化妆品 </a>
-                                <a href="/trademark/index/?c=30">食品 </a>
-                                <a href="/trademark/index/?c=31">农产品 </a>
-								<a href="/trademark/index/?c=43">餐饮</a>
+                                <a href="/trademark/index/?class=25">服装</a>
+                                <a href="/trademark/index/?class=18">箱包</a>
+                                <a href="/trademark/index/?class=9">电子数码 </a>
+                                <a href="/trademark/index/?class=3">化妆品 </a>
+                                <a href="/trademark/index/?class=30">食品 </a>
+                                <a href="/trademark/index/?class=31">农产品 </a>
+								<a href="/trademark/index/?class=43">餐饮</a>
                             </p>
                         </div>
                         <div class="brand-box swiper-slide">
@@ -42,7 +42,7 @@
             </div>
 		</section>
 		<nav class="yzc-nav">
-			<a href="#">
+			<a href="/trademark/index/">
 				<span>
 					<img src="<?=StaticDir?>1.0/images/nav-ico1.png" />
 				</span>
@@ -51,7 +51,7 @@
 					trademark
 				</p>
 			</a>
-			<a href="#">
+			<a href="/ptsearch/index/">
 				<span>
 					<img src="<?=StaticDir?>1.0/images/nav-ico2.png" />
 				</span>
@@ -60,7 +60,7 @@
 					patent
 				</p>
 			</a>
-			<a href="#">
+			<a href="/buy">
 				<span>
 					<img src="<?=StaticDir?>1.0/images/nav-ico3.png" />
 				</span>
@@ -69,7 +69,7 @@
 					buy
 				</p>
 			</a>
-			<a href="#">
+			<a href="/sell">
 				<span>
 					<img src="<?=StaticDir?>1.0/images/nav-ico4.png" />
 				</span>
@@ -84,7 +84,7 @@
 				<span>热门商标类别</span>
 			</div>
 			<div class="yzc-class-show">
-				<a href="/trademark/index/?c=25">
+				<a href="/trademark/index/?class=25">
 					<span>
 						<img src="<?=StaticDir?>1.0/images/clas-ico1.jpg" />
 					</span>
@@ -93,7 +93,7 @@
 						服装鞋帽
 					</p>
 				</a>
-				<a href="/trademark/index/?c=3">
+				<a href="/trademark/index/?class=3">
 					<span>
 						<img src="<?=StaticDir?>1.0/images/clas-ico2.jpg" />
 					</span>
@@ -102,7 +102,7 @@
 						化妆日化
 					</p>
 				</a>
-				<a href="/trademark/index/?c=9">
+				<a href="/trademark/index/?class=9">
 					<span>
 						<img src="<?=StaticDir?>1.0/images/clas-ico3.jpg" />
 					</span>
@@ -114,19 +114,19 @@
 			</div>
 			<ul class="yzc-class-list odd-cg">
 				<li>
-					<a href="/trademark/index/?c=29"><label>&bull;</label>29类 肉食蜜饯</a>
-					<a href="/trademark/index/?c=30"><label>&bull;</label>30类 方便食品</a>
-					<a href="/trademark/index/?c=31"><label>&bull;</label>31类 饲料花木</a>
+					<a href="/trademark/index/?class=29"><label>&bull;</label>29类 肉食蜜饯</a>
+					<a href="/trademark/index/?class=30"><label>&bull;</label>30类 方便食品</a>
+					<a href="/trademark/index/?class=31"><label>&bull;</label>31类 饲料花木</a>
 				</li>
 				<li>
-					<a href="/trademark/index/?c=43"><label>&bull;</label>43类 餐饮住宿</a>
-					<a href="/trademark/index/?c=18"><label>&bull;</label>18类 皮革皮具</a>
-					<a href="/trademark/index/?c=11"><label>&bull;</label>11类 家用电器</a>
+					<a href="/trademark/index/?class=43"><label>&bull;</label>43类 餐饮住宿</a>
+					<a href="/trademark/index/?class=18"><label>&bull;</label>18类 皮革皮具</a>
+					<a href="/trademark/index/?class=11"><label>&bull;</label>11类 家用电器</a>
 				</li>
 				<li>
-					<a href="/trademark/index/?c=33"><label>&bull;</label>33类 酒精饮料</a>
-					<a href="/trademark/index/?c=5"><label>&bull;</label>05类 医用药品</a>
-					<a href="/trademark/index/?c=1"><label>&bull;</label>01类 化工原料</a>
+					<a href="/trademark/index/?class=33"><label>&bull;</label>33类 酒精饮料</a>
+					<a href="/trademark/index/?class=5"><label>&bull;</label>05类 医用药品</a>
+					<a href="/trademark/index/?class=1"><label>&bull;</label>01类 化工原料</a>
 				</li>
 			</ul>
 		</section>

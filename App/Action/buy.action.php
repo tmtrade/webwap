@@ -33,7 +33,7 @@ class BuyAction extends AppAction{
         if($res){
             $enquiry = $this->com('redisHtml')->get('enquiry'.$phone);
             if(empty($enquiry)){
-               // $this->load('phoneEnquiry')->sendMsg($phone);
+                $this->load('phoneEnquiry')->sendMsg($phone);
                 $this->com('redisHtml')->set('enquiry'.$phone, 1, 86400);
             }
         }

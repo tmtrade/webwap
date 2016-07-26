@@ -1,4 +1,5 @@
 <? require(ViewDir.'/header.html'); ?>
+<? require(ViewDir.'/header2.html'); ?>
 <section class="deta-banner top-head">
     <h2 title="<?=$info['name']?>"><?=$class?>类 <?=empty($info['thum_name'])?'【暂无商标名称】':$info['thum_name']?></h2>
     <h6><?=$sale['value']?></h6>
@@ -103,17 +104,6 @@
 	<input type="hidden" id="remarks"  value="<?='商标号-'.$item['number']?>">
     </div>
    
-<!--咨询价格弹窗-->
-    <div class="refer-cost" >
-        <div class="refer-cost-pic"></div>
-        <div class="refer-cost-main">
-            <input type="tel" placeholder="请输入11位手机号" id="xun_phone"/>
-            <label id="tips" style="display: none;">输入错误</label>
-            <a href="javascript:void(0)" id="xun_submit">咨询价格</a>
-	    <input type="hidden" value="" id="xun_number">
-	    <input type="hidden" value="1" id="xun_type">
-        </div>
-    </div>
 <!--fenxiang -->
 <div class="jiathis_style yzc-share">
     <span class="jiathis_txt">分享到：</span>
@@ -158,8 +148,9 @@
 	    buyData['trademark'] 	= $('#trademark').val();
 	    buyData['class'] 		= $('#class').val();
 	    buyData['subject'] 		= '求购信息';
-	    buyData['type'] 		= 7;
+	    buyData['type'] 		= 5;
 	    buyData['remarks'] 		= remarks;
+	    buyData['pttype']		= "求购";
 	    //提交数据
 	    buyGoods(buyData,function(){
 		    //关闭弹窗

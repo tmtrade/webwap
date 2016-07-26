@@ -1,64 +1,80 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Hello MUI</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<link rel="stylesheet" href="<?=StaticDir?>1.0/style/common.css?v=<?=$static_version?>">
+    <head>
+	<meta charset="utf-8">
+	<title><?=$title?></title>
+	<? if(!empty($keywords)) {?><meta name="keywords" content="<?=$keywords?>"><? }?>
+
+	<? if(!empty($description)) {?><meta name="description" content="<?=$description?>"> <? }?>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="<?=StaticDir?>1.0/style/common.css?v=<?=$static_version?>">
         <link rel="stylesheet" href="<?=StaticDir?>1.0/style/swiper.css?v=<?=$static_version?>">
-		<link rel="stylesheet" href="<?=StaticDir?>1.0/style/style.css?v=<?=$static_version?>">
-		<script type="text/javascript" src="<?=StaticDir?>1.0/script/jquery-1.8.3.min.js?v=<?=$static_version?>"></script>
-		<script type="text/javascript" src="<?=StaticDir?>1.0/script/layer/layer.js?v=<?=$static_version?>"></script>
-	    <script type="text/javascript" src="<?=StaticDir?>1.0/script/fastclick.js?v=<?=$static_version?>"></script>
+	<link rel="stylesheet" href="<?=StaticDir?>1.0/style/style.css?v=<?=$static_version?>">
+	<script type="text/javascript" src="<?=StaticDir?>1.0/script/jquery-1.8.3.min.js?v=<?=$static_version?>"></script>
+	<script type="text/javascript" src="<?=StaticDir?>1.0/script/layer/layer.js?v=<?=$static_version?>"></script>
+	<script type="text/javascript" src="<?=StaticDir?>1.0/script/fastclick.js?v=<?=$static_version?>"></script>
         <script type="text/javascript" src="<?=StaticDir?>1.0/script/swiper.scroll-2.1.js?v=<?=$static_version?>"></script>
-	    <script type="text/javascript" src="<?=StaticDir?>1.0/script/func.js?v=<?=$static_version?>"></script>
-	    <script type="text/javascript" src="<?=StaticDir?>1.0/script/my.js?v=<?=$static_version?>"></script>
-	    <script type="text/javascript">
-			var HOST = '<?=UC_URL?>';
-			$(function(){
-				//获得登录相关的参数
-				var timestamp = '';
-				var nonceStr = '';
-				var signature = '';
-				$.ajax({
-					async: true,
-					type : 'post',
-					url  : '/index/getLogin',
-					data : '',
-					dataType : 'json',
-					complete : function(xhr,status){
-						ucConfig.setConfig(timestamp,nonceStr,signature);
-					},
-					success : function (data){
-						timestamp = data.timestamp;
-						nonceStr = data.nonceStr;
-						signature = data.signature;
-					},
-					error : function (data){
-						layer_msg('初始化登录失败');
-					}
-				});
-			});
-	    	//适配rem的兼容代码
-			(function (doc, win) {
-			    var docEl = doc.documentElement,
-			            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-			            recalc = function () {
-			                var clientWidth = docEl.clientWidth;
-			                if (!clientWidth) return;
-			                if(clientWidth>=770){
-			                    docEl.style.fontSize = '100px';
-			                }else{
-			                    docEl.style.fontSize = 100 * (clientWidth / 770) + 'px';
-			                }
-			            };
-			
-			    if (!doc.addEventListener) return;
-			    win.addEventListener(resizeEvt, recalc, false);
-			    doc.addEventListener('DOMContentLoaded', recalc, false);
-			})(document, window);
-	    </script>
-	</head>
-	<body>
+	<script type="text/javascript" src="<?=StaticDir?>1.0/script/func.js?v=<?=$static_version?>"></script>
+	<script type="text/javascript" src="<?=StaticDir?>1.0/script/my.js?v=<?=$static_version?>"></script>
+	<script type="text/javascript">
+	    var HOST = '<?=UC_URL?>';
+	    $(function() {
+		//获得登录相关的参数
+		var timestamp = '';
+		var nonceStr = '';
+		var signature = '';
+		$.ajax({
+		    async: true,
+		    type: 'post',
+		    url: '/index/getLogin',
+		    data: '',
+		    dataType: 'json',
+		    complete: function(xhr, status) {
+			ucConfig.setConfig(timestamp, nonceStr, signature);
+		    },
+		    success: function(data) {
+			timestamp = data.timestamp;
+			nonceStr = data.nonceStr;
+			signature = data.signature;
+		    },
+		    error: function(data) {
+			layer_msg('初始化登录失败');
+		    }
+		});
+	    });
+	    //适配rem的兼容代码
+	    (function(doc, win) {
+		var docEl = doc.documentElement,
+			resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+			recalc = function() {
+			    var clientWidth = docEl.clientWidth;
+			    if (!clientWidth)
+				return;
+			    if (clientWidth >= 770) {
+				docEl.style.fontSize = '100px';
+			    } else {
+				docEl.style.fontSize = 100 * (clientWidth / 770) + 'px';
+			    }
+			};
+
+		if (!doc.addEventListener)
+		    return;
+		win.addEventListener(resizeEvt, recalc, false);
+		doc.addEventListener('DOMContentLoaded', recalc, false);
+	    })(document, window);
+	</script>
+    </head>
+    <body>
+	<!--咨询价格弹窗-->
+	<div class="refer-cost" >
+	    <div class="refer-cost-pic"></div>
+	    <div class="refer-cost-main">
+		<input type="tel" placeholder="请输入11位手机号" id="xun_phone"/>
+		<label id="tips" style="display: none;">输入错误</label>
+		<a href="javascript:void(0)" id="xun_submit">咨询价格</a>
+		<input type="hidden" value="" id="xun_number">
+		<input type="hidden" value="1" id="xun_type">
+	    </div>
+	</div>

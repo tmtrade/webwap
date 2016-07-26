@@ -90,7 +90,6 @@ class TrademarkAction extends AppAction
 		$this->set("platformUrl", C('PLATFORM_URL'));
 		$this->set("platformItems", C('PLATFORM_ITEMS'));
 		//商标是否出售,获取其他信息
-		$issale = 0;
 		$tid 	= $info['tid'];
 		$class 	= current($info['class']);
 		$_class = implode(',', $info['class']);
@@ -107,12 +106,10 @@ class TrademarkAction extends AppAction
 		//分配数据
 		$this->set("info", $info);
 		$this->set("sale", $sale);
-		$this->set("need", $need);
-		$this->set("topic", $topic);
 		$this->set("refer", $refer);
 		$this->set("class", $class);
-		$this->set("isSale", $isSale);
 		$this->set("platform", $platform);
+                $this->set("page_title", '商标详情');
 		$this->display();
     }
 
