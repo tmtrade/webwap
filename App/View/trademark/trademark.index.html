@@ -250,7 +250,7 @@
         var scrollTop = $(this).scrollTop();
         var scrollHeight = $(document).height();
         var windowHeight = $(this).height();
-        if (scrollHeight - scrollTop - windowHeight < 100 && scrollHeight - scrollTop - windowHeight>0)  {
+        if (scrollHeight - scrollTop - windowHeight < 1 )  {
             loadMore();
         }
     });
