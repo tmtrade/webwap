@@ -40,7 +40,7 @@
     transition:all 0.4s;
 }
 .search-main .brand-inp{
-	width:95%;
+    padding-right: 0.36rem;
 	height: 0.7rem;
 	margin-top: 0.13rem;
 }
@@ -472,7 +472,7 @@
 	/*display: none;*/
 
 }
-.deta-cont-main p{
+.deta-cont-main:first-child p{
     width: 92.6666%;
 }
 .deta-cont-main .enter,.deta-cont-main .intr{
