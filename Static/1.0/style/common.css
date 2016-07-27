@@ -184,7 +184,7 @@ a[href]:hover{
 	flex-grow: 1;
 }
 .top-head{
-    margin-top: 0.94rem;
+    margin-top: 0.9rem;
 }
 
 /*公用组件*/
@@ -435,10 +435,15 @@ a[href]:hover{
     padding-bottom: 10px;
     padding-top:10px;
 }
+.yzc-share span{
+    display: inline-block;
+}
 .yzc-share a{
-	color: #FFFFFF;
+    color: #FFFFFF;
     margin-top: 10px;
 }
 .jiathis_style  .button, .jiathis_style .jiathis_txt{
     margin-left: 15px;
+    line-height: 38px!important;
 }
+

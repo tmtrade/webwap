@@ -445,13 +445,13 @@
 }
 .deta-cont-tit{
 	margin-top: 0.14rem;
-	height: 0.65rem;
+	height: 0.85rem;
 }
 .deta-cont-tit b{
 	text-align:center;
 	float: left;
 	width:50%;
-	line-height: 0.65rem;
+	line-height: 0.85rem;
 	border-bottom: 1px solid #2d2d2d;
 	color: #b1b1b1;
 	cursor: pointer;
@@ -464,9 +464,11 @@
 	min-height: 3rem;
 	margin-top: 0.14rem;
 	color: #999999;
+    padding-bottom: 0.6rem;
+    width: 47% !important;
 	overflow: hidden;
 	/*display: none;*/
-	/*padding-bottom: 0.6rem;*/
+
 }
 .deta-cont-main .enter,.deta-cont-main .intr{
 	padding-left: 0.35rem;
@@ -475,8 +477,10 @@
     margin-top: 0.24rem;
     text-indent: 2em;
     line-height: 24px;
+    padding-left: 20px;
 }
 .basic-info{
+    width: 96%;
 	padding-top:0.12rem;
 	padding-bottom:0.12rem;
 	background: #f6f6f6;

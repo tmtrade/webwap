@@ -2,7 +2,6 @@
 var  tapCount;
 tapCount=0;
 $("#menu").on('click',function(){
-
     tapCount++;
     if(tapCount==1){
         $("#menu-box").addClass("slideInDown animated infinite");
@@ -20,6 +19,17 @@ $("#menu").on('click',function(){
         tapCount=0;
     }
 })
+$("#menu,#menu-box").on('click',function(e){
+    stopPropagation(e);
+});
+//阻止默认事件执行的函数
+
+function stopPropagation(e) {
+    if (e.stopPropagation)
+        e.stopPropagation();
+    else
+        e.cancelBubble = true;
+}
 //选项卡函数
 function jc(name,curr,n)
     {
@@ -40,22 +50,13 @@ window.addEventListener( "load", function() {
     FastClick.attach( document.body );
 }, false );
 
-//阻止默认事件执行的函数
-
- function stopPropagation(e) {
-    if (e.stopPropagation) 
-        e.stopPropagation();
-    else 
-        e.cancelBubble = true;
-}
 
 
 
 
 
-$("#menu,#menu-box").on('click',function(e){
-    stopPropagation(e);
-});
+
+
 
 
 //关闭共用谈话框
@@ -115,12 +116,38 @@ $(".tabs b").click(function(e){
 
 
 //列表页头部点击分享按钮的时候弹出分享页面；
+//$("#share").on('click',function(){
+//    $(".yzc-share").show();
+//});
+//$(document).on('click',function(){
+//    $(".yzc-share").hide();
+//});
+//
+//$("#share,.yzc-share").on('click',function(e){
+//    stopPropagation(e);
+//});
+
+//顶部点击菜单出现弹窗；
+var  tapCount2;
+tapCount2=0;
 $("#share").on('click',function(){
-    $(".yzc-share").show();
-});
-$(document).on('click',function(){
-    $(".yzc-share").hide();
-});
+    tapCount2++;
+    if(tapCount2==1){
+        $(".yzc-share").addClass("slideInDown animated infinite");
+        $(".yzc-share").css({"display":"block"});
+        $(document).on('click',function(){
+            $(".yzc-share").removeClass("slideInDown animated infinite");
+            $(".yzc-share").hide();
+            tapCount2=0;
+        });
+        tapCount2=1;
+    }
+    if(tapCount2==2){
+        $(".yzc-share").removeClass("slideInDown animated infinite");
+        $(".yzc-share").hide();
+        tapCount2=0;
+    }
+})
 
 $("#share,.yzc-share").on('click',function(e){
     stopPropagation(e);
