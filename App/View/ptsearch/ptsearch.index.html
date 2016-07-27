@@ -145,6 +145,10 @@
 					createUrl(type,value,value_0);
 				}
 				layer_close_load();
+				//关闭
+				$('#search-Ind').find('li.inp span').removeClass('on');//选中效果
+				$(".search-Ind-bg").hide();//下拉效果
+				tem = [];//清空暂存数组
                 $("body, html").css({"overflow":"auto"});
 			});
 			//取消
