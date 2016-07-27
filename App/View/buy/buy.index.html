@@ -16,7 +16,7 @@
             <section class="buy-table swiper-slide">
                 <ul>
                     <li class="dem">
-                        <label><em>*</em>购买需求1</label>
+                        <label><em>*</em>购买需求</label>
                         <textarea id="tm_content"></textarea>
                     </li>
                     <li>
@@ -31,7 +31,7 @@
             <section class="buy-table swiper-slide">
                 <ul>
                     <li class="dem">
-                        <label><em>*</em>购买需求2</label>
+                        <label><em>*</em>购买需求</label>
                         <textarea id="pt_content"></textarea>
                     </li>
                     <li>
@@ -134,8 +134,10 @@
 			data['type'] = type;
 			data['pttype'] = "求购";
 			buyGoods(data,function(){
-				$("#content").text('');
-				$("#mobile").val('');
+				$("#pt_content").val('');
+				$("#tm_content").val('');
+				$("#pt_mobile").val('');
+				$("#tm_mobile").val('');
 				//提交数据
 				var type_0 = 1;
 				if(type==7) type_0=2;
