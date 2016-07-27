@@ -167,10 +167,11 @@
 			});
 			//滚动事件
 			$(window).scroll(function () {
+				if(is_load) return false;//加载中,直接返回
 				var scrollTop = $(this).scrollTop();
 				var scrollHeight = $(document).height();
 				var windowHeight = $(this).height();
-				if (scrollHeight == scrollTop + windowHeight && is_load==false)  {
+				if (scrollHeight-scrollTop-windowHeight<80)  {
 					loadMore();
 				}
 			});
