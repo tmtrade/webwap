@@ -22,8 +22,8 @@
 	display: inline-block;
 	width: 50%;
 	float:left;
-	height: 0.66rem;
-	line-height: 0.66rem;
+    height: 0.86rem;
+    line-height: 0.86rem;
 	color: #b1b1b1;
 	border-bottom: 1px solid #2d2d2d;
 	text-align: center;
@@ -79,6 +79,7 @@
 	float: left;
 }
 .yzc-nav{
+    width: 100%;
 	margin-top: 0.3rem;
 }
 .yzc-nav a{
@@ -89,6 +90,7 @@
 	display: inline-block;
 	width:24%;
 	color: #999999;
+    overflow: hidden;
 }
 .yzc-nav a span{
 	max-width: 1.3rem;
@@ -146,8 +148,9 @@
 .yzc-class-show a{
 	/*flex: 1;*/
 	display: inline-block;
-	width: 32.4%;
+	width: 32.2%;
     height: 100%;
+    overflow: hidden;
 }
 
 .yzc-class-show a p{
@@ -191,12 +194,18 @@
 }
 .yzc-class-list li a{
 	display: inline-block;
+    width: 33.3%;
 	color: #666666;
-	min-width: 1.12rem;
-	margin-left: 0.6rem;
 	margin-top: 0.2rem;
 	float:left;
     font-size: 0.24rem;
+    text-align: center;
+}
+.yzc-class-list li a label{
+    display: inline-block;
+    margin-right: 3px;
+    vertical-align: middle;
+    margin-bottom:6px;
 }
 .pat-list{
 	margin-top: 0.6rem;
@@ -848,9 +857,9 @@
     .yzc-class-show a p{
         margin-right: 0.04rem;
     }
-    .yzc-class-list li a{
-    	margin-left: 0.3rem;
-    }
+    /*.yzc-class-list li a{*/
+    	/*margin-left: 0.3rem;*/
+    /*}*/
     .search-Ind-list ul li p a{
 	    width: 2.42rem;
 	    margin-left: 0.08rem;

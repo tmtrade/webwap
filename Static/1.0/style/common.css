@@ -300,7 +300,7 @@ a[href]:hover{
 	position:fixed;
 	top:0px;
 	left: 0px;
-    border-bottom: 5px solid #353535;
+    border-bottom:2px solid #353535;
     z-index: 99;
 	
 }

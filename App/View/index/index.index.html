@@ -136,7 +136,6 @@
 			</div>
 			<ul class="yzc-class-list pat-list odd-cg">
 				<li>
-					<a href="/ptsearch/index"><label>&bull;</label>全部</a>
 					<a href="/ptsearch/index/?t=1"><label>&bull;</label>发明</a>
 					<a href="/ptsearch/index/?t=2"><label>&bull;</label>实用新型</a>
 					<a href="/ptsearch/index/?t=3"><label>&bull;</label>外观设计</a>
@@ -161,10 +160,10 @@
        //判断弹出框在滚动时候的定位变化；
        $(window).scroll(function(){
            if($(window).scrollTop() == $(document).height() - $(window).height()){
-               $("#dlg-box").css({"bottom":"1.46rem","transitionDuration":"0.8s"})
+               $("#dlg-box").css({"bottom":"1.46rem","transitionDuration":"0.3s"})
            }
            else{
-               $("#dlg-box").css({"bottom":"0","transitionDuration":"0.4s"})
+               $("#dlg-box").css({"bottom":"0","transitionDuration":"0.2s"})
            }
        })
        //定义奇数行变色

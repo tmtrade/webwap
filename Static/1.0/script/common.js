@@ -112,3 +112,16 @@ $(".tabs b").on('touchstart mousedown',function(e){
 $(".tabs b").click(function(e){
     e.preventDefault()
 })
+
+
+//列表页头部点击分享按钮的时候弹出分享页面；
+$("#share").on('click',function(){
+    $(".yzc-share").show();
+});
+$(document).on('click',function(){
+    $(".yzc-share").hide();
+});
+
+$("#share,.yzc-share").on('click',function(e){
+    stopPropagation(e);
+});
