@@ -40,7 +40,6 @@ class SaleModule extends AppModule{
                     }
                     $_res = $this->searchLike($_arr, 1, 1000);
                     
-	var_dump($_res['rows']);exit;
                     if ( empty($_res['rows']) ) return $result;
                     $numberList = array_unique( arrayColumn($_res['rows'], 'code') );
                     if ( empty($numberList) ) return $result;
