@@ -16,8 +16,8 @@ class TrademarkIndexForm extends AppForm
      */
     protected $map = array(
         'name'      => array( 'field' => 'name', 'method' => 'fieldString', ),
-        'class'     => array( 'field' => 'class', 'method' => 'fieldInt', ),
-        'type'      => array( 'field' => 'type', 'method' => 'fieldInt', ),
+        'class'     => array( 'field' => 'class', 'method' => 'fieldString', ),
+        'type'      => array( 'field' => 'type', 'method' => 'fieldString', ),
         'length'    => array( 'field' => 'length', 'method' => 'fieldString', ),
     );
 
