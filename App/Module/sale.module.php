@@ -33,7 +33,6 @@ class SaleModule extends AppModule{
         if ( !empty($params['length']) ){
             $r['ft']['length'] = $params['length'];
         }
-	var_dump($params);exit;
         if ( !empty($params['name']) ){
            $_arr = array('keyword'=>$params['name']);
                     if ( !empty($params['class']) ){
@@ -41,6 +40,7 @@ class SaleModule extends AppModule{
                     }
                     $_res = $this->searchLike($_arr, 1, 1000);
                     
+	var_dump($_res['rows']);exit;
                     if ( empty($_res['rows']) ) return $result;
                     $numberList = array_unique( arrayColumn($_res['rows'], 'code') );
                     if ( empty($numberList) ) return $result;
