@@ -66,7 +66,7 @@ class SellAction extends AppAction{
             }
         }else{
             //添加商品
-            $res = $this->add_goods($saleId,$number,$price,$mobile,$uid);
+            $res = $this->add_goods($number,$price,$mobile,$uid);
             if(!$res){
                 $this->returnAjax(array('code'=>6,'msg'=>'添加商标信息失败'));
             }
