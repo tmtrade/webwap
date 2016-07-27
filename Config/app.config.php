@@ -16,7 +16,7 @@ define('SITE_URL', 'http://t.chofn.net/');
 define('TRADE_URL', 'http://tr2.chofn.net/');
 
 //手机端
-define('WAP_URL', 'http://m.chofn.net/');
+define('WAP_URL', 'http://m.test.chofn.net/');
 
 //近似查询URL
 define('GUANJIA_URL', 'http://tuotu.chofn.net/');

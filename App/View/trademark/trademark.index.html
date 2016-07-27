@@ -170,7 +170,9 @@
 		}
 	    });
 	    $("#"+names).val(str);
-	    $("#seachfrom").submit();
+	    if(str){
+		$("#seachfrom").submit();
+	    }
 	});
     var _start      = 1;
     var _startTm    = 1;
