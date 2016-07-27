@@ -16,6 +16,7 @@
 /* ===============================================================
 Basic Swiper Styles 
 ================================================================*/
+
 .swiper-container {
 	margin:0 auto;
 	position:relative;
@@ -33,6 +34,7 @@ Basic Swiper Styles
 .swiper-wrapper {
 	position:relative;
 	width:100%;
+    height: auto !important;
 	-webkit-transition-property:-webkit-transform, left, top;
 	-webkit-transition-duration:0s;
 	-webkit-transform:translate3d(0px,0,0);
@@ -118,3 +120,4 @@ Pagination Styles
 	/* Specific visible button style: */	
 	
 }
+/*body{display: none;}*/

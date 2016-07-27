@@ -1,3 +1,4 @@
+
 //顶部点击菜单出现弹窗；
 var  tapCount;
 tapCount=0;
@@ -114,17 +115,6 @@ $(".tabs b").click(function(e){
 })
 
 
-//列表页头部点击分享按钮的时候弹出分享页面；
-//$("#share").on('click',function(){
-//    $(".yzc-share").show();
-//});
-//$(document).on('click',function(){
-//    $(".yzc-share").hide();
-//});
-//
-//$("#share,.yzc-share").on('click',function(e){
-//    stopPropagation(e);
-//});
 
 //顶部点击菜单出现弹窗；
 var  tapCount2;

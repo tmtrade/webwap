@@ -48,7 +48,9 @@
 		});
 	    });
 	    //适配rem的兼容代码
+
 	    (function(doc, win) {
+
 		var docEl = doc.documentElement,
 			resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
 			recalc = function() {
@@ -59,7 +61,10 @@
 				docEl.style.fontSize = '100px';
 			    } else {
 				docEl.style.fontSize = 100 * (clientWidth / 770) + 'px';
+
+
 			    }
+                $("body, html").css({"display":"block"})
 			};
 
 		if (!doc.addEventListener)
@@ -68,6 +73,7 @@
 		doc.addEventListener('DOMContentLoaded', recalc, false);
 	    })(document, window);
 	</script>
+
     </head>
     <body>
 	<!--咨询价格弹窗-->
