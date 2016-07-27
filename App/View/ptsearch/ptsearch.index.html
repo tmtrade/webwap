@@ -170,7 +170,7 @@
 				var scrollTop = $(this).scrollTop();
 				var scrollHeight = $(document).height();
 				var windowHeight = $(this).height();
-				if (scrollHeight == scrollTop + windowHeight)  {
+				if (scrollHeight == scrollTop + windowHeight && is_load==false)  {
 					loadMore();
 				}
 			});
@@ -196,11 +196,10 @@
 		}
 		//加载剩余数据
 		function loadMore(){
+			//设置正在加载数据
+			is_load = true;
 			//数据加载完毕,直接返回
 			if(pt_now>=pt_total) return false;
-			//设置正在加载数据
-			if(is_load) return false;
-			is_load = true;
 			//加载层
 			$('#s-uploading').show();
 			//构造url
@@ -218,7 +217,7 @@
 					//改变当前数据
 					++_p;
 					pt_now += pt_step;
-					setTimeout(function(){is_load = false;},1000);
+					setTimeout(function(){is_load = false;},500);
 				}else{
 					is_load = false;
 				}
