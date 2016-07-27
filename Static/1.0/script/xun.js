@@ -26,7 +26,7 @@ $("#xun_submit").on("click",function(){
 	tip.html("请您输入正确的电话号码!");
 	tip.show();
     }else{
-	//lxb.call(phone); //自动拨打电话
+	lxb.call(phone); //自动拨打电话
 	tip.hide();
 	$.ajax({
 		type: "post",
