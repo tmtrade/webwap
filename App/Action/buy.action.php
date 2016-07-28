@@ -39,10 +39,12 @@ class BuyAction extends AppAction{
         //发送短信
         if($res){
             $enquiry = $this->com('redisHtml')->get('enquiry'.$phone);
-            if(empty($enquiry)){
-                $this->load('phoneEnquiry')->sendMsg($phone);
-                $this->com('redisHtml')->set('enquiry'.$phone, 1, 86400);
-            }
+            //if(empty($enquiry)){
+                $res = $this->load('phoneEnquiry')->sendMsg($phone);
+                if($res){
+                    $this->com('redisHtml')->set('enquiry'.$phone, 1, 86400);
+                }
+            //}
         }
         $this->returnAjax(array('code'=>1));
     }

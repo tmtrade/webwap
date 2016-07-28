@@ -20,87 +20,8 @@ class InternalModule extends AppModule
         'contact'       => 'saleContact',
         'tminfo'        => 'saleTminfo',
     );
-	
-    /**
-     * 获取首页特价商标显示数据，暂时为4条记录
-     * 
-     * @author  Xuni
-     * @since   2015-11-18
-     *
-     * @access  public
-     * @return  array   $list       数据列表
-     */
-    public function getIndexOffprice()
-    {
-        $r['raw']   = " indexPic != '' ";
-        $r['limit'] = 1000;
-        $r['col']   = array('saleId', 'indexPic');
-        $res        = $this->import('tminfo')->find($r);
-        $items      = arrayColumn($res, 'indexPic', 'saleId');
-        $ids        = array_keys($items);
-		if(!empty($ids)){
-			$role['in']     = array('id'=>$ids);
-		}
-        $role['limit']  = 4;
-        $role['col']    = array('id', 'tid', 'number', 'class', 'name');
-        $role['order']  = array('isTop'=>'desc','date'=>'desc');
-        $role['raw']    = ' ( isSale = 1 AND `status` = 1 AND priceType = 1 AND isOffprice = 1 AND (`salePriceDate` = 0  OR `salePriceDate` > unix_timestamp(now())) )';
-        $list = $this->import('sale')->find($role);
-        foreach ($list as $k => $v) {
-            $_class = current( explode(',', $v['class']) );
-            $list[$k]['imgUrl']     = TRADE_URL.$items[$v['id']];
-            $list[$k]['viewUrl']    = '/d-'.$v['tid'].'-'.$_class.'.html';
-        }
-        return $list;
-    }
 		
-    /**
-     * 通过条件查询商标信息--首页使用
-     * 
-     * @author  Jeany
-     * @since   2015-11-09
-     *
-     * @access  public
-     * @param   string  $param      查询条件
-     * @param   int     $num        查询数量
-     *
-     * @return  array   $data       查询数据
-     */
-	public function getSaleList($param, $num , $page=1)
-	{
-		if($param){
-			foreach($param as $key => $val){
-				if($key == 'notId'){
-					$r['notIn']    = array('id'=>$val);
-				}else{
-					$r['ft'][$key] = $val;
-				}	
-			}
-		}
-        //可出售商标
-		$r['eq']      = array(
-            'isSale'    => 1,
-            'status'    => 1,
-            );
-		$r['page']        = $page;
-        $r['limit']       = $num;
-		$r['col']         = array('name,class,id,number,tid');
-		//$r['group']       = array('tid'=>'asc');
-        $r['order']       = array('isTop' => 'desc','date' => 'desc');
-        $data = $this->import('sale')->findAll($r);
-		$data['notId'] = array();
-        $classTitle = C('CLASSES');
-        foreach($data['rows'] as $k => $v){
-            $_class = current( explode(',', $v['class']) );
-			$data['rows'][$k]['imgUrl']  = $this->getViewImg($v['id']); 
-			$data['rows'][$k]['viewUrl'] = "/d-".$v['tid'].'-'.$_class.".html"; 
-			$data['rows'][$k]['_name']   = mbSub($v['name'],0,4);
-            $data['rows'][$k]['classes'] = $classTitle[$_class];
-			
-			array_push($data['notId'], $v['id']);
-        }
-		return $data;
-	}
+
 	
     //获取详情图片
 	public function getViewImg($id)
