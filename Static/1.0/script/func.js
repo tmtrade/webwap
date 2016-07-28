@@ -46,7 +46,7 @@ function check_mobile(mobile,type){
 }
 //验证价格
 function check_price(price,type){
-    return /^\d+$/.test(price);
+    return /^[123456789](\d)*$/.test(price);
 }
 //验证联系人
 function check_name(name){

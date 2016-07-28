@@ -146,7 +146,7 @@
 			   //验证价格
 			   var price = $.trim($('#pt_price').val());
 			   if(!check_price(price)){
-				   layer_error('请输入正确的价格');
+				   layer_error('请输入0以上的整数');
 				   layer_close_load();
 				   return false;
 			   }
