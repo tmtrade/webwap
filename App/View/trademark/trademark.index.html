@@ -194,10 +194,11 @@
         //出售与商标库都没有了
         if (!_hasSale && !_hasTm) return false;
 
-        $('#s-uploading').show();
         //是否已经在请求中
         if ( _times != 0 || _tmTimes != 0 ) return false; 
 
+        $('#s-uploading').show();
+	
         var obj = new objURL('/?'+_whereStr);
 
         if ( !_hasSale ) {
