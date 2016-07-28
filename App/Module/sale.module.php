@@ -40,12 +40,15 @@ class SaleModule extends AppModule{
                     }
                     $_res = $this->searchLike($_arr, 1, 1000);
                     
-                    if ( empty($_res['rows']) ) return $result;
                     $numberList = array_unique( arrayColumn($_res['rows'], 'code') );
-                    if ( empty($numberList) ) return $result;
-                    $r['in']['number'] = $numberList;
+                    if (!empty($numberList) ){
+                        $r['in']['number'] = $numberList;
+                        $r['raw'] .= " OR `number`='{$params['name']}' ";
+                    }else{
+                        $r['raw'] .= " and `number`='{$params['name']}' ";
+                    }
+                    
 		    
-		    $r['raw'] .= " OR `number`='{$params['name']}' ";
         } 
 	$r['eq']['status']  = 1;
         $r['eq']['isSale']  = 1;
