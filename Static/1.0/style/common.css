@@ -26,6 +26,7 @@ input{
 	border: 1px solid #e3e3e3;
 	text-indent: 10px;
 }
+input,textarea{font-size: 0.28rem}
 img{display: block;width: auto;height: auto;}
 .fl{float: left}
 .fr{float: right}
@@ -422,7 +423,8 @@ a[href]:hover{
 	position: fixed;
 	top:0px;
 	left: 0px;    
-	display: none; 
+	display: none;
+    z-index: 9;
 }
 /*分享*/
 .yzc-share{
@@ -435,7 +437,7 @@ a[href]:hover{
 	color: #FFFFFF;
     padding-bottom: 10px;
     padding-top:10px;
-    z-index: 99;
+    z-index:9;
 }
 .yzc-share span{
     display: inline-block;

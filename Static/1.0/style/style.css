@@ -62,6 +62,7 @@
     float: left;
     text-indent: 0.2rem;
     color: #999999;
+    font-size: 0.28rem;
 }
 .brand-box{
 	height: auto !important;
@@ -667,7 +668,7 @@
 .buy-table ul li a.tj-btn{
 	display: block;
 	margin: auto;
-	width:6rem;
+	/*width:6rem;*/
 	height: 0.8rem;
 	line-height: 0.8rem;
 	text-align: center;
@@ -765,9 +766,9 @@
 	text-indent: 10px;
 	margin-left: 0.1rem;
 }
-.buy-mess-tb li.name input{
-	width: 2.8rem;
-}
+/*.buy-mess-tb li.name input{*/
+	/*width: 2.8rem;*/
+/*}*/
 .buy-mess-tb li.rema label{
 	float: left;
 	margin-top:  0.12rem;
