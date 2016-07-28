@@ -128,10 +128,12 @@
 		});
 		//提交求购信息
 		function addBuy(need,mobile,type){
+			var subject = '商标求购';
+			if(type==7) subject='专利求购';
 			var data = {};
 			data['name'] = '';
 			data['tel'] = mobile;
-			data['subject'] = need;
+			data['subject'] = subject;
 			data['remarks'] = need;
 			data['type'] = type;
 			data['pttype'] = "求购";
