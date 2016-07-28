@@ -27,8 +27,10 @@
                         </div>
                         <div class="brand-box swiper-slide">
                             <div class="brand-inp f-hidden">
-                                <input class="search-inp" type="text" name="name" id="pt_kw" placeholder="请输入您要搜索的专利名或专利号"/>
+				<form action="/ptsearch/index"  method="get" id="ptfrom">
+                                <input class="search-inp" type="text" name="kw" id="pt_kw" placeholder="请输入您要搜索的专利名或专利号"/>
                                 <input type="button" class="search-btn" value="" id="pt_search">
+				</form>
                             </div>
                             <p>
 								<a href="/ptsearch/index/?t=1&c=h">通信电子</a>

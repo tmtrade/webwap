@@ -32,7 +32,9 @@ $('#pt_search').click(function(){
         kw = kw.substr(0, 30);
     }
     //提交数据
-    window.location.href = '/ptsearch/index/?kw='+kw;
+    layer_close_load();
+    //window.location.href = '/ptsearch/index/?kw='+kw;
+    $("#ptfrom").submit();
 });
 
 //商标搜索
