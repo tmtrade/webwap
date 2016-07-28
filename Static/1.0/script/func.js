@@ -35,10 +35,10 @@ function layer_close_load(){
 }
 //验证手机-- 默认只验证手机
 function check_mobile(mobile,type){
-    if(typeof type == 'undefined') type=0;
+    if(typeof type == 'undefined') type=1;
     var reg = '';
     if(type){
-        reg = /^(0?1\d{10})|0\d{2,3}-?\d{7,8}$/;//电话和手机
+        reg = /^(13[0-9]|14[0-9]|15[0-9]|17[0-9]|18[0-9])\d\d\d\d\d\d\d\d$/i;//电话和手机
     }else{
         reg = /^0?1\d{10}$/;
     }
