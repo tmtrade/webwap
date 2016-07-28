@@ -8,6 +8,7 @@ h1,h2,h3,h4,h5,h6,b {font-size:100%;font-weight:normal;-webkit-font-smoothing: a
 q:before,q:after {content:''}
 abbr,acronym { border:0}
 table {border-collapse: collapse;border-spacing: 0;width: 100%;}
+body{opacity: 0}
 body,html{
     background-color: #ffffff;
     font-family: "微软雅黑","arial";
@@ -186,7 +187,7 @@ a[href]:hover{
 	flex-grow: 1;
 }
 .top-head{
-    margin-top: 0.9rem;
+    margin-top: 0.88rem;
 }
 
 /*公用组件*/
@@ -368,8 +369,8 @@ a[href]:hover{
 }
 .dlg-box a{
 	display: inline-block;
-	width: 3.17rem;
-	height: 0.54rem;
+	width: 3.6rem;
+	height: 0.57rem;
 	position: absolute;
 	bottom: 0.1rem;
 	right: 1.7rem;
@@ -381,6 +382,8 @@ a[href]:hover{
 	height: 1.46rem;
     background: #4d4d4d;
     /*margin-top: 0.24rem;*/
+    /*position: fixed;*/
+    /*bottom: 0px;*/
 }
 .yzc-btm-main{
 	padding-left: 0.54rem;
@@ -428,26 +431,51 @@ a[href]:hover{
 }
 /*分享*/
 .yzc-share{
-    width: 100%;
-    background-color: #333;
-	position: fixed;
-	/*right:10px;*/
-	top:0.84rem;
-	display: none;
 	color: #FFFFFF;
     padding-bottom: 10px;
     padding-top:10px;
     z-index:9;
+    display: none;
 }
-.yzc-share span{
-    display: inline-block;
+.yzc-share-bg{
+    width: 100%;
+    height: 1.87rem;
+    overflow: hidden;
+    background: url("../images/fx-bg.png") no-repeat top center;
+    background-size: 100% auto;
+    margin-top: -20px;
 }
-.yzc-share a{
-    color: #FFFFFF;
+.yzc-share h3{
+    color: #666666;
+    font-size:0.3rem;
+    text-align: center;
+    font-weight: bold;
     margin-top: 10px;
 }
-.jiathis_style  .button, .jiathis_style .jiathis_txt{
-    margin-left: 15px;
-    line-height: 38px!important;
+.yzc-share-main{
+    width: 80%;
+    margin:15px auto;
+    overflow: hidden;
+    border-top:1px solid #e3e3e3;
+    padding-top: 15px;
+}
+.yzc-share-main li{
+    width: 33.3%;
+    float: left;
+    text-align: center;
+    color: #999999;
+    font-size: 0.28rem;
+}
+.yzc-share-main li a{
+    display: block;
+    margin: 10px;
+}
+.yzc-share-main a img{
+    width: 100%;
+    height: auto;
 }
 
+
+.layui-layer-dialog .layui-layer-content{
+    font-size: 0.28rem !important;
+}

@@ -38,7 +38,7 @@ function jc(name,curr,n)
         {
             var menu=document.getElementById(name+i);
             var cont=document.getElementById("con_"+name+"_"+i);
-        menu.className=i==curr ? "on" : "";
+        menu.className=i==curr ? "active" : "";
         if(i==curr){
             cont.style.display="block";
         }else{
@@ -50,14 +50,6 @@ function jc(name,curr,n)
 window.addEventListener( "load", function() {
     FastClick.attach( document.body );
 }, false );
-
-
-
-
-
-
-
-
 
 
 //关闭共用谈话框
@@ -113,31 +105,27 @@ $(".tabs b").on('touchstart mousedown',function(e){
 $(".tabs b").click(function(e){
     e.preventDefault()
 })
+$("#share").live("click",function(){
+    layer.open({
+        area:["80%","5.57rem"],
+        type: 1,
+        title: false,
+        closeBtn:1,
+        shadeClose:false,
+        content:$(".yzc-share")
 
+    });
+});
 
-
-//顶部点击菜单出现弹窗；
-var  tapCount2;
-tapCount2=0;
-$("#share").on('click',function(){
-    tapCount2++;
-    if(tapCount2==1){
-        $(".yzc-share").addClass("slideInDown animated infinite");
-        $(".yzc-share").css({"display":"block"});
-        $(document).on('click',function(){
-            $(".yzc-share").removeClass("slideInDown animated infinite");
-            $(".yzc-share").hide();
-            tapCount2=0;
-        });
-        tapCount2=1;
-    }
-    if(tapCount2==2){
-        $(".yzc-share").removeClass("slideInDown animated infinite");
-        $(".yzc-share").hide();
-        tapCount2=0;
-    }
-})
-
-$("#share,.yzc-share").on('click',function(e){
-    stopPropagation(e);
+//点击事件
+$(function () {
+    $('.btn_qq').click(function(){
+        $('.bds_sqq').get(0).click();
+    });
+    $('.btn_sina').click(function(){
+        $('.bds_tsina').get(0).click();
+    });
+    $('.btn_weixin').click(function(){
+        $('.bds_weixin').get(0).click();
+    });
 });

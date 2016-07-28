@@ -1172,3 +1172,4 @@ Swiper.prototype = {
 }(window.jQuery || window.Zepto), "undefined" != typeof module && (module.exports = Swiper), "function" == typeof define && define.amd && define([], function () {
     return Swiper
 });
+

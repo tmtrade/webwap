@@ -9,13 +9,13 @@
 </section>
 <section class="deta-cont">
     <div class="main">
-        <p class="deta-cont-tit tabs">
-            <b class="active">商标基本信息</b>
-            <b>商标介绍</b>
+        <p class="deta-cont-tit">
+            <b id="det1" onclick="jc('det',1,2)" class="active">商标基本信息</b>
+            <b id="det2" onclick="jc('det',2,2)">商标介绍</b>
         </p>
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="deta-cont-main swiper-slide">
+                <div class="deta-cont-main" id="con_det_1" style="display: block;">
                     <p class="basic-info">商标分类第<?=$class?>类 - <?=$info['className']?>当前群组：<?=$info['items'][0]['group']?></p>
                     <p class="enter">此商标可入驻：
                     <?php
@@ -45,7 +45,7 @@
                     </p>
                     <p class="intr">商品列表：<?=$info['goods']?></p>
                 </div>
-                <div class="deta-cont-main swiper-slide">
+                <div class="deta-cont-main"  id="con_det_2">
                     <p class="desc"><?=$sale['tminfo']['intro']?></p>
                 </div>
             </div>
@@ -107,16 +107,6 @@
 	<input type="hidden" id="class"  value="<?=$info['className']?>">
 	<input type="hidden" id="remarks"  value="<?='商标号:'.$item['number']?>">
     </div>
-   
-<!--fenxiang -->
-<div class="jiathis_style yzc-share">
-    <span class="jiathis_txt">分享到：</span>
-    <a class="jiathis_button_tools_1"></a>
-    <a class="jiathis_button_tools_2"></a>
-    <a class="jiathis_button_tools_3"></a>
-    <a class="jiathis_button_tools_4"></a>
-</div>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
 <!-- JiaThis Button END -->
 <script type="text/javascript" src="<?=StaticDir?>1.0/script/xun.js"></script>
 <script type="text/javascript">
