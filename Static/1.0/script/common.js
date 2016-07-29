@@ -116,16 +116,3 @@ $("#share").live("click",function(){
 
     });
 });
-
-//点击事件
-$(function () {
-    $('.btn_qq').click(function(){
-        $('.bds_sqq').get(0).click();
-    });
-    $('.btn_sina').click(function(){
-        $('.bds_tsina').get(0).click();
-    });
-    $('.btn_weixin').click(function(){
-        $('.bds_weixin').get(0).click();
-    });
-});
