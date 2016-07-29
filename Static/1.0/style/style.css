@@ -190,14 +190,14 @@
 	border-radius:15px;
 	-webkit-border-radius:15px;
 	margin-top: 0.15rem;
-    padding-bottom: 0.2rem;
+    padding-bottom: 0.16rem;
+    padding-top: 0.16rem;
     overflow: hidden;
 }
 .yzc-class-list li a{
 	display: inline-block;
     width: 33.3%;
 	color: #666666;
-	margin-top: 0.2rem;
 	float:left;
     font-size: 0.24rem;
     text-align: center;
@@ -352,6 +352,7 @@
     overflow: hidden;
     padding-bottom: 0.24rem;
     margin-bottom: 2rem;
+    min-height:5.7rem;
 }
 .filt-list ul{
 	margin-left: -15px;
@@ -797,7 +798,6 @@
 /*}*/
 .sell-btm-ban{
 	width: 100%;
-	
 }
 .sell-btm-ban1{
 	height: 3.35rem;
@@ -875,9 +875,6 @@
     .yzc-class-show a p{
         margin-right: 0.04rem;
     }
-    /*.yzc-class-list li a{*/
-    	/*margin-left: 0.3rem;*/
-    /*}*/
     .search-Ind-list ul li p a{
 	    width: 2.42rem;
 	    margin-left: 0.08rem;
@@ -888,10 +885,6 @@
     }
     .buy-flow i{
     	margin-left: 0.16rem;
-    }
-    .buy-table{
-    	/*padding-left: 0.4rem;*/
-    	/*padding-right: 0.4rem;*/
     }
     .sell-zx-btn a{
     	width: 3.4rem;

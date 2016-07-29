@@ -68,9 +68,10 @@
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/xun.js"></script>
 	<script type="text/javascript">
 		//加载剩余数据
-     // var oh1=($(".yzc-head").outerHeight())/0.69;
+        var ow=$(window).width();
+        var oh1=ow/770*100-5;
         var oh2=($(".filt-search").outerHeight())/0.68;
-        var otp=oh2;
+        var otp=oh2+oh1;
 		var more_url = '/ptsearch/index/?';
 		var _moreUrl = '/ptsearch/getmore/';
 		var now_param = '<?=$whereStr?>';
@@ -102,7 +103,7 @@
 					$(this).addClass('on');
 					$(".search-Ind-bg").hide();//下拉效果
 					$(this).siblings(".search-Ind-bg").show();
-                    $(this).siblings(".search-Ind-bg").css({"top":43+otp})
+                    $(this).siblings(".search-Ind-bg").css({"top":otp})
                     $("body, html").css({"overflow":"hidden"});
 				}
 				tem = [];//清空暂存

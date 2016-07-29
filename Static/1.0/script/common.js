@@ -5,17 +5,17 @@ tapCount=0;
 $("#menu").on('click',function(){
     tapCount++;
     if(tapCount==1){
-        $("#menu-box").addClass("slideInDown animated infinite");
+        $("#menu-box").addClass("slideInDown animated");
         $("#menu-box").css({"display":"block"});
         $(document).on('click',function(){
-            $("#menu-box").removeClass("slideInDown animated infinite");
+            $("#menu-box").removeClass("slideInDown animated");
             $("#menu-box").hide();
             tapCount=0;
         });
         tapCount=1;
     }
     if(tapCount==2){
-        $("#menu-box").removeClass("slideInDown animated infinite");
+        $("#menu-box").removeClass("slideInDown animated");
         $("#menu-box").hide();
         tapCount=0;
     }

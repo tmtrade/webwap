@@ -119,18 +119,20 @@
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/xun.js"></script>
 	<script type="text/javascript">
         //筛选页面下拉列表搜索；
-//        var oh1=($(".yzc-head").outerHeight())/0.69;
+        var ow=$(window).width();
+        var oh1=ow/770*100-5;
         var oh2=($(".filt-search").outerHeight())/0.68;
-        var otp=oh2;
+        var otp=oh2+oh1;
 	    var olis = $("#search-Ind li.inp span");
 	    var obox = $("#Ind-box");
 	    var oas = $(".search-Ind-list").find("a");
 	    olis.on("click", function() {
+
             olis.removeClass("on");
             $(this).addClass("on");
             $(".search-Ind-bg").hide();
             $(this).siblings(".search-Ind-bg").show();
-            $(this).siblings(".search-Ind-bg").css({"top":45+otp})
+            $(this).siblings(".search-Ind-bg").css({"top":otp})
             $("body, html").css({"overflow":"hidden"});
 
 	    });
@@ -152,9 +154,9 @@
                 }
                 if(odex==2){
                     $(this).removeClass("on");
-		    $(this).find("i").remove();
+		            $(this).find("i").remove();
                     $(this).attr("index","1");
-		    $(this).find("input").attr("checked", false);
+                    $(this).find("input").attr("checked", false);
                 }
             });
         });
