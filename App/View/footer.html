@@ -31,7 +31,7 @@
 </script>-->
 <!--百度分享-->
 <!--jiathsi分享-->
-<div class="jiathis_style" style="display: none">
+<!--<div class="jiathis_style" style="display: none">
     <a class="jiathis_button_qzone bds_qzone">QQ空间</a>
     <a class="jiathis_button_tsina bds_tsina">新浪微博</a>
     <a class="jiathis_button_weixin bds_weixin">微信</a>
@@ -56,8 +56,19 @@
         });
     });
 </script>
-<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>-->
 <!--jiathsi分享-->
+<!--简单分享-->
+<script type="text/javascript" src="<?=StaticDir?>1.0/script/simple-share.min.js?v=<?=$static_version?>"></script>
+<script type="text/javascript">
+    var share = new SimpleShare({
+        url: location.href,
+//        title: '',
+//        content: '',
+        pic: '<?=$share_img?>'
+    });
+</script>
+<!--简单分享-->
 <!--共用底部-->
 <section class="yzc-btm">
     <div class="yzc-btm-main" >
