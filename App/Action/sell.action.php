@@ -12,6 +12,7 @@ class SellAction extends AppAction{
      */
     public function index(){
         $this->set("page_title", '我要出售');
+        $this->set("share_img", WAP_URL.StaticDir.'1.0/images/wap-banner.png');
         $this->display();
     }
 

@@ -107,7 +107,6 @@
 	<input type="hidden" id="class"  value="<?=$info['className']?>">
 	<input type="hidden" id="remarks"  value="<?='商标号:'.$item['number']?>">
     </div>
-<!-- JiaThis Button END -->
 <script type="text/javascript" src="<?=StaticDir?>1.0/script/xun.js"></script>
 <script type="text/javascript">
      //提交需求
@@ -153,21 +152,21 @@
 	$(".deta-tc-bg").show();
 	$(".buy-mess-box").show();
 
-    })
+    });
     $("#gb-tc").on('click', function() {
-	$(".deta-tc-bg").hide();
-	$(".buy-mess-box").hide();
-    })
+		$(".deta-tc-bg").hide();
+		$(".buy-mess-box").hide();
+    });
     //列表页头部点击分享按钮的时候弹出分享页面；
     $("#share").on('click', function() {
-	$(".yzc-share").show();
-    })
+		$(".yzc-share").show();
+    });
     $(document).on('click', function() {
-	$(".yzc-share").hide();
+		$(".yzc-share").hide();
     });
 
     $("#share,.yzc-share").on('click', function(e) {
-	stopPropagation(e);
+		stopPropagation(e);
     });
 </script>
 <? require(ViewDir.'/footer.html'); ?>

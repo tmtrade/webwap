@@ -128,6 +128,9 @@ class TrademarkAction extends AppAction
                 $this->set('description', $seoList['description']);
                 
 		//分配数据
+		$share_img = empty($info['imgUrl']['embellish'])?WAP_URL.StaticDir.'1.0/images/wap-banner.png':$info['imgUrl']['embellish'];
+		//分配数据
+		$this->set("share_img", $share_img);
 		$this->set("info", $info);
 		$this->set("sale", $sale);
 		$this->set("refer", $refer);

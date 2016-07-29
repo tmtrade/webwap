@@ -17,54 +17,42 @@
     </div>
 </header>
 
-<!--分享-->
-
+<!--分享弹窗-->
 <div class="yzc-share">
      <div class="yzc-share-bg"></div>
         <h3>我要把网页分享到</h3>
         <ul class="yzc-share-main bdsharebuttonbox">
-            <li><a title="分享到QQ好友" href="javascript:void(0);" class="bds_sqq" data-cmd="sqq"><span class="jiathis_txt jiathis_separator jtico jtico_cqq">  <img src="<?=StaticDir?>1.0/images/qqkj.png"><br/>QQ空间</span></a></li>
-            <li><a title="分享到新浪微博" href="javascript:void(0);" class="bds_tsina" data-cmd="tsina"><span class="jiathis_txt jiathis_separator jtico jtico_tsina"> <img src="<?=StaticDir?>1.0/images/wb.png"><br/>微博</span></a></li>
-            <li><a title="分享到微信" href="javascript:void(0);" class="bds_weixin" data-cmd="weixin"><span class="jiathis_txt jiathis_separator jtico jtico_weixin"><img src="<?=StaticDir?>1.0/images/wx.png"><br/>微信</span></a></li>
+            <li><a title="分享到QQ好友" href="javascript:void(0);" class="btn_qq"><span><img src="<?=StaticDir?>1.0/images/qqkj.png"><br/>QQ空间</span></a></li>
+            <li><a title="分享到新浪微博" href="javascript:void(0);" class="btn_sina"><span><img src="<?=StaticDir?>1.0/images/wb.png"><br/>微博</span></a></li>
+            <li><a title="分享到微信" href="javascript:void(0);" class="btn_weixin"><span><img src="<?=StaticDir?>1.0/images/wx.png"><br/>微信</span></a></li>
         </ul>
-        <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script><script type="text/javascript" src="http://v3.jiathis.com/code/plugin.client.js" charset="utf-8"></script>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<div class="jiathis_style yzc-share">-->
-    <!--<div class="yzc-share-bg"></div>-->
-    <!--<h3>我要把网页分享到</h3>-->
-    <!--<ul>-->
-        <!--<li>-->
-            <!--<a class="jiathis_button_tools_3">-->
-                <!--<img src="<?=StaticDir?>1.0/images/qqkj.png">-->
-                <!--QQ空间-->
-             <!--</a>-->
-        <!--</li>-->
-        <!--<li>-->
-            <!--<a class="jiathis_button_tools_4">-->
-                <!--<img src="<?=StaticDir?>1.0/images/wb.png">-->
-                <!--微博-->
-            <!--</a>-->
-        <!--</li>-->
-        <!--<li>-->
-            <!--<a class="jiathis_button_tools_1">-->
-                 <!--<img src="<?=StaticDir?>1.0/images/wx.png">-->
-                <!--微信-->
-             <!--</a>-->
-        <!--</li>-->
-    <!--</ul>-->
-
-<!--</div>-->
-<!--<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>-->
+<!--百度分享相关js-->
+<div class="bdsharebuttonbox" data-tag="share_1" style="display: none">
+    <a class="bds_sqq" data-cmd="sqq"></a>
+    <a class="bds_tsina" data-cmd="tsina"></a>
+    <a class="bds_weixin" data-cmd="weixin"></a>
+</div>
+<script type="text/javascript">
+    //点击事件
+    $(function () {
+        $('.btn_qq').click(function(){
+            $('.bds_sqq').get(0).click();
+        });
+        $('.btn_sina').click(function(){
+            $('.bds_tsina').get(0).click();
+        });
+        $('.btn_weixin').click(function(){
+            $('.bds_weixin').get(0).click();
+        });
+    });
+</script>
+<script>
+    window._bd_share_config = {
+        common : {
+            bdPic : '<?=$share_img?>'
+        }
+    }
+    with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>

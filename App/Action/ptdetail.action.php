@@ -70,7 +70,10 @@ class PtdetailAction extends AppAction{
         $need = "专利号:".$number;
         //得到推荐专利
         $tj = $this->load('pdetail')->getRandPT(2);
+        $share_img = empty($tminfo['embellish'])?$info['imgUrl']:(TRADE_URL.$tminfo['embellish']);
+        $share_img = empty($share_img)?WAP_URL.StaticDir.'1.0/images/wap-banner.png':$share_img;
         //分配数据
+        $this->set("share_img", $share_img);
         $this->set('patentType', $patentType);
         $this->set('patentClassOne', $patentClassOne);
         $this->set('patentClassTwo', $patentClassTwo);
