@@ -31,21 +31,32 @@
 </script>-->
 <!--百度分享-->
 <!--jiathsi分享-->
-<div class="jiathis_style_m"></div>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_m.js" charset="utf-8"></script>
-<script type="text/javascript">
+<div class="jiathis_style" style="display: none">
+    <a class="jiathis_button_qzone bds_qzone">QQ空间</a>
+    <a class="jiathis_button_tsina bds_tsina">新浪微博</a>
+    <a class="jiathis_button_weixin bds_weixin">微信</a>
+</div>
+<script type="text/javascript" >
+    var jiathis_config={
+        url:location.href,
+        pic:'<?=$share_img?>'
+    };
     $(function(){
-        /*$('.btn_qzone').click(function(){
+        $('.btn_qzone').click(function(){
             $('.bds_qzone').get(0).click();
+            layer.closeAll();
         });
         $('.btn_sina').click(function(){
             $('.bds_tsina').get(0).click();
+            layer.closeAll();
         });
         $('.btn_weixin').click(function(){
             $('.bds_weixin').get(0).click();
-        });*/
+            layer.closeAll();
+        });
     });
 </script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
 <!--jiathsi分享-->
 <!--共用底部-->
 <section class="yzc-btm">
