@@ -47,11 +47,12 @@ class SaleModule extends AppModule{
                     }else{
                         $r['raw'] .= " and `number`='{$params['name']}' ";
                     }
-                    
+            $r['raw'] .= " OR `name` like '{$params['name']}%' ";
 		    
         } 
 	$r['eq']['status']  = 1;
         $r['eq']['isSale']  = 1;
+        $r['group']     = array('number' => 'desc');
         $r['order']     = array('isTop' => 'desc');
         $res = $this->import('sale')->findAll($r);
 	
