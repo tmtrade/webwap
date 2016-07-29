@@ -1,7 +1,7 @@
 
 <header class="list-head">
     <div class="main">
-        <a class="fl" href="javascript:;" onclick="history.go(-1)"><i></i><?=$page_title?></a>
+        <a class="fl" href="javascript:;" onclick="if(document.referrer){history.go(-1);}else{location.href='/'};"><i></i><?=$page_title?></a>
         <div class="fr">
             <a id="share"><img src="<?=StaticDir?>1.0/images/arrw-ico1.png"></a>
             <a id="menu"><img src="<?=StaticDir?>1.0/images/arrw-ico2.png"></a>

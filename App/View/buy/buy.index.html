@@ -81,6 +81,11 @@
 					layer_close_load();
 					return false;
 				}
+				if(content.length>=200){
+					layer_error('购买需求不能超过200个字符');
+					layer_close_load();
+					return false;
+				}
 				content = '商标需求:'+content;
 				//验证手机
 				var mobile = $.trim($('#tm_mobile').val());
@@ -100,6 +105,11 @@
 				var content = $.trim($('#pt_content').val());
 				if(content==''){
 					layer_error('请填写购买需求');
+					layer_close_load();
+					return false;
+				}
+				if(content.length>=200){
+					layer_error('购买需求不能超过200个字符');
 					layer_close_load();
 					return false;
 				}

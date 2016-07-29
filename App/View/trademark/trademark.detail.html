@@ -125,6 +125,11 @@
 		    return false;
 	    }
 	    var content = $.trim($('#content').val());
+		if(content.length>=200){
+			layer_error('备注内容不能超过200个字符');
+			layer_close_load();
+			return false;
+		}
 	    //组装数据
 	    //获得数据
 	    var remarks 	= $('#remarks').val();
