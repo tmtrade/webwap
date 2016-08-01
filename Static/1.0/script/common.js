@@ -70,7 +70,7 @@ function submitDataCallback(obj,func){
     $.each(obj,function(i,n){
         layer_close_load();
         if(n.code==-1){
-            layer.msg('key验证失败',{
+            layer.msg('请刷新后重试',{
                 time:1500,
                 icon:2
             },function(){
