@@ -537,13 +537,27 @@ a[href]:hover{
     /*background: none !important;*/
 /*}*/
 
+.layui-layer-dialog .layui-layer-content .layui-layer-ico{
+    position: relative !important;;
+    left:-3px !important;
+    top:-2px !important;
+    vertical-align: top;
+    margin-bottom: 3px;
+}
+.layui-layer-dialog .layui-layer-padding{
+    text-align: center !important;;
+    padding: 15px 5px 15px 5px !important;
+}
+/*.layui-layer-dialog{*/
+    /*left: 22.55%  !important;;*/
+/*}*/
 .layui-layer-dialog .layui-layer-content{
     font-size: 0.32rem !important;
-    line-height: 0.3rem !important;
+    line-height: 0.1rem !important;
 }
 .layui-layer-ico2{
     vertical-align: middle !important;
-    margin-top:-4px;
+    margin-top:4px;
 }
 @media screen and (min-width:461px){
     .layui-layer-dialog .layui-layer-content{
@@ -554,4 +568,8 @@ a[href]:hover{
         vertical-align: middle !important;
         margin-top:4px;
     }
+}
+
+.layui-layer-msg{
+    width:4.5rem !important;
 }

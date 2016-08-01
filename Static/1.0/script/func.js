@@ -16,14 +16,14 @@ function layer_load(){
 }
 //成功失败弹窗
 function layer_success(msg,time){
-    if(typeof time == 'undefined') time=150000;
+    if(typeof time == 'undefined') time=1500;
     layer.msg(msg,{
         time:time,
         icon:1
     })
 }
 function layer_error(msg,time){
-    if(typeof time == 'undefined') time=150000;
+    if(typeof time == 'undefined') time=1500;
     layer.msg(msg,{
         time:time,
         icon:2

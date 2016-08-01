@@ -38,7 +38,7 @@
     color: #f38e8e;
 }
 .search-main .brand-inp{
-    width: 95%;
+    width: 99%;
 	height: 0.7rem;
 	margin-top: 0.13rem;
 }
@@ -79,6 +79,7 @@
 }
 .yzc-nav{
     width: 100%;
+    min-height: 2rem;
 	margin-top: 0.3rem;
    overflow: hidden;
 }
@@ -152,6 +153,7 @@
 	/*flex: 1;*/
 	display: inline-block;
 	width:33.2%;
+    height: 1.18rem;
     height: 100%;
     float: left;
     overflow: hidden;
