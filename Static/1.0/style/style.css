@@ -44,7 +44,7 @@
 }
 .search-main .search-btn{
     display: inline-block;
-    width: 16.6%;
+    width: 13.8%;
     height: 0.7rem;
     background: url(../images/search-ico.png) no-repeat left top;
     background-size: 100% 100%;
@@ -54,7 +54,7 @@
 }
 .search-main .search-inp{
 	display: inline-block;
-    width: 82.5%;
+    width: 80.5%;
     height: 0.64rem;
     line-height: 0.64rem;
     float: left;
@@ -63,6 +63,7 @@
     font-size: 0.28rem;
 }
 .brand-box{
+    background-color:#414141;
 	height: auto !important;
 }
 .brand-box p {
