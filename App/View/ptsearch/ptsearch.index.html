@@ -104,7 +104,7 @@
 					$(".search-Ind-bg").hide();//下拉效果
 					$(this).siblings(".search-Ind-bg").show();
                     $(this).siblings(".search-Ind-bg").css({"top":oh1+$(".filt-search").outerHeight()})
-                    $("body, html").css({"overflow":"hidden"});
+                    $("body, html").css({"overflow":"hidden","height":"100%"});
 				}
 				tem = [];//清空暂存
 			});
@@ -150,7 +150,7 @@
 				$('#search-Ind').find('li.inp span').removeClass('on');//选中效果
 				$(".search-Ind-bg").hide();//下拉效果
 				tem = [];//清空暂存数组
-                $("body, html").css({"overflow":"auto"});
+                $("body, html").css({"overflow":"auto","height":"auto"});
 			});
 			//取消
 			$('.off').click(function(){

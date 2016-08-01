@@ -673,9 +673,11 @@
     display: inline-block;
 }
 .buy-table ul li  textarea{
-    text-indent: 10px;
+   text-indent: 15px;
 	height: 2.4rem;
     padding-top: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 .buy-table ul li  input{
 	height:0.55rem;
