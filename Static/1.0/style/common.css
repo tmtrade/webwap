@@ -245,7 +245,10 @@ a[href]:hover{
 	height:0.84rem;
 	background: #FFFFFF;
 	position: fixed;
+    _position:absolute;
 	top:0px;
+    _top:0px;
+    _top:expression(eval(document.documentElement.scrollTop+ (parseInt(this.currentStyle.marginTop,10)||0)));
 	left: 0px;
 	z-index: 9;
     border-bottom:1px solid #dfdfdf;
@@ -535,6 +538,20 @@ a[href]:hover{
 /*}*/
 
 .layui-layer-dialog .layui-layer-content{
-    font-size: 0.24rem !important;
+    font-size: 0.32rem !important;
     line-height: 0.3rem !important;
+}
+.layui-layer-ico2{
+    vertical-align: middle !important;
+    margin-top:-4px;
+}
+@media screen and (min-width:461px){
+    .layui-layer-dialog .layui-layer-content{
+        font-size: 0.24rem !important;
+        line-height: 0.3rem !important;
+    }
+    .layui-layer-ico2{
+        vertical-align: middle !important;
+        margin-top:4px;
+    }
 }
