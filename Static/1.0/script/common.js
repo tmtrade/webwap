@@ -7,6 +7,7 @@ $("#menu").on('click',function(){
     if(tapCount==1){
         $("#menu-box").addClass("slideInDown animated");
         $("#menu-box").css({"display":"block"});
+        $(this).addClass("on");
         $(document).on('click',function(){
             $("#menu-box").removeClass("slideInDown animated");
             $("#menu-box").hide();
@@ -17,6 +18,7 @@ $("#menu").on('click',function(){
     if(tapCount==2){
         $("#menu-box").removeClass("slideInDown animated");
         $("#menu-box").hide();
+        $(this).removeClass("on");
         tapCount=0;
     }
 })
