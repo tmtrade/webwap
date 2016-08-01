@@ -17,7 +17,10 @@
 	  <h2 title="<?=$info['title']?>"><?=empty($info['thum_title'])?'【暂无专利名称】':$info['thum_title']?></h2>
 	  <h6><?=$tminfo['value']?></h6>
 	  <div class="deta-banner-pic flex-box flex-jz">
-		  <img src="<?=empty($tminfo['embellish'])?$info['imgUrl']:(TRADE_URL.$tminfo['embellish']);?>"  onerror="this.src='/Static/1.0/images/nopic.gif'" alt="<?=$tminfo['alt1']?>">
+          <span>
+               <img src="<?=empty($tminfo['embellish'])?$info['imgUrl']:(TRADE_URL.$tminfo['embellish']);?>"  onerror="this.src='/Static/1.0/images/nopic.gif'" alt="<?=$tminfo['alt1']?>">
+          </span>
+
 	  </div>
    </section>
    <section class="deta-cont">

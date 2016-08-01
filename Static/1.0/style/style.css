@@ -283,13 +283,18 @@
 	display: none;
 }
 .search-Ind-box{
-	background: #424242;
+	/*background: #424242;*/
     height: 70%;
-    padding-bottom: 0.24rem;
-    overflow: auto;
+    /*padding-bottom: 0.24rem;*/
+    /*overflow: auto;*/
     position: relative;
 }
 .search-Ind-list{
+    background: #424242;
+    height:100%;
+    padding-bottom: 0.24rem;
+    overflow: auto;
+    position: relative;
 	min-height: 6rem;
 }
 .search-Ind-list  p{
@@ -331,8 +336,8 @@
 }
 .search-Ind-btn{
     width: 100%;
-    position:fixed;
-    bottom:0.86rem;
+    position: absolute;
+    bottom: -1.2rem;
     left: 0px;
 }
 .search-Ind-btn a{
@@ -446,6 +451,11 @@
 	margin:0.28rem auto;
 	text-align: center;
 	/*line-height: 4.1rem;*/
+}
+.deta-banner-pic  span{
+    display: inline-block;
+    min-width:6rem;
+    min-height:4rem;
 }
 .deta-banner-pic img{
     display: inline-block;
