@@ -573,3 +573,14 @@ a[href]:hover{
 .layui-layer-msg{
     width:4.5rem !important;
 }
+
+.layui-layer-setwin .layui-layer-close2{
+    width: 29px !important;
+    height: 29px !important;;
+    background-position: -152px -31px !important;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+}
+.layui-layer-ico:hover{
+    background-position: -152px -31px !important;
+}
