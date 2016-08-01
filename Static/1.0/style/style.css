@@ -32,12 +32,10 @@
 .brand-pt-search-tit b.active{
 	border-bottom: 1px solid #f38e8e;
 	color: #FFFFFF;
-    transition:all 0.4s;
 }
 .buy-tit b.active{
     border-bottom: 1px solid #f38e8e;
     color: #f38e8e;
-    transition:all 0.4s;
 }
 .search-main .brand-inp{
     padding-right: 0.36rem;
@@ -82,6 +80,7 @@
 .yzc-nav{
     width: 100%;
 	margin-top: 0.3rem;
+   overflow: hidden;
 }
 .yzc-nav a{
 	/*-webkit-box-flex: 1.0;
@@ -89,7 +88,9 @@
 	-webkit-flex-grow: 1;
 	flex-grow: 1;*/
 	display: inline-block;
-	width:24%;
+	/*width:24%;*/
+    width: 24.899999%;
+    float: left;
 	color: #999999;
     overflow: hidden;
 }
@@ -145,12 +146,14 @@
 	height: 1.18rem;
 	border: 1px solid #e3e3e3;
 	margin-top: 0.58rem;
+    overflow: hidden;
 }
 .yzc-class-show a{
 	/*flex: 1;*/
 	display: inline-block;
-	width: 32.2%;
+	width:33.2%;
     height: 100%;
+    float: left;
     overflow: hidden;
 }
 
@@ -359,12 +362,14 @@
 }
 .filt-list ul li{
 	width: 50%;
-	border-radius: 10px;
-	-webkit-border-radius:10px;
+
 	float:left;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 .filt-list ul li .cont{
+    height: 3.8rem;
+    border-radius:5px;
+    -webkit-border-radius:5px;
 	margin: 15px 0px 0px 15px;
 	border: 1px solid #e1e1e1;
 }
@@ -953,3 +958,4 @@
     background: url("../images/gb-ico.png") no-repeat !important;
     background-size: 100% 100% !important;;
 }
+

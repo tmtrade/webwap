@@ -518,13 +518,18 @@ a[href]:hover{
 .yzc-share-main li a{
     display: block;
     margin: 10px;
+    /*padding-bottom: 1rem;*/
+    /*line-height: 0.22rem;*/
 }
 .yzc-share-main a img{
     width: 100%;
     height: auto;
 }
-
+/*.bdshare-button-style0-16 a, .bdshare-button-style0-16 .bds_more{*/
+    /*background: none !important;*/
+/*}*/
 
 .layui-layer-dialog .layui-layer-content{
-    font-size: 0.28rem !important;
+    font-size: 0.24rem !important;
+    line-height: 0.3rem !important;
 }
