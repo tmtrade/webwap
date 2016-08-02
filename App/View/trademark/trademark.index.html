@@ -132,16 +132,14 @@
             $(".search-Ind-bg").hide();
             $(this).siblings(".search-Ind-bg").show();
             $(this).siblings(".search-Ind-bg").css({"top":oh1+$(".filt-search").outerHeight()})
-            $(".filt-list,.yzc-btm").css({"display":"none"});
-//            $("body").bind("touchmove",function(event){event.preventDefault();});
-//            $(".filt-search").bind("touchmove",function(event){event.stopPropagation()});
+            $("body, html").css({"overflow":"hidden","height":"100%"});
+
 	    });
 	    $(".off,.sure").on('click', function() {
 		$(".search-Ind-bg").hide();
 		olis.removeClass("on");
 		oas.removeClass("on");
-         $("body, html").css({"overflow":"auto","height":"auto"});
-            $(".filt-list,.yzc-btm").css({"display":"block"});
+        $("body, html").css({"overflow":"auto","height":"auto"});
 	    });
 
         oas.each(function(){

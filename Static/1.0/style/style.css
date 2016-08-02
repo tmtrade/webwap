@@ -3,7 +3,7 @@
 	min-height: 4.25rem;
 	background: #414141 url(../images/wap-banner.png) no-repeat top center;
 	background-size: 100% auto;
-	padding-bottom: 0.2rem;
+	padding-bottom: 0.32rem;
 	overflow: hidden;
 	margin-top: 0.84rem;
 }
@@ -57,7 +57,7 @@
 .search-main .search-inp{
 	display: inline-block;
     width: 5.7rem;
-    height: 0.67rem;
+    height: 0.678rem;
     line-height: 0.67rem;
     float: left;
     text-indent: 0.2rem;
@@ -508,7 +508,10 @@
     float: left;
     /*transition: all 2s;*/
 }
-
+#con_det_2>div>img{
+    width: 100% !important;
+    height:auto;
+}
 .deta-cont-main .enter,.deta-cont-main .intr{
 	padding-left: 0.35rem;
 }
@@ -921,7 +924,7 @@
     	width: 3.4rem;
     }
     .search-main .search-inp{
-        height: 0.634rem;
+        height: 0.6309rem;
     }
     
    
@@ -988,7 +991,7 @@
     background-size: 100% 100% !important;;
 }
 .layui-layer-tips{
-    width: 300px !important;
+    min-width:3rem !important;
 }
 .layui-layer-tips .layui-layer-content {
     font-size: 0.18rem !important;

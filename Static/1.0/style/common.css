@@ -37,7 +37,7 @@ input{
 	text-indent: 10px;
 }
 input,textarea{font-size: 0.28rem}
-img{display: block;width: auto;height: auto;border: 0;}
+img{display: block;width:100%;height: auto;border: 0;}
 .fl{float: left}
 .fr{float: right}
 select{
@@ -610,11 +610,11 @@ a[href]:hover{
 }
 .wx-tc p{
     margin-top: 15px;
-    font-size: 0.24rem;
+    font-size: 0.28rem;
 }
 .wx-tc img{
     display: inline-block;
-    width: 150px;
-    height:150px;
+    width: 3.5rem;
+    height: 3.5rem;
     margin: auto;
 }
