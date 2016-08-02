@@ -56,9 +56,9 @@
 }
 .search-main .search-inp{
 	display: inline-block;
-    width: 5.74rem;
-    height: 0.66rem;
-    line-height: 0.66rem;
+    width: 5.7rem;
+    height: 0.67rem;
+    line-height: 0.67rem;
     float: left;
     text-indent: 0.2rem;
     color: #999999;
@@ -917,6 +917,9 @@
     }
     .sell-zx-btn a{
     	width: 3.4rem;
+    }
+    .search-main .search-inp{
+        height: 0.634rem;
     }
     
    

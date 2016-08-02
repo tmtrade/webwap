@@ -177,8 +177,9 @@
                }
            }
        })
-        $(".swiper-slide").on("input,textarea","touchend",function(){
-            $(this).blur();
+
+        $(".swiper-slide").on("touchend",function(){
+            $(this).find("input").blur();
         })
 	</script>
 <? require(ViewDir.'/footer.html'); ?>
