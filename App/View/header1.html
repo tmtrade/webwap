@@ -33,6 +33,8 @@
         var head_type = '<?=$head_type?>';
         if(head_type){
             $('.yzc-head a').removeClass('on').eq(head_type).addClass('on');
+        }else{
+            $('.yzc-head a').removeClass('on');
         }
     });
 </script>
