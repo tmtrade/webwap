@@ -29,10 +29,13 @@ class TrademarkAction extends AppAction
         //存储每个用户当次的搜索条件为下次搜索去比较
         $ip =  getClientIp();
         $this->com('redisHtml')->set('kw_'.$ip, $params, 300);
-            
+        
+        $classGroup = $this->load('trademark')->getClassGroup();
+        list($_class, $_group) = $classGroup;    
+        
         $this->set("list",$res['rows']);
 	$this->set("counts",$res['total']);
-	$this->set('_CLASSES', C('CLASSES'));//商标分类
+	$this->set('_CLASSES', $_class);//商标分类
 	$this->set('_NUMBER', C('SBNUMBER'));//商标字数
         $this->set('_TYPE', C('TYPES'));//组合类型
 	$this->set("s",$params);
