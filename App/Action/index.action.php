@@ -27,7 +27,13 @@ class IndexAction extends AppAction
         $this->set('list',$list);
         $this->display();
     }
-
+    
+    //跳转到电脑端
+    public function jumpPc() {
+        setcookie("jumpwap",FALSE,0, Session::$path, Session::$domain);
+        $this->redirect('', SITE_URL);
+    }
+    
     /**
      * 获得登录相关的验证参数
      * @return string
