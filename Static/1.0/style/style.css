@@ -53,6 +53,7 @@
     float: left;
     cursor: pointer;
     border: 0px;
+    -webkit-appearance: none;
 }
 .search-main .search-inp{
 	display: inline-block;
@@ -63,6 +64,7 @@
     text-indent: 0.2rem;
     color: #999999;
     font-size: 0.28rem;
+    -webkit-appearance: none;
 }
 .brand-box{
     background-color:#414141;
