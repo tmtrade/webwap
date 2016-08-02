@@ -10,7 +10,7 @@
 .brand-pt-search .search-main{
 	padding-left: 0.37rem;
 	padding-right: 0.37rem;
-	margin-top: 2.22rem;
+    margin-top: 2.22rem;
 }
 .brand-pt-search-tit{
 	/*display:-webkit-flex;
@@ -38,11 +38,9 @@
     color: #f38e8e;
 }
 .search-main .brand-inp{
-    /*width:100%;*/
+    width:7rem;
 	height: 0.7rem;
 	margin-top: 0.13rem;
-    margin-left:0px;
-    margin-right:5px;
 }
 .search-main .search-btn{
     display:block;
@@ -58,9 +56,9 @@
 }
 .search-main .search-inp{
 	display: inline-block;
-    width: 5.5rem;
-    height: 0.67rem;
-    line-height: 0.67rem;
+    width: 5.74rem;
+    height: 0.66rem;
+    line-height: 0.66rem;
     float: left;
     text-indent: 0.2rem;
     color: #999999;
@@ -71,7 +69,7 @@
 .brand-box{
     background-color:#414141;
 	height: auto !important;
-    width:50% !important;
+    /*width:50% !important;*/
 }
 .brand-box p {
 	display:block;
