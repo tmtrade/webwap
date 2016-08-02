@@ -22,7 +22,8 @@ $("#menu").on('click',function(){
         tapCount=0;
     }
 })
-$("#menu,#menu-box").on('click',function(e){
+
+$("#menu").on('click',function(e){
     stopPropagation(e);
 });
 //阻止默认事件执行的函数

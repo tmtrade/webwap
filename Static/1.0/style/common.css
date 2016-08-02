@@ -20,9 +20,11 @@ body,html{
     color: #666666;
     overflow-x: hidden;
 }
+
 input:focus, textarea:focus {
     outline: none;
 }
+
 input:focus{
     -webkit-tap-highlight-color:rgba(0,0,0,0);
     -webkit-user-modify:read-write-plaintext-only;
@@ -35,7 +37,7 @@ input{
 	text-indent: 10px;
 }
 input,textarea{font-size: 0.28rem}
-img{display: block;width: auto;height: auto;}
+img{display: block;width: auto;height: auto;border: 0;}
 .fl{float: left}
 .fr{float: right}
 select{
@@ -60,7 +62,7 @@ select::-ms-expand { display: none; }
     -moz-border-radius:5px;
     -o-border-radius:5px;
 }
-a {outline: none;text-decoration: none;color:#666666;}
+a {outline: none;text-decoration: none;color:#666666;blr:expression(this.onFocus=this.blur());}
 a:active {star:expression(this.onFocus=this.blur());}
 :focus { outline:0; }
 a[href]:hover{
@@ -530,6 +532,9 @@ a[href]:hover{
     color: #999999;
     font-size: 0.28rem;
 }
+.yzc-share-main .layui-layer-close{
+    position:relative !important;
+}
 .yzc-share-main li a{
     display: block;
     margin: 10px;
@@ -590,4 +595,26 @@ a[href]:hover{
 }
 .layui-layer-ico:hover{
     background-position: -152px -31px !important;
+}
+.wx-tc{
+    display: none;
+    text-align: center;
+    top: 50px;
+    z-index: 9999999999999;
+    left: 10%;
+    top: 30%;
+}
+.wx-tc span{
+    display: inline-block;
+    margin-top: 35px;
+}
+.wx-tc p{
+    margin-top: 15px;
+    font-size: 0.24rem;
+}
+.wx-tc img{
+    display: inline-block;
+    width: 150px;
+    height:150px;
+    margin: auto;
 }
