@@ -45,7 +45,7 @@
 .search-main .search-btn{
     display:block;
     width:1.2rem;
-    height: 0.7rem;
+    height: 0.70301rem;
     background: url(../images/search-ico.png) no-repeat left top;
     background-size: 100% 100%;
     float: left;
@@ -994,5 +994,5 @@
     min-width:3rem !important;
 }
 .layui-layer-tips .layui-layer-content {
-    font-size: 0.18rem !important;
+    font-size: 0.22rem !important;
 }

@@ -18,7 +18,7 @@ $('#pt_search').click(function(){
     if(reg.test(kw)==false){
         layer.tips('不要输入特殊字符哦', $('#pt_kw'), {
             tips: [3, '#fc7d28'],
-            time: 2000
+            time: 20000000
         });
         layer_close_load();
         return false;
@@ -27,7 +27,7 @@ $('#pt_search').click(function(){
     if(kw.length >=30){
         layer.tips('只搜索前30个字符哦，请稍等...', $('#pt_kw'), {
             tips: [3, '#fc7d28'],
-            time: 2000
+            time: 20000000
         });
         kw = kw.substr(0, 30);
     }
