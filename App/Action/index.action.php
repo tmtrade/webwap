@@ -75,5 +75,11 @@ class IndexAction extends AppAction
         $res = $this->load('index')->sendEmail($email, $title, $content, $name , $from);
         return $this->returnAjax($res);
     }
+
+    public function getOnlineStatus()
+    {
+        $online = $this->com('redisQc')->get($this->onlineName);
+        $this->returnAjax(array('code'=>1,'msg'=>$online));
+    }
 }
 ?>

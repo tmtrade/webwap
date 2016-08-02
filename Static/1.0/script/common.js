@@ -63,7 +63,13 @@ $("#gb-btn").on('click',function(){
 
 //聊天函数
 function goChat(){
-    window.open("http://p.qiao.baidu.com/im/index?siteid=7918603&ucid=1268165");
+    var type = _YZC_ONLINE_;
+    if ( type=='yzc' )
+    {
+        window.open("http://p.qiao.baidu.com/cps/chat?siteId=9503594&userId=21149642");
+    }else{
+        window.open("http://chat.looyu.com/chat/chat/p.do?c=46344&f=123997&g=51817");
+    }
 }
 //购买商品--func成功的回调---- 允许重复
 function buyGoods(data,func){

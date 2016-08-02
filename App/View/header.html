@@ -23,29 +23,42 @@
 		var ptype = '<?=$ptype?>';//页面标识
 		var login_mobile = '';
 		var login_id = '';
+		var _YZC_ONLINE_ = '';
 	    $(function() {
-		//获得登录相关的参数
-		var timestamp = '';
-		var nonceStr = '';
-		var signature = '';
-		$.ajax({
-		    async: true,
-		    type: 'post',
-		    url: '/index/getLogin',
-		    data: '',
-		    dataType: 'json',
-		    complete: function(xhr, status) {
-			ucConfig.setConfig(timestamp, nonceStr, signature);
-		    },
-		    success: function(data) {
-			timestamp = data.timestamp;
-			nonceStr = data.nonceStr;
-			signature = data.signature;
-		    },
-		    error: function(data) {
-			//layer_msg('初始化登录失败');
-		    }
-		});
+			//获得登录相关的参数
+			var timestamp = '';
+			var nonceStr = '';
+			var signature = '';
+			$.ajax({
+			    async: true,
+			    type: 'post',
+			    url: '/index/getLogin',
+			    data: '',
+			    dataType: 'json',
+			    complete: function(xhr, status) {
+				ucConfig.setConfig(timestamp, nonceStr, signature);
+			    },
+			    success: function(data) {
+				timestamp = data.timestamp;
+				nonceStr = data.nonceStr;
+				signature = data.signature;
+			    },
+			    error: function(data) {
+				//layer_msg('初始化登录失败');
+			    }
+			});
+			//获取客服在线
+	        $.ajax({
+	            async: false,
+	            type : 'post',
+	            url  : '/index/getOnlineStatus/',
+	            dataType : 'json',
+	            success : function (data){
+	                if (data.code){
+	                    _YZC_ONLINE_ = data.msg;
+	                }
+	            }
+	        });
 	    });
 	    //适配rem的兼容代码
 
