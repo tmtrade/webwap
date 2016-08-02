@@ -133,8 +133,8 @@
             $(this).siblings(".search-Ind-bg").show();
             $(this).siblings(".search-Ind-bg").css({"top":oh1+$(".filt-search").outerHeight()})
             $("body, html").css({"overflow":"hidden","height":"100%"});
-            $("body").bind("touchmove",function(event){event.preventDefault();$(".filt-search").stopPropagation()});
-//            $(".filt-search").bind("touchmove",function(event){event.stopPropagation()});
+            $("body").bind("touchmove",function(event){event.preventDefault();});
+            $(".filt-search").bind("touchmove",function(event){event.stopPropagation()});
 	    });
 	    $(".off,.sure").on('click', function() {
 		$(".search-Ind-bg").hide();
