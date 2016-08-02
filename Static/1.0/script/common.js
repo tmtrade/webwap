@@ -118,3 +118,23 @@ $("#share").live("click",function(){
 
     });
 });
+
+function stopEvent (evt) {
+
+    var evt = evt || window.event;
+
+    if (evt.preventDefault) {
+
+        evt.preventDefault();
+
+        evt.stopPropagation();
+
+    } else {
+
+        evt.returnValue = false;
+
+        evt.cancelBubble = true;
+
+    }
+
+}

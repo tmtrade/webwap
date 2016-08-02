@@ -133,8 +133,11 @@
             $(this).siblings(".search-Ind-bg").show();
             $(this).siblings(".search-Ind-bg").css({"top":oh1+$(".filt-search").outerHeight()})
             $("body, html").css({"overflow":"hidden","height":"100%"});
-            $('.filt-search').on('touchmove touchstart', function (event) {
+            $("body, html").on('touchstart', function (event) {
                 event.preventDefault();
+            });
+            $(".filt-search").on('touchstart', function (event) {
+                event.stopPropagation();
             });
 	    });
 	    $(".off,.sure").on('click', function() {

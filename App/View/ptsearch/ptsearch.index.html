@@ -105,9 +105,7 @@
 					$(this).siblings(".search-Ind-bg").show();
                     $(this).siblings(".search-Ind-bg").css({"top":oh1+$(".filt-search").outerHeight()})
                     $("body, html").css({"overflow":"hidden","height":"100%"});
-                    $('.filt-search').on('touchmove touchstart', function (event) {
-                        event.preventDefault();
-                    });
+                    stopEvent();
 				}
 				tem = [];//清空暂存
 			});
