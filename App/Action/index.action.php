@@ -34,9 +34,9 @@ class IndexAction extends AppAction
         $length          = count($arr);
         $domain          = '.'.$arr[$length-2].'.'.$arr[$length-1];
         $domain          = preg_replace("/:\d+/", '', $domain);
-        setcookie("jumpwap", 'false', 0, '/', $domain);
+        setcookie("jumpwap", 0, 0, '/', $domain);
 
-        Header("Location: ".SITE_URL);exit;
+        $this->redirect('', SITE_URL);
     }
     
     /**
