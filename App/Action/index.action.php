@@ -36,7 +36,7 @@ class IndexAction extends AppAction
         $domain          = preg_replace("/:\d+/", '', $domain);
         setcookie("jumpwap", 'false', 0, '/', $domain);
 
-        $this->redirect('', SITE_URL);
+        $this->redirect('123123', SITE_URL);
     }
     
     /**
