@@ -55,10 +55,10 @@ var Swiper = function (a, b) {
             var e = c("a", C.container);
             for (a = 0; a < e.length; a++)d(e[a], "click", n)
         }
-        if (b.releaseFormElements) {
-            var f = c("input, textarea, select", C.container);
-            for (a = 0; a < f.length; a++)d(f[a], C.touchEvents.touchStart, o, !0)
-        }
+        //if (b.releaseFormElements) {
+        //    var f = c("input, textarea, select", C.container);
+        //    for (a = 0; a < f.length; a++)d(f[a], C.touchEvents.touchStart, o, !0)
+        //}
         if (b.onSlideClick)for (a = 0; a < C.slides.length; a++)d(C.slides[a], "click", k);
         if (b.onSlideTouch)for (a = 0; a < C.slides.length; a++)d(C.slides[a], C.touchEvents.touchStart, l)
     }
@@ -67,10 +67,10 @@ var Swiper = function (a, b) {
         var a, d = C.h.removeEventListener;
         if (b.onSlideClick)for (a = 0; a < C.slides.length; a++)d(C.slides[a], "click", k);
         if (b.onSlideTouch)for (a = 0; a < C.slides.length; a++)d(C.slides[a], C.touchEvents.touchStart, l);
-        if (b.releaseFormElements) {
-            var e = c("input, textarea, select", C.container);
-            for (a = 0; a < e.length; a++)d(e[a], C.touchEvents.touchStart, o, !0)
-        }
+        //if (b.releaseFormElements) {
+        //    var e = c("input, textarea, select", C.container);
+        //    for (a = 0; a < e.length; a++)d(e[a], C.touchEvents.touchStart, o, !0)
+        //}
         if (b.preventLinks) {
             var f = c("a", C.container);
             for (a = 0; a < f.length; a++)d(f[a], "click", n)
