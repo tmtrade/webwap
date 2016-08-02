@@ -54,6 +54,7 @@
     cursor: pointer;
     border: 0px;
     -webkit-appearance: none;
+    border-radius: 0;
 }
 .search-main .search-inp{
 	display: inline-block;
@@ -65,6 +66,7 @@
     color: #999999;
     font-size: 0.28rem;
     -webkit-appearance: none;
+    border-radius: 0;
 }
 .brand-box{
     background-color:#414141;
@@ -325,7 +327,7 @@
 }
 .search-Ind-list  p a label{
     display: inline-block;
-    max-width:2.6rem ;
+    max-width:1.6rem ;
     overflow: hidden;
 	margin-left: 0.08rem;
     vertical-align: middle;
@@ -980,3 +982,6 @@
     background-size: 100% 100% !important;;
 }
 
+.layui-layer-tips .layui-layer-content {
+    font-size: 0.26rem !important;
+}
