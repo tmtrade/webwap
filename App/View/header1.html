@@ -2,11 +2,11 @@
 <!--公用头部-->
 <header class="yzc-head">
     <a href="/"><h1><img src="<?=StaticDir?>1.0/images/wap-lg.png"></h1></a>
-    <a href="/trademark">
+    <a href="/trademark" class="<?=($head_type==1)?'on':''?>">
         <!--<i><img src="<?=StaticDir?>1.0/images/lg-ico1.png"></i>-->
         <h2>商标<br/><label>trademark</label></h2>
     </a>
-    <a href="/ptsearch">
+    <a href="/ptsearch"  class="<?=($head_type==2)?'on':''?>">
         <!--<i><img src="<?=StaticDir?>1.0/images/lg-ico2.png"></i>-->
         <h2>专利<br/><label>patent</label></h2>
     </a>
@@ -28,14 +28,4 @@
         <a href="<?=SELLER_URL?>">出售者平台</a>
     </div>
 </header>
-<script type="text/javascript">
-    $(function(){
-        var head_type = '<?=$head_type?>';
-        if(head_type){
-            $('.yzc-head a').removeClass('on').eq(head_type).addClass('on');
-        }else{
-            $('.yzc-head a').removeClass('on');
-        }
-    });
-</script>
 <!--公用头部end-->
