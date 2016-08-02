@@ -3,6 +3,7 @@
 var Swiper = function (a, b) {
     function c(a, b) {
         return document.querySelectorAll ? (b || document).querySelectorAll(a) : jQuery(a, b)
+        alert("111");
     }
 
     function d(a) {
