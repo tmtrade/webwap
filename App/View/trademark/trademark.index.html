@@ -133,7 +133,7 @@
             $(this).siblings(".search-Ind-bg").show();
             $(this).siblings(".search-Ind-bg").css({"top":oh1+$(".filt-search").outerHeight()})
             $("body, html").css({"overflow":"hidden","height":"100%"});
-            $('.filt-search,.top-head').on('touchmove touchstart', function (event) {
+            $('.filt-search').on('touchmove touchstart', function (event) {
                 event.preventDefault();
             });
 	    });
