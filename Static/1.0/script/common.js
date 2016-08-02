@@ -8,6 +8,7 @@ $("#menu").on('click',function(){
         $("#menu-box").addClass("slideInDown animated");
         $("#menu-box").css({"display":"block"});
         $(this).addClass("on");
+        sendBehavior(203,ptype,0,0);//发送统计数据
         $(document).on('click',function(){
             $("#menu-box").removeClass("slideInDown animated");
             $("#menu-box").hide();

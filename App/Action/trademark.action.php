@@ -8,7 +8,7 @@
  */
 class TrademarkAction extends AppAction
 {
-    
+	public $ptype       = 202;
     public function index()
     {
         
@@ -140,6 +140,7 @@ class TrademarkAction extends AppAction
 		$this->set("class", $class);
 		$this->set("platform", $platform);
                 $this->set("page_title", '商标详情');
+		$this->set('ptype',204);//设置页面标识
 		$this->display();
     }
     

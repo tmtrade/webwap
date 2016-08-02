@@ -10,7 +10,7 @@
  */
 class IndexAction extends AppAction
 {
-
+    public $ptype       = 201;
     public function index()
     {
         $this->display();

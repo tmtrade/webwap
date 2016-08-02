@@ -8,7 +8,7 @@
 class PtsearchAction extends AppAction{
 
     private $row_num = 8;
-    public $ptype = 10;
+    public $ptype = 203;
 
     /**
      * 获取列表

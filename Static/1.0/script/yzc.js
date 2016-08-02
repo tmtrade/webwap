@@ -109,7 +109,7 @@ $(function(){
             sendCount(args,false);
         }
     });*/
-    //通过轮寻的方式获得离开时间 --- 4s
+    //通过轮寻的方式获得离开时间 --- 8s
     setInterval(function(){
         if(typeof visitid !='undefined'){ //记录离开时间
             var args = 'yzc=3&visitid='+visitid;
@@ -118,7 +118,7 @@ $(function(){
             }
             sendCount(args,true);
         }
-    },4000)
+    },8000)
 });
 //提交数据
 function sendCount(args,async,callback){

@@ -6,7 +6,7 @@
  * Time: 下午 14:48
  */
 class PtdetailAction extends AppAction{
-    public $ptype       = 11;
+    public $ptype       = 205;
     /**
      * 设置标题
      * @param $data

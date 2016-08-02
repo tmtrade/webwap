@@ -33,8 +33,8 @@ $('#pt_search').click(function(){
     }
     //提交数据
     layer_close_load();
+    sendBehavior(3,ptype,0,0,kw,$("#ptfrom").submit());//发送统计数据
     //window.location.href = '/ptsearch/index/?kw='+kw;
-    $("#ptfrom").submit();
 });
 
 //商标搜索
@@ -69,5 +69,5 @@ $('#td_search').click(function(){
         kw = kw.substr(0, 30);
     }
     //提交数据
-    $("#trademarkfrom").submit();
+    sendBehavior(2,ptype,0,0,kw,$("#trademarkfrom").submit());//发送统计数据
 });

@@ -155,8 +155,8 @@
 			$.post(url,data,function(res){
 				if(res.code==0){
 					layer_success('提交成功');
-					var content_0 = '编号:'+data.number+';电话:'+data.mobile+';价格:'+data.price;
-					sendBehavior(type,13,0,0,content_0);//发送统计数据
+//					var content_0 = '编号:'+data.number+';电话:'+data.mobile+';价格:'+data.price;
+//					sendBehavior(type,13,0,0,content_0);//发送统计数据
 					empty_data();
 				}else{
 					layer_error(res.msg);
