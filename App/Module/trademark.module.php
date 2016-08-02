@@ -290,7 +290,7 @@ class TrademarkModule extends AppModule
     */
     public function getImg($number)
     {
-        $default = '/Static/images/img1.png';
+        $default = '/Static/1.0/images/img1.png';
         if ( intval($number) <= 0 ) return $default;
         $r['eq']    = array('trademark_id'=>$number);
         $img        = $this->import('img')->find($r);
