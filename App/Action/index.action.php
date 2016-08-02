@@ -30,7 +30,12 @@ class IndexAction extends AppAction
     
     //跳转到电脑端
     public function jumpPc() {
-        setcookie("jumpwap",FALSE,0, Session::$path, Session::$domain);
+        $arr             = explode('.', $_SERVER['HTTP_HOST']);
+        $length          = count($arr);
+        $domain          = '.'.$arr[$length-2].'.'.$arr[$length-1];
+        $domain          = preg_replace("/:\d+/", '', $domain);
+        setcookie("jumpwap", 'false', 0, '/', $domain);
+
         $this->redirect('', SITE_URL);
     }
     
