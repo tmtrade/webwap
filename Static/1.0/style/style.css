@@ -596,6 +596,7 @@
 	width: 100%;
 	overflow: hidden;
 	margin-bottom:0.44rem;
+    margin-top: 0.2rem;
 }
 .refer-xf{
     position: fixed;
@@ -613,7 +614,7 @@
 	float:left;
 	color: #FFFFFF;
 	font-size: 0.28rem;
-	margin-top: 0.2rem;
+
 }
 .refer-buy a img{
 	display: inline-block;

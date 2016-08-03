@@ -50,12 +50,12 @@ $("#xun_submit").on("click",function(){
 });
 
 //判断咨询弹窗的位置；
-var sjl= $(window).height()/770*100*1.9;
+
 $(window).scroll(function(){
-    if(($(document).height() - $(window).height())-$(window).scrollTop()<sjl){
-        $(".refer-buy").removeClass("refer-xf");
+    if(($(document).height() - $(window).height())-$(window).scrollTop()<=$(".yzc-btm").height()+10){
+        $("#tel-buy").removeClass("refer-xf");
     }
-    else{
-        $(".refer-buy").addClass("refer-xf");
+    if(($(document).height()-$(window).height())-$(window).scrollTop()>$(".yzc-btm").height()+($("#tel-buy").outerHeight(true)- $("#tel-buy a").height())){
+       $("#tel-buy").addClass("refer-xf");
     }
 })
