@@ -414,6 +414,8 @@
 	text-align: center;
 	overflow: hidden;
 	background: #f8f8f8;
+    border-radius:0px 0px 10px 10px;
+    -webkit-border-radius:0px 0px 10px 10px;
 }
 .filt-list ul li div.filt-list-btn p{
     text-align: center;
