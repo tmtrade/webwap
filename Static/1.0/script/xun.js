@@ -48,3 +48,14 @@ $("#xun_submit").on("click",function(){
 	});
     }
 });
+
+//判断咨询弹窗的位置；
+var sjl= $(window).height()/770*100*1.9;
+$(window).scroll(function(){
+    if(($(document).height() - $(window).height())-$(window).scrollTop()<sjl){
+        $(".refer-buy").removeClass("refer-xf");
+    }
+    else{
+        $(".refer-buy").addClass("refer-xf");
+    }
+})
