@@ -127,11 +127,6 @@ $("#share").live("click",function(){
     });
 });
 
-var  preventDefault  = function(e) {
-    e = e || window.event;
-    if(e.preventDefault) {
-        e.preventDefault();
-    }else{
-        e.returnValue = false;
-    }
-}
+$("input,textarea").on("touchstart",function(){
+     $(this).blur();
+})

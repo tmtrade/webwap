@@ -133,8 +133,6 @@
             $(this).siblings(".search-Ind-bg").show();
             $(this).siblings(".search-Ind-bg").css({"top":oh1+$(".filt-search").outerHeight()})
             $("body, html").css({"overflow":"hidden","height":"100%"});
-
-
         });
 	    $(".off,.sure").on('click', function() {
 		$(".search-Ind-bg").hide();
@@ -142,7 +140,6 @@
 		oas.removeClass("on");
         $("body, html").css({"overflow":"auto","height":"auto"});
 	    });
-
         oas.each(function(){
             $(this).click(function(){
                 var odex=$(this).attr("index");
