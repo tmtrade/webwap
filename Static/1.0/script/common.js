@@ -126,7 +126,6 @@ $("#share").live("click",function(){
 
     });
 });
-
 $("input,textarea").on("touchstart",function(){
      $(this).blur();
 })
