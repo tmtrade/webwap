@@ -129,15 +129,3 @@ $("#share").live("click",function(){
 $("input,textarea").on("touchstart",function(){
      $(this).blur();
 })
-
-var list = ['container'];
-var prevent = new PreventOverScroll({
-    list: list
-});
-var outer = (  isAndroid // do it yourself
-    ? 'wrapper'
-    : 'container' );
-var list = [outer];
-var prevent = new PreventOverScroll({
-    list: list
-});

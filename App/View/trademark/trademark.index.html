@@ -118,6 +118,10 @@
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/objurl.js"></script>
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/xun.js"></script>
 	<script type="text/javascript">
+        var list = ['container'];
+        var prevent = new PreventOverScroll({
+            list: list
+        });
         //筛选页面下拉列表搜索；
         var ow=$(window).width();
         var oh1=ow/770*100*0.84;
