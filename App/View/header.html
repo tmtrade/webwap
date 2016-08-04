@@ -19,6 +19,7 @@
     <script type="text/javascript" src="<?=StaticDir?>1.0/script/swiper.scroll-2.1.js?v=<?=$static_version?>"></script>
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/func.js?v=<?=$static_version?>"></script>
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/my.js?v=<?=$static_version?>"></script>
+    <script type="text/javascript" src="<?=StaticDir?>1.0/script/preventoverscroll.min.js?v=<?=$static_version?>"></script>
 	<script type="text/javascript">
 	    var HOST = '<?=UC_URL?>';//后台站点
 	    var tj_host = '<?=TR2_STATIC?>';//统计站点
@@ -105,7 +106,8 @@
 <!-- End Piwik Code -->
 
     </head>
-    <body>
+    <body id="wrapper">
+
 	<!--咨询价格弹窗-->
 	<div class="refer-cost" >
 	    <div class="refer-cost-pic"></div>
