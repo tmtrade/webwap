@@ -127,13 +127,11 @@ $("#share").live("click",function(){
     });
 });
 
-//阻止浏览器的默认行为
-function stopDefault( e ) {
-    //阻止默认浏览器动作(W3C)
-    if ( e && e.preventDefault )
+var  preventDefault  = function(e) {
+    e = e || window.event;
+    if(e.preventDefault) {
         e.preventDefault();
-    //IE中阻止函数器默认动作的方式
-    else
-        window.event.returnValue = false;
-    return false;
+    }else{
+        e.returnValue = false;
+    }
 }

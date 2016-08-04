@@ -112,7 +112,7 @@
 	    <input  type="hidden" name="type"   value="<?=$s['type']?>" id="type_str">
 	    <input  type="hidden" name="length" value="<?=$s['length']?>" id="length_str">
 	</form>
-	<div id="s-uploading" style="padding-top:33px;margin-left: 45%;display:none;height:100px;"><img src="<?=StaticDir?>1.0/script/layer/skin/default/loading-1.gif"></div>
+	<div id="s-uploading" style="padding-top:0px;margin-left: 45%;display:none;height:100px;"><img src="<?=StaticDir?>1.0/script/layer/skin/default/loading-1.gif"></div>
 	<div id="_tmpDiv" style="display:none"></div>
 
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/objurl.js"></script>
@@ -133,8 +133,9 @@
             $(this).siblings(".search-Ind-bg").show();
             $(this).siblings(".search-Ind-bg").css({"top":oh1+$(".filt-search").outerHeight()})
             $("body, html").css({"overflow":"hidden","height":"100%"});
-//            stopDefault( e );
-	    });
+
+
+        });
 	    $(".off,.sure").on('click', function() {
 		$(".search-Ind-bg").hide();
 		olis.removeClass("on");
