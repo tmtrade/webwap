@@ -298,8 +298,6 @@
 	/*background: #424242;*/
     height:60%;
     /*padding-bottom: 0.24rem;*/
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
     position: relative;
 }
 .search-Ind-list{
