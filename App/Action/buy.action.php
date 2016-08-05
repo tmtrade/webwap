@@ -30,10 +30,10 @@ class BuyAction extends AppAction{
         $type	= $this->input("type","int",1);
         if ( empty($number) || empty($phone) || empty($type) ) $this->returnAjax(array('code'=>2,'msg'=>'数据不完整'));
         //检测该用户是否已存在
-        $phone_info = $this->load('phoneEnquiry')->getUserByPhone($phone);
-        if(!empty($phone_info)){
-            $this->returnAjax(array('code'=>2,'msg'=>'用户已存在'));
-        }
+//        $phone_info = $this->load('phoneEnquiry')->getUserByPhone($phone);
+//        if(!empty($phone_info)){
+//            $this->returnAjax(array('code'=>2,'msg'=>'用户已存在'));
+//        }
         
         //添加记录到数据库
         $res= $this->load('phoneEnquiry')->addPhone($number,$phone,$type);
