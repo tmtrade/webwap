@@ -10,7 +10,9 @@
  */
 class IndexAction extends AppAction
 {
-    public $ptype       = 201;
+    public $ptype           = 201;
+    protected $onlineName   = 'YzCoNlInE'; //客服在线设置
+
     public function index()
     {
         $this->display();
