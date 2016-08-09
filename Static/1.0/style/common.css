@@ -416,7 +416,7 @@ a:focus{
 /*公用弹话框*/
 .dlg-box{
 	width: 100%;
-	min-height:1.82rem;
+    min-height: 1.24rem;
 	background: url(../images/btm-th.png) no-repeat top center;
 	background-size: 100% auto;
 	position: fixed;
@@ -425,14 +425,14 @@ a:focus{
 	z-index:99;
 }
 .dlg-box span{
-	display: inline-block;
-	width:0.46rem;
-	height: 0.45rem;
-	background: url(../images/gb-ico.png) no-repeat top center;
-	background-size: 100% 100%;
+    display: inline-block;
+    width: 0.42rem;
+    height: 0.42rem;
+    background: url(../images/th-gb-ico.png) no-repeat top center;
+    background-size: 100% 100%;
     position: absolute;
-    right: 0.1rem;
-    top: 0.8rem;
+    right: 0.14rem;
+    top: 0.4rem;
 }
 .dlg-box a{
 	display: inline-block;
