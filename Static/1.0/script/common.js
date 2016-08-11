@@ -129,3 +129,9 @@ $("#share").live("click",function(){
 $("input,textarea").on("touchstart",function(){
      $(this).blur();
 })
+//position下的fixed兼容手机端
+
+if(navigator.platform == 'iPad' || navigator.platform == 'iPhone' || navigator.platform == 'iPod')
+{
+    $(".sell-btm-dw").css("position", "static");
+};
