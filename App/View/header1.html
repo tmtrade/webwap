@@ -1,31 +1,31 @@
 
 <!--公用头部-->
 <header class="yzc-head">
-    <a href="/" webid="204"><h1><img src="<?=StaticDir?>1.0/images/wap-lg.png"></h1></a>
-    <a href="/trademark" class="<?=($head_type==1)?'on':''?>" webid="200">
+    <a href="/" webid="204" module="顶部1" addmsg="logo"><h1><img src="<?=StaticDir?>1.0/images/wap-lg.png"></h1></a>
+    <a href="/trademark" class="<?=($head_type==1)?'on':''?>" webid="200" module="顶部2" addmsg="商标">
         <!--<i><img src="<?=StaticDir?>1.0/images/lg-ico1.png"></i>-->
         <h2>商标<br/><label>trademark</label></h2>
     </a>
-    <a href="/ptsearch"  class="<?=($head_type==2)?'on':''?>" webid="201">
+    <a href="/ptsearch"  class="<?=($head_type==2)?'on':''?>" webid="201" module="顶部3" addmsg="专利">
         <!--<i><img src="<?=StaticDir?>1.0/images/lg-ico2.png"></i>-->
         <h2>专利<br/><label>patent</label></h2>
     </a>
-    <a href="javascript:;" onclick="goChat()" webid="203">
+    <a href="javascript:;" onclick="goChat()" webid="203" module="顶部4" addmsg="客服">
         <!--<i><img src="<?=StaticDir?>1.0/images/lg-ico3.png"></i>-->
         <h2>客服<br/><label>service</label></h2>
     </a>
 
-    <a id="menu">
+    <a id="menu" module="顶部5" addmsg="菜单">
         <!--<i><img src="<?=StaticDir?>1.0/images/lg-ico4.png"></i>-->
         <h2>菜单<br/><label>list</label></h2>
     </a>
     <!--点击菜单出现导航弹窗，默认影藏-->
     <div class="menu-box" id="menu-box">
-        <a href="/" webid="204">一只蝉首页</a>
-        <a href="/sell" webid="205">我要出售</a>
-        <a href="/buy" webid="206">购买登记</a>
-        <a href="<?=UC_URL?>" webid="207">我的蝉窝</a>
-        <a href="<?=SELLER_URL?>" webid=208>出售者平台</a>
+        <a href="/" webid="204" module="菜单1" addmsg="首页">一只蝉首页</a>
+        <a href="/sell" webid="205" module="菜单2" addmsg="我要出售">我要出售</a>
+        <a href="/buy" webid="206" module="菜单3" addmsg="购买登记">购买登记</a>
+        <a href="<?=UC_URL?>" webid="207" module="菜单4" addmsg="我的蝉窝">我的蝉窝</a>
+        <a href="<?=SELLER_URL?>" webid=208 module="菜单5" addmsg="出售者平台">出售者平台</a>
     </div>
 </header>
 <!--公用头部end-->

@@ -99,6 +99,7 @@ class PtsearchAction extends AppAction{
         //得到专利数据
         $res = $this->load('pt')->getPtList($params, $page, $this->row_num);
         $this->set('list', $res['rows']);
+        $this->set('page', $page);
         $this->display();
     }
 

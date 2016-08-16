@@ -54,7 +54,7 @@
 					</a>
 					<div class="filt-list-btn">
 						<p><?=$v['title']?></p>
-						<a class="xun_price" href="javascript:;" data-type="2" data-number="<?=$v['number']?>">立即询价</a>
+						<a class="xun_price" href="javascript:;" data-type="2" data-number="<?=$v['number']?>" data-wz="列表1-<?=$k+1?>">立即询价</a>
 					</div>
 				</div>
 			</li>
@@ -237,10 +237,12 @@
 					obj.set('t', value);
 					if ( value != now_type) obj.set('c', '');
 					sendBehavior(1,ptype,0,0,value_0);//发送统计数据
+					setEvent('专利类型',value_0);
 					break;
 				case "_class" :
 					obj.set('c', value);
 					sendBehavior(2,ptype,0,0,value_0);//发送统计数据
+					setEvent('专利类型分类',value_0);
 					break;
 			}
 			//得到当前url

@@ -19,7 +19,7 @@
     <script type="text/javascript" src="<?=StaticDir?>1.0/script/swiper.scroll-2.1.js?v=<?=$static_version?>"></script>
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/func.js?v=<?=$static_version?>"></script>
 	<script type="text/javascript" src="<?=StaticDir?>1.0/script/my.js?v=<?=$static_version?>"></script>
-
+	<script type="text/javascript" src="http://data.chanshu.wang/data.js?v=<?=$static_version?>"></script>
 	<script type="text/javascript">
 	    var HOST = '<?=UC_URL?>';//后台站点
 	    var tj_host = '<?=TR2_STATIC?>';//统计站点
@@ -87,27 +87,8 @@
 		doc.addEventListener('DOMContentLoaded', recalc, false);
 	    })(document, window);
 	</script>
-
-    <!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(["setDomains", ["*.m.yizhchan.com"]]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//douob.cn/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', 4]);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<noscript><p><img src="//douob.cn/piwik.php?idsite=4" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code -->
-
     </head>
     <body>
-
 	<!--咨询价格弹窗-->
 	<div class="refer-cost" >
 	    <div class="refer-cost-pic"></div>
@@ -117,5 +98,6 @@
 		<a href="javascript:void(0)" id="xun_submit">咨询价格</a>
 		<input type="hidden" value="" id="xun_number">
 		<input type="hidden" value="1" id="xun_type">
+		<input type="hidden" value="" id="xun_wz">
 	    </div>
 	</div>

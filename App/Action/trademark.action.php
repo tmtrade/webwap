@@ -54,6 +54,7 @@ class TrademarkAction extends AppAction
         $res = $this->load('sale')->getList($params, $page, $this->rowNum);
 
         $this->set('searchList', $res['rows']);
+        $this->set('page', $page);
         $this->display();
     }
     

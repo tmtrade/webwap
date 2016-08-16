@@ -4,6 +4,7 @@ document.write('<script type="text/javascript"  data-lxb-uid="1268165" data-lxb-
 $(".xun_price").live("click",function(){
     $("#xun_number").val($(this).data("number"));
     $("#xun_type").val($(this).data("type"));
+    $("#xun_wz").val($(this).data("wz"));
     layer.open({
 	area:["80%","4.86rem"],
 	type: 1,
@@ -19,6 +20,7 @@ $(".xun_price").live("click",function(){
 $("#xun_submit").on("click",function(){
     var phone = $("#xun_phone").val();
     var number = $("#xun_number").val();
+    var wz = $("#xun_wz").val();
     var type = $("#xun_type").val();
     var tip = $("#tips");
     var preg = /^1[3|4|5|7|8][0-9]\d{8}$/;
@@ -39,6 +41,7 @@ $("#xun_submit").on("click",function(){
 				var type_0 = '商标';
 				if(type==2) type_0 = '专利';
 				var content_0 = type_0+'号:'+number+';电话:'+phone;
+				setEvent(type_0+wz,'02-询价');
 				sendBehavior(30,ptype,0,0,content_0);//发送统计数据
 			}else{
 			    layer.closeAll();

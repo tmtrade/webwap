@@ -33,6 +33,7 @@ $('#pt_search').click(function(){
     }
     //提交数据
     layer_close_load();
+    setSearch(kw,'专利名称');
     sendBehavior(3,ptype,0,0,kw,$("#ptfrom").submit());//发送统计数据
     //window.location.href = '/ptsearch/index/?kw='+kw;
 });
@@ -69,5 +70,6 @@ $('#td_search').click(function(){
         kw = kw.substr(0, 30);
     }
     //提交数据
+    setSearch(kw,'商标名称');
     sendBehavior(2,ptype,0,0,kw,$("#trademarkfrom").submit());//发送统计数据
 });
