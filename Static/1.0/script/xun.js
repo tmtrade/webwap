@@ -42,7 +42,6 @@ $("#xun_submit").on("click",function(){
 				if(type==2) type_0 = '专利';
 				var content_0 = type_0+'号:'+number+';电话:'+phone;
 				setEvent(type_0+wz,'02-询价');
-				sendBehavior(30,ptype,0,0,content_0);//发送统计数据
 			}else{
 			    layer.closeAll();
 			    tip.html("数据错误!");

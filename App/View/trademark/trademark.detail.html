@@ -34,13 +34,13 @@
                     if(empty($sale['platform'])){//根据类别规则显示
                     foreach($platformIn as $k=>$v){
                     if(checkIn($info['class'],$platformItems[$k])){
-                    echo " <a href='".$platformUrl[$k]."' webid='2' addmsg='".$v."' target='_blank' class='cur' >".$v."</a>";
+                    echo " <a href='".$platformUrl[$k]."'  addmsg='".$v."' target='_blank' class='cur' >".$v."</a>";
                     }
                     }
                     }else{//根据包装信息显示
                     foreach($platformIn as $k=>$v){
                     if(in_array($k, array_filter(explode(',',$sale['platform'])))){
-                    echo " <a href='".$platformUrl[$k]."' webid='2' addmsg='".$v."' target='_blank' class='cur' >".$v."</a>";
+                    echo " <a href='".$platformUrl[$k]."'  addmsg='".$v."' target='_blank' class='cur' >".$v."</a>";
                     }
                     }
                     }
@@ -61,7 +61,7 @@
     </div>
     <ul class="rec-brand-list main">
 	<?foreach($refer as $item):?>
-	<a  title="<?=$item['name']?>" href="/d-<?=$item['tid']?>-<?=$item['class']?>.html"  webid="1" addmsg="<?=$item['name']?>" module="推荐商标">
+	<a  title="<?=$item['name']?>" href="/d-<?=$item['tid']?>-<?=$item['class']?>.html"    addmsg="<?=$item['name']?>" module="推荐商标">
 	    <li>
 		<div class="cont">
 		    <img src="<?=$item['pic']['embellish']?>" onerror="this.src='/Static/1.0/images/img1.png'">

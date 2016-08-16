@@ -50,7 +50,7 @@
 		</div>
 		<ul class="rec-brand-list main">
 			<? foreach($tj as $i=>$v): ?>
-			<a href="<?=$v['url']?>" webid="1" addmsg="<?=$v['title']?>" module="推荐专利">
+			<a href="<?=$v['url']?>"   addmsg="<?=$v['title']?>" module="推荐专利">
 				<li>
 					<div class="cont">
 						<img src="<?=$v['img']?>" onerror="this.src='/Static/1.0/images/img1.png'"/>
@@ -164,7 +164,6 @@
 				   //关闭弹窗
 				   $("#gb-tc").click();
 				   //提交数据
-				   sendBehavior(2,ptype,0,0,buyData.remarks);//发送统计数据
 				   setEvent('立即购买',mobile);
 			   });
 		   });

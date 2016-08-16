@@ -8,7 +8,6 @@ $("#menu").on('click',function(){
         $("#menu-box").addClass("slideInDown animated");
         $("#menu-box").css({"display":"block"});
         $(this).addClass("on");
-        sendBehavior(203,ptype,0,0);//发送统计数据
         $(document).on('click',function(){
             $("#menu-box").removeClass("slideInDown animated");
             $("#menu-box").hide();
@@ -158,26 +157,3 @@ $(document).on('click','a',function(e){
         setEvent(module,addmsg);
     }
 });
-//解析页面
-function analyzePage(ptype){
-    var str = '';
-    switch (ptype){
-        case '201':
-            str = '首页';break;
-        case '202':
-            str = '商标筛选页';break;
-        case '203':
-            str = '专利筛选页';break;
-        case '204':
-            str = '商标详情页';break;
-        case '205':
-            str = '专利详情页';break;
-        case '12':
-            str = '我要买';break;
-        case '13':
-            str = '我要卖';break;
-        default:
-            str = '未知';
-    }
-    return str;
-}

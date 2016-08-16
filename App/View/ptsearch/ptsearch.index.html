@@ -27,7 +27,7 @@
 					<div class="search-Ind-box">
 						<div class="search-Ind-list" id="pt_class2">
 							<?foreach ($_CLASS as $k => $v) {?>
-							<p><a i="<?=$k?>" webid="2" addmsg="<?=$v?>" class="<?=(in_array($k,$c_arr))?'on':''?>"> <label><?=$v?><?=(in_array($k,$c_arr))?'</label><i></i>':''?></a></p>
+							<p><a i="<?=$k?>"   addmsg="<?=$v?>" class="<?=(in_array($k,$c_arr))?'on':''?>"> <label><?=$v?><?=(in_array($k,$c_arr))?'</label><i></i>':''?></a></p>
 							<?}?>
 						</div>
 						<div class="search-Ind-btn">
@@ -47,7 +47,7 @@
 			<? foreach($list as $k => $v): ?>
 			<li>
 				<div class="cont">
-					<a class="pic" href="/pt-<?=$v['number']?>.html" webid="3" addmsg="<?=$v['title']?>">
+					<a class="pic" href="/pt-<?=$v['number']?>.html"   addmsg="<?=$v['title']?>">
 				<span>
 					<img src="<?=$v['imgUrl']?>"  onerror="this.src='/Static/1.0/images/img1.png'" width="170" height="100">
 				</span>
@@ -236,12 +236,10 @@
 				case "_type" :
 					obj.set('t', value);
 					if ( value != now_type) obj.set('c', '');
-					sendBehavior(1,ptype,0,0,value_0);//发送统计数据
 					setEvent('专利类型',value_0);
 					break;
 				case "_class" :
 					obj.set('c', value);
-					sendBehavior(2,ptype,0,0,value_0);//发送统计数据
 					setEvent('专利类型分类',value_0);
 					break;
 			}

@@ -92,7 +92,7 @@
 		<? foreach ($list as $k => $v) {?>
 		<li>
 		    <div class="cont">
-			<a class="pic" href="/d-<?=$v['tid']?>-<?=$v['class']?>.html" title="<?=$v['name']?>" webid="4" addmsg="<?=$v['name']?>" >
+			<a class="pic" href="/d-<?=$v['tid']?>-<?=$v['class']?>.html" title="<?=$v['name']?>"   addmsg="<?=$v['name']?>" >
 			    <span>
 				<img src="<?=$v['pic']['embellish']?>"  onerror="this.src='/Static/1.0/images/img1.png'" width="170" height="100">
 			    <span>
@@ -161,15 +161,18 @@
 	$(".search-Ind-btn .sure").on("click", function() {
 	    var names = $(this).data("name");
 	    var  str = '';
+	    var  strname ="";
             $("[name = "+names+"]:checked").each(function () {
 		if(str===""){
                         str =$(this).val();
 		}else{
                         str +=","+$(this).val();
 		}
+		strname+=","+$(this).parent().find("label").html();
 	    });
 	    $("#"+names).val(str);
 	    if(str){
+		setEvent('搜索了条件',strname);
 		$("#seachfrom").submit();
 	    }else{
 		$("#"+names).val("");
