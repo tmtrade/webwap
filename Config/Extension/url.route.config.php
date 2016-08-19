@@ -17,4 +17,11 @@ $rules[] = array(
         'short' => '#((\d+-)([\w-])*)#',
         ),
 );
+$rules[] = array(
+    '#/s(-|/)#',
+    array('mod' => 'trademark', 'action' => 'index'),
+    array(
+        'short' => '##',
+        ),
+);
 ?>
