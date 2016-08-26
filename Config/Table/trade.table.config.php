@@ -83,4 +83,19 @@ $tbl['keywordCount'] = array(
 	'dbId'		=> $dbId,
 	'configFile'=> $configFile,
 );
+$tbl['quotation'] = array(
+	'name'		=> $prefixs.'quotation',
+	'dbId'		=> $dbId,
+	'configFile'=> $configFile,
+);
+$tbl['userImage'] = array(
+	'name'		=> $prefixs.'user_image',
+	'dbId'		=> $dbId,
+	'configFile'=> $configFile,
+);
+$tbl['quotationItems'] = array(
+	'name'		=> $prefixs.'quotation_items',
+	'dbId'		=> $dbId,
+	'configFile'=> $configFile,
+);
 ?>
