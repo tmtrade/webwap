@@ -471,8 +471,6 @@ function analyzePage(ptype){
             str = '我要买';break;
         case '13':
             str = '我要卖';break;
-        case '14':
-            str = '报价单页面';break;
         default:
             str = '未知';
     }
