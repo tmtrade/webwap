@@ -620,3 +620,6 @@ a:focus{
     height: 3.5rem;
     margin: auto;
 }
+#newBridge{
+    display:none !important;
+}
