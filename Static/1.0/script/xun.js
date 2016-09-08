@@ -41,7 +41,7 @@ $("#xun_submit").on("click",function(){
 				var type_0 = '商标';
 				if(type==2) type_0 = '专利';
 				var content_0 = type_0+'号:'+number+';电话:'+phone;
-				setEvent(type_0+wz,'02-询价');
+				setEvent(type_0+wz,'表单-02-询价:电话-'+phone);
 			}else{
 			    layer.closeAll();
 			    tip.html("数据错误!");
