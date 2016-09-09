@@ -43,7 +43,7 @@ abstract class AppAction extends Action
         $this->set('keywords', $this->pageKey);//页面keywords
         $this->set('description', $this->pageDescription);//页面description
         $this->set('ptype',$this->ptype);//设置页面标识
-        $this->set('static_version', 11454);//静态文件版本号>>控制js,css缓存
+        $this->set('static_version', 11954);//静态文件版本号>>控制js,css缓存
     }
 
     /**
